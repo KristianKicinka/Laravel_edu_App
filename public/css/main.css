@@ -1,0 +1,48 @@
+.sidebar-left{
+    background-color: #00171F;
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    position: fixed;
+
+}
+.side-nav>li{
+    padding: 4% 2% 2% 5%;
+    margin-top: 10%;
+    font-size: 1.3em;
+}
+.side-nav>a{
+    float: left;
+    text-align: center;
+}
+
+.sidebar-ul>a:hover,a:active,a:link,a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.side-nav>li:hover{
+    background-color: rgba(0,168,232,1);
+    z-index: 500;
+}
+.sidebar-icon{
+    padding-right: 5%;
+}
+.panel-navbar{
+    background-color: #00A8E8;
+}
+.font-roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.logo-panel{
+    position: absolute;
+    left: 0;
+    background-color: #0d83ba;
+    height: 100%;
+    padding-top: 0.7%;
+
+}
+.main-content{
+    padding-left: 20%;
+
+}
