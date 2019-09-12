@@ -1,5 +1,7 @@
-<?php
+@extends('layouts.app')
+@section('content')
 
+<?php
 use phpDocumentor\Reflection\Types\This;
 
  $index=1;
@@ -11,8 +13,7 @@ use phpDocumentor\Reflection\Types\This;
  }
 
 ?>
-@extends('layouts.app')
-@section('content')
+
     <div class="window">
         @include('Teacher.sidebars.teacherSidebar')
         <div class="main-content container-fluid">
