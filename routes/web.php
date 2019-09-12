@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\SettingsController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,25 +25,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('dashboard','DashboardController');
+
 /*Teacher panel sidebar routes*/
-Route::get('/teacher/dashboard', ['as' => 'teacherDashboard', function () {
-    return view('home');
-}]);
-Route::get('/teacher/settings', ['as' => 'teacherSettings', function () {
-    return view('home');
-}]);
-Route::get('/teacher/tests', ['as' => 'teacherTests', function () {
-    return view('home');
-}]);
-Route::get('/teacher/materials', ['as' => 'teacherMaterials', function () {
-    return view('home');
-}]);
-Route::get('/teacher/students', ['as' => 'teacherStudents', function () {
-    return view('home');
-}]);
-Route::get('/teacher/classrooms', ['as' => 'teacherClassrooms', function () {
-    return view('home');
-}]);
-Route::get('/teacher/subjects', ['as' => 'teacherSubjects', function () {
+Route::get('/teacher/dashboard', ['uses'=>'DashboardController@index','as'=>'teacherDashboard']);
+Route::get('/teacher/settings', ['uses'=>'SettingsController@index', 'as'=>'teacherSettings']);
+Route::get('/teacher/tests', ['uses'=>'TestsController@index', 'as'=>'teacherTests']);
+Route::get('/teacher/materials', ['uses'=>'MaterialsController@index', 'as'=>'teacherMaterials']);
+Route::get('/teacher/students', ['uses'=>'StudentsController@index', 'as'=>'teacherStudents']);
+Route::get('/teacher/classrooms', ['uses'=>'ClassroomsController@index', 'as'=>'teacherClassrooms']);
+Route::get('/teacher/subjects', ['uses'=>'SubjectsController@index', 'as'=>'teacherSubjects']);
+
+Route::get('/teacher/tests/create',['as'=>'testCreate',function(){
     return view('home');
 }]);
