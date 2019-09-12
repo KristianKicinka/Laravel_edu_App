@@ -8,24 +8,24 @@
                 @include('Teacher.content.teacherDashboard')
         @endif
             @if (Route::current()->getName() == 'teacherSettings')
-                <h1>Teacher Settings</h1>
+                @include('Teacher.content.teacherSettings')
             @endif
             @if (Route::current()->getName() == 'teacherTests')
-                <h1>Teacher Tests</h1>
+                @include('Teacher.content.teacherTests')
             @endif
 
             @if (Route::current()->getName() == 'teacherMaterials')
-                <h1>Teacher Materials</h1>
+                @include('Teacher.content.teacherMaterials')
             @endif
 
             @if (Route::current()->getName() == 'teacherStudents')
-                <h1>Teacher Students</h1>
+                @include('Teacher.content.teacherStudents')
             @endif
             @if (Route::current()->getName() == 'teacherClassrooms')
-                <h1>Teacher classrooms</h1>
+                @include('Teacher.content.teacherClassrooms')
             @endif
             @if (Route::current()->getName() == 'teacherSubjects')
-                <h1>Teacher Subjects</h1>
+                @include('Teacher.content.teacherSubjects')
             @endif
     </div>
 </div>
