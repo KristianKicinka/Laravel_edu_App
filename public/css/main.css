@@ -4,6 +4,7 @@
     text-decoration: none;
     height: 100%;
     position: fixed;
+    top:7%;
 
 }
 .side-nav>li{
@@ -30,6 +31,10 @@
 }
 .panel-navbar{
     background-color: #00A8E8;
+    position: fixed;
+    width: 100%;
+    height: 8%;
+    z-index: 2;
 }
 .font-roboto{
     font-family: 'Roboto', sans-serif;
