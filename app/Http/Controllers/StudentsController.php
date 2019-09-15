@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
+
 
 class StudentsController extends Controller
 {
@@ -13,7 +15,9 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        return view('Students.index');
+        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
+
+        return view('Students.index',compact("users"));
     }
 
     /**
