@@ -23,20 +23,15 @@ class TestsController extends Controller
      */
     public function create()
     {
-        $index=1;
-        $end=false;
-        $answers=4;
-
-        return view('Tests.create')->with('index',$index)->with('end',$end)->with('answers',$answers);
+        return view('Tests.create');
     }
 
-    public function questions()
+    public function questions(Request $request)
     {
-        $index=1;
-        $end=false;
-        $answers=4;
+        $questions=$request->input("testQuestionsVal");
+        $answers=$request->input("testOptionsVal");
+       return view('Tests.questions')->with("questions",$questions)->with("answers",$answers);
 
-        return view('Tests.questions')->with('index',$index)->with('end',$end)->with('answers',$answers);
     }
 
 
@@ -49,7 +44,7 @@ class TestsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

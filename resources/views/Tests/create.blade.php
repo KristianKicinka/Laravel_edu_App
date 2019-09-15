@@ -20,48 +20,39 @@ use App\Http\Controllers\TestsController;
                 <div class="row">
                     <div class="container px-2 py-2 mx-3 my-2 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ">
                         <div class="label form-group col-md-6">
-                            <h3>Question {{ isset($index) }}</h3>
-                            <div class="question">
-                                {{ Form::text("question_$index",null,['placeholder'=>" Type Question $index",'class'=>'form-control', ]) }}
+                            {{ Form::open(['method' =>"post","action"=>"TestsController@questions"]) }}
+                            <h3>Basic info about test</h3>
+                            <div class="test-name py-2">
+                                {{ Form::label("testName","Test name") }}
+                                {{ Form::text("testNameVal",null,['placeholder'=>" Set the test name",'class'=>'form-control', "required"=>"true",'autofocus'=>true ]) }}
                             </div>
-                            <div class="options py-4">
-                                @for($i=0;$i<$answers;$i++)
-                                    <div class="option py-2">
-                                        {{ Form::text("answer_$i",null,['placeholder'=>"Answer $i",'class'=>'form-control',]) }}
-                                    </div>
-                                    <div class="checkbox float-left px-2 py-1">
-                                        {!! Form::label('correct_'.$i,'Correct',['class'=>'control-label']) !!}
-                                        {!! Form::hidden('correct_'.$i,0) !!}
-                                        {!! Form::checkbox('correct_'.$i,1,false,[]) !!}
-                                    </div>
-                                @endfor
-                            </div>
-                            <div class="handler py-2">
-                                <div class="form-group">
-                                    <div class="row py-2 d-block">
-                                        <div class="handler-buttons">
-                                            <div class="hanlder-button px-2 ml-2 py-2">
-                                                {!!  Form::button('Save',['class'=>'btn btn-success','type'=>'submit',]) !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row py-2">
-                                        <div class="handler-button pt-4 px-2 d-inline-block float-left ml-2 ml-2">
-                                            {!!  Form::button('Back',['class'=>'btn btn-danger', ]) !!}
-                                        </div>
 
-                                        <div class="handler-button pt-4 px-2 d-inline-block float-right ml-2">
-                                            {!!  Form::button('Next',['class'=>'btn btn-primary',]) !!}
+                            <div class="test-questions py-2">
+                                {{ Form::label("testQuestions","Count of questions") }}
+                                {{ Form::number("testQuestionsVal",null,['placeholder'=>" Set count of Questions",'class'=>'form-control', "min"=>"1","required"=>"true",'autofocus'=>true ]) }}
+                            </div>
+                            <div class="test-options py-2">
+                                {{ Form::label("testOptions","Count of options") }}
+                                {{ Form::number("testOptionsVal",null,['placeholder'=>" Set count of Options",'class'=>'form-control', "min"=>"1","required"=>"true",'autofocus'=>true ]) }}
+
+                                <div class="row py-2 d-block px-3">
+                                    <div class="handler-buttons">
+                                        <div class="hanlder-button  py-2">
+                                            {!!  Form::submit('Save',['class'=>'btn btn-success','type'=>'submit',]) !!}
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
 
+
                         </div>
+
+                        {{ Form::close() }}
                     </div>
+
                 </div>
             </main>
-
         </div>
     </div>
 @endsection
