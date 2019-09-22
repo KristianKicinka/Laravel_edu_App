@@ -17,7 +17,6 @@ class CreateTeachersTable extends Migration
             $table->Integer('user_id')->unsigned();
             $table->String('name', 200);
             $table->String('surname', 200);
-            $table->('');
             $table->timestamps();
         });
     }

@@ -12,9 +12,9 @@
                 ]) }}
             </div>
         </header>
-
-        <div class="container px-2 py-2 mx-3 my-2 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ">
-            <table class="table table-bordered">
+$
+        <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
+            <table class="table table-bordered ">
                 <thead>
                 <tr>
                     <th>ID</th>

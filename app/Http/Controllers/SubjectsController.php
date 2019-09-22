@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\Subject;
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class SubjectsController extends Controller
 {
@@ -13,7 +17,9 @@ class SubjectsController extends Controller
      */
     public function index()
     {
-        return view('Subjects.index');
+        $subjects = DB::table('subjects')->paginate(10);
+
+        return view('Subjects.index',compact("subjects"));
     }
 
     /**
@@ -23,7 +29,14 @@ class SubjectsController extends Controller
      */
     public function create()
     {
-        //
+        $subject = new Subject;
+
+        $subject->name = Input::get('subject_name_val');
+        $subject->shortcut = Input::get('subject_shortcut_val');
+        $subject->description = Input::get('subject_description_val');
+        $subject->save();
+
+        return \Redirect::route("Subjects");
     }
 
     /**
@@ -45,7 +58,10 @@ class SubjectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Subject::findOrFail($id);
+        // return $post->user;
+        // return $post;
+        return view('Subject.show')->with('post',$post);
     }
 
     /**

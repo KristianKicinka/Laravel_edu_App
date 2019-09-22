@@ -32,6 +32,7 @@ Route::get('/subjects', ['uses'=>'SubjectsController@index', 'as'=>'Subjects']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
 Route::post('/tests/create/questions',['uses'=>'TestsController@questions',]);
 Route::post('/tests/create/test',['uses'=>'TestsController@store',]);
+Route::post('/subjects/create', ['uses'=>'SubjectsController@create', 'as'=>'subjectCreate']);
 
 
 
