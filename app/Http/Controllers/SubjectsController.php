@@ -58,10 +58,10 @@ class SubjectsController extends Controller
      */
     public function show($id)
     {
-        $post = Subject::findOrFail($id);
+        $subject = Subject::findOrFail($id);
         // return $post->user;
         // return $post;
-        return view('Subject.show')->with('post',$post);
+        return view('Subject.show')->with('post',$subject);
     }
 
     /**
@@ -84,9 +84,10 @@ class SubjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::findOrFail($id);
-        $post->update($request->all());
-        return \Redirect::route("Subjects");
+        $subject = Subject::findOrFail($id);
+        $subject->update($request->all());
+        /*return Redirect::route("Subjects");*/
+        return back();
     }
 
     /**
