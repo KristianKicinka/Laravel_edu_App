@@ -33,7 +33,8 @@ Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate'
 Route::post('/tests/create/questions',['uses'=>'TestsController@questions',]);
 Route::post('/tests/create/test',['uses'=>'TestsController@store',]);
 Route::post('/subjects/create', ['uses'=>'SubjectsController@create', 'as'=>'subjectCreate']);
-Route::post('/subjects/update/{id}', ['uses'=>'SubjectsController@update', 'as'=>'subjectEdit']);
+Route::post('/subjects/edit/{id}', ['uses'=>'SubjectsController@update', 'as'=>'subjectEdit']);
+Route::post('/subjects/delete/{id}', ['uses'=>'SubjectsController@destroy', 'as'=>'subjectDelete']);
 
 
 

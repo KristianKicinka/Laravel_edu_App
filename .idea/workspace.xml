@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/partials/teacherSubjectDelete.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper/" />
@@ -124,23 +123,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
+            <state relative-caret-position="382">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/teacherSubjectCreate.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -157,17 +147,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+            <state relative-caret-position="430">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state relative-caret-position="204">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -175,11 +165,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+            <state relative-caret-position="374">
+              <caret line="36" column="100" lean-forward="true" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/teacherSubjectDelete.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -199,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/TableTest.php" />
         <option value="$PROJECT_DIR$/app/TableQuestion.php" />
         <option value="$PROJECT_DIR$/app/Test.php" />
         <option value="$PROJECT_DIR$/app/Answer.php" />
@@ -246,10 +244,11 @@
         <option value="$PROJECT_DIR$/resources/views/partials/teacherSubjectDescription.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Subjects/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/teacherSubjectDelete.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php" />
       </list>
     </option>
   </component>
@@ -631,7 +630,7 @@
       <workItem from="1570084615184" duration="526000" />
       <workItem from="1570192389756" duration="17276000" />
       <workItem from="1570442052713" duration="687000" />
-      <workItem from="1570711231093" duration="2901000" />
+      <workItem from="1570711231093" duration="4592000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -752,11 +751,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569513270149</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Oprava Edit formulára v sekcii Sunjects.">
+      <created>1570721421999</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1570721421999</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147580000" />
+    <option name="totallyTimeSpent" value="149271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -800,16 +806,10 @@
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu" />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu" />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu, detailu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu, detailu" />
+    <MESSAGE value="Oprava Edit formulára v sekcii Sunjects." />
+    <option name="LAST_COMMIT_MESSAGE" value="Oprava Edit formulára v sekcii Sunjects." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Student.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Tests/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1124,37 +1124,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+        <state relative-caret-position="374">
+          <caret line="36" column="100" lean-forward="true" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="430">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/teacherSubjectDelete.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

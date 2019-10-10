@@ -15,6 +15,8 @@
                     @include("partials.teacherSubjectEdit")
                     {{--ModalDescription--}}
                     @include("partials.teacherSubjectDescription")
+
+                    @include("partials.teacherSubjectDelete")
             @endforeach
 
         <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
@@ -41,7 +43,7 @@
                         <td>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#descriptionModal_{{$subject->id}}" >Description</button>
                             <button class="btn btn-success" data-toggle="modal" data-target="#editModal_{{$subject->id}}" >Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_{{$subject->id}}">Delete</button>
                         </td>
 
                     </tr>
