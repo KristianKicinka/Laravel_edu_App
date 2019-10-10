@@ -10,6 +10,13 @@
 
         {{--Content--}}
 
+            @foreach($subjects as $subject)
+                <!-- Modal Editing -->
+                    @include("partials.teacherSubjectEdit")
+                    {{--ModalDescription--}}
+                    @include("partials.teacherSubjectDescription")
+            @endforeach
+
         <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
             <table class="table table-bordered">
                 <thead>
@@ -24,10 +31,7 @@
                 <tbody>
                 @forelse($subjects as $subject)
 
-                    <!-- Modal Editing -->
-                        @include("partials.teacherSubjectEdit")
-                    {{--ModalDescription--}}
-                        @include("partials.teacherSubjectDescription")
+
 
 
                     <tr>

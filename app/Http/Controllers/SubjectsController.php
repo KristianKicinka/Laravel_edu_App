@@ -6,6 +6,7 @@ use App\Post;
 use App\Subject;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Input;
 
 class SubjectsController extends Controller
@@ -84,10 +85,10 @@ class SubjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $subject = Subject::findOrFail($id);
-        $subject->update($request->all());
-        /*return Redirect::route("Subjects");*/
-        return back();
+        DB::table('subjects')
+            ->where('id',$id)
+            ->update(["name"=>$request["subject_name_val"], "shortcut"=>$request["subject_shortcut_val"], "description"=>$request["subject_description_val"]]);
+        return \Redirect::route("Subjects");
     }
 
     /**
@@ -98,6 +99,6 @@ class SubjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

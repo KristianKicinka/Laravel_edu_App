@@ -1,0 +1,33 @@
+{
+    "name": "mrohnstock-bootstrap-multiselect",
+    "repo": "mrohnstock/bootstrap-multiselect",
+    "description": "JQuery multiselect plugin based on Twitter Bootstrap.",
+    "version": "0.9.15",
+    "homepage": "http://davidstutz.github.io/bootstrap-multiselect/",
+    "licenses": [
+        {
+            "type": "Apache License, Version 2.0",
+            "url": "https://github.com/davidstutz/bootstrap-multiselect/blob/master/LICENSE.md"
+        }
+    ],
+    "keywords": [
+        "js",
+        "css",
+        "less",
+        "bootstrap",
+        "jquery",
+        "multiselect"
+    ],
+    "dependencies": {
+        "components/jquery": "~2.1.3"
+    },
+    "main": "js/bootstrap-multiselect.js",
+    "scripts": [
+        "js/bootstrap-multiselect.js"
+    ],
+    "files": [
+        "css/bootstrap-multiselect.css",
+        "js/bootstrap-multiselect.js",
+        "less/bootstrap-multiselect.less"
+    ]
+}

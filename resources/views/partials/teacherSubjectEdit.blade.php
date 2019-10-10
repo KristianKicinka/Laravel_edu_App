@@ -7,7 +7,7 @@
 
             </div>
 
-            {!! Form::open(["method"=>"post", "url"=>route('subjectEdit')]) !!}
+            {!! Form::open(["method"=>"post", "url"=>route('subjectEdit',$subject->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
                 {!! Form::label("subject_name_label","Subject name :") !!}
@@ -16,6 +16,8 @@
                 {!! Form::text("subject_shortcut_val",$subject->shortcut,['class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
                 {!! Form::label("subject_description_label","Subject description :") !!}
                 {!! Form::textarea("subject_description_val",$subject->description,['class'=>'form-control','autofocus'=>true,"required"=>true,]) !!}
+
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
