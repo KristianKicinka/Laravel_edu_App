@@ -12,7 +12,13 @@
                 ]) }}
             </div>
         </header>
-$
+
+       {{-- @foreach($users as $user)
+            @include("partials.teacherStudentsEdit")
+            @include("partials.teacherStudentsDelete")
+        @endforeach--}}
+
+
         <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
             <table class="table table-bordered ">
                 <thead>

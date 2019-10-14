@@ -1,4 +1,4 @@
-<div class="modal fade" id="deleteModal_{{ $subject->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="deleteModal_{{ $student->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
@@ -7,7 +7,7 @@
 
             </div>
 
-            {!! Form::open(["method"=>"post", "url"=>route('subjectDelete',$subject->id)]) !!}
+            {!! Form::open(["method"=>"post", "url"=>route('subjectDelete',$sutudent->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
                 <p>Are you sure want to delete this item ?</p>

@@ -35,7 +35,7 @@ Route::post('/tests/create/test',['uses'=>'TestsController@store',]);
 Route::post('/subjects/create', ['uses'=>'SubjectsController@create', 'as'=>'subjectCreate']);
 Route::post('/subjects/edit/{id}', ['uses'=>'SubjectsController@update', 'as'=>'subjectEdit']);
 Route::post('/subjects/delete/{id}', ['uses'=>'SubjectsController@destroy', 'as'=>'subjectDelete']);
-
+Route::post('/settings/profile/edit/{id}', ['uses'=>'SettingsController@index', 'as'=>'profileEdit']);
 
 
 

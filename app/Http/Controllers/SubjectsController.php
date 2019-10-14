@@ -100,7 +100,7 @@ class SubjectsController extends Controller
     public function destroy($id)
     {
         DB::table('subjects')->where('id','=', $id)->delete();
-
+ 
         return \Redirect::route("Subjects");
 
 
