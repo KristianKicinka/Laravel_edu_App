@@ -88,7 +88,7 @@
 <footer class="container">
     {{--copyrigth and things--}}
 </footer>
-<script src="{{ URL::asset('js/jquery.js') }}"></script>
+{{--<script src="{{ URL::asset('js/jquery.js') }}"></script>--}}
 <script src="{{ URL::asset('js/app.js') }}"></script>
 </body>
 </html>
