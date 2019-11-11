@@ -27,8 +27,13 @@
                     <form method="post">
                         {{csrf_field()}}
                         <div class="modal-body">
-                            {!! Form::label("material_name_label","Material name: ") !!}
-                            {!! Form::text("material_name_val",null,['placeholder'=>"Set the name of material",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                            {!! Form::label("material_name_label","Material Title: ") !!}
+                            {!! Form::text("material_name_val",null,['placeholder'=>"Set the title of material",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                            {!! Form::label("material_content_label","Material content/description: ") !!}
+                            {!! Form::textarea("material_content_val",null,['placeholder'=>"Set the content or description",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                            {{--{!! Form::label("material_file_label","Choose extern file: ") !!}--}}
+                            {!! Form::file("material_file_val",null,['placeholder'=>"Insert File",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                            {!! Form::hidden("material_author_val",Auth::user()->name,["type"=>"hidden"]) !!}
 
 
 

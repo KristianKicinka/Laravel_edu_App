@@ -32,7 +32,7 @@
                             {!! Form::number("class_count_val",null,['placeholder'=>"Set the count of students in class",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
 
                             <div class="container">
-                                <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+                                <select class="js-example-basic-multiple py-3"style="width: 80%" name="states[]" multiple="multiple">
                                   @foreach($users as $user)
                                   <option value="{{ $user->name }}">{{ $user->name }}</option>
                                   @endforeach
@@ -40,6 +40,9 @@
                             </div>
 
                         </div>
+
+
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Create</button>

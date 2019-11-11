@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SPSE Edu App') }}</title>
 
 
     <!-- Fonts -->
@@ -22,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -48,14 +49,19 @@
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
 
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     {{--Select 2 plugin--}}
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js" defer></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js" defer></script>
 
+    {{--<link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="bower_components/select2/dist/js/select2.min.js"></script>--}}
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
+
     <script src="{{ asset('js/main.js') }}" defer></script>
 
 
