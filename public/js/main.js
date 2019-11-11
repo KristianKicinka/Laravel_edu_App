@@ -7,10 +7,10 @@ Select2*/
 
 
 $(document).ready(function() {
-    $('.js-example-basic-multiple').select2({
-        placeholder: "Select users",
-        allowClear: true,
-        theme: "classic",
-        width: "resolve"
+    $('.js-example-placeholder-multiple').select2({
+        placeholder: {
+            id: '-1', // the value of the option
+            text: 'Choose students'
+        }
     });
 });

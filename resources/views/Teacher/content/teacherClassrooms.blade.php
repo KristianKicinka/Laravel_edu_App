@@ -31,8 +31,8 @@
                             {!! Form::label("class_count_label","Students in class :") !!}
                             {!! Form::number("class_count_val",null,['placeholder'=>"Set the count of students in class",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
 
-                            <div class="container">
-                                <select class="js-example-basic-multiple py-3"style="width: 80%" name="states[]" multiple="multiple">
+                            <div class="py-2">
+                                <select class="js-example-placeholder-multiple js-states form-control"style="width: 80%" name="states[]" multiple="multiple">
                                   @foreach($users as $user)
                                   <option value="{{ $user->name }}">{{ $user->name }}</option>
                                   @endforeach
