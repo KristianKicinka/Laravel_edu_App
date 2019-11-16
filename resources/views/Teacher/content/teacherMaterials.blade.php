@@ -32,7 +32,9 @@
                             {!! Form::label("material_content_label","Material content/description: ") !!}
                             {!! Form::textarea("material_content_val",null,['placeholder'=>"Set the content or description",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                             {{--{!! Form::label("material_file_label","Choose extern file: ") !!}--}}
-                            {!! Form::file("material_file_val",null,['placeholder'=>"Insert File",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                            <div class="py-2 px-2">
+                                {!! Form::file("material_file_val",null,['placeholder'=>"Insert File",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                            </div>
                             {!! Form::hidden("material_author_val",Auth::user()->name,["type"=>"hidden"]) !!}
 
 
