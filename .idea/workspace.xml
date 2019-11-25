@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClassroomsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClassroomsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherClassrooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Teacher/content/teacherClassrooms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherMaterials.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Teacher/content/teacherMaterials.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -190,7 +190,8 @@
       <workItem from="1570776477255" duration="5062000" />
       <workItem from="1571046930718" duration="5443000" />
       <workItem from="1573491454813" duration="8099000" />
-      <workItem from="1573937856074" duration="1933000" />
+      <workItem from="1573937856074" duration="3738000" />
+      <workItem from="1574693054147" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -353,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573498928259</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="After repair add file design in materials">
+      <created>1573940509846</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1573940509846</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +372,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -389,7 +399,8 @@
     <MESSAGE value="Pridanie formulára Settings bez funkcionality" />
     <MESSAGE value="After creating migration for materials table" />
     <MESSAGE value="After repair select2" />
-    <option name="LAST_COMMIT_MESSAGE" value="After repair select2" />
+    <MESSAGE value="After repair add file design in materials" />
+    <option name="LAST_COMMIT_MESSAGE" value="After repair add file design in materials" />
   </component>
   <component name="masterDetails">
     <states>

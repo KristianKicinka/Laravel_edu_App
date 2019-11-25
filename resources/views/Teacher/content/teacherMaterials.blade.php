@@ -32,6 +32,12 @@
                             {!! Form::label("material_content_label","Material content/description: ") !!}
                             {!! Form::textarea("material_content_val",null,['placeholder'=>"Set the content or description",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                             {{--{!! Form::label("material_file_label","Choose extern file: ") !!}--}}
+                            {!! Form::label("material_subject_label","Select subjects: ") !!}
+                            <select class="js-example-templating js-states form-control" style="width: 50%;">
+                                @foreach($subjects as $subject)
+                                    <option value="{{ $subject->name }}">{{ $subject->name }}</option>
+                                @endforeach
+                            </select>
                             <div class="py-2 px-2">
                                 {!! Form::file("material_file_val",null,['placeholder'=>"Insert File",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                             </div>

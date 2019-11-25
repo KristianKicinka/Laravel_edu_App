@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 
 class MaterialsController extends Controller
@@ -13,7 +14,8 @@ class MaterialsController extends Controller
      */
     public function index()
     {
-        return view('Materials.index');
+        $subjects = DB::table('subjects')->paginate(10);
+        return view('Materials.index',compact("subjects"));
     }
 
     /**
