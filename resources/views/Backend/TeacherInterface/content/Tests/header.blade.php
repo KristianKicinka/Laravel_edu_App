@@ -2,8 +2,8 @@
     <div class="forms col-sm-5 d-inline-block">
         {{ Form::search('search',null,[
         'class'=>'form-control',
-        'placeholder'=>'Search Subjects',
+        'placeholder'=>'Search Tests',
         ]) }}
     </div>
-    <button class="btn btn-primary float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Subject</button>
+    <button class="btn btn-primary float-lg-right mr-2" onclick="window.location='{{ route('testCreate') }}'"> New Test</button>
 </header>

@@ -3,15 +3,9 @@
 </header>
 
 <main class="panel-main-content">
-    <div class="row">
-        <header class="content-header py-2 px-2 shadow-sm rounded border border-secondary container">
-            <div class="forms col-sm-5 d-inline-block">
-                {{ Form::search('search',null,[
-                'class'=>'form-control',
-                'placeholder'=>'Search Students',
-                ]) }}
-            </div>
-        </header>
+    <div class="row container-fluid">
+        {{--Include header--}}
+        @include('Backend.TeacherInterface.content.Students.header')
 
        {{-- @foreach($users as $user)
             @include("partials.teacherStudentsEdit")
@@ -19,7 +13,7 @@
         @endforeach--}}
 
 
-        <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
+        <div class="container-fluid py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block w-100">
             <table class="table table-bordered ">
                 <thead>
                 <tr>

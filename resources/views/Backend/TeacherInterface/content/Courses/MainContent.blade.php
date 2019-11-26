@@ -2,8 +2,8 @@
     <h1>Classrooms</h1>
 </header>
 
-<main class="panel-main-content">
-    <div class="row">
+
+    <div class="row container-fluid">
         @include('Backend.TeacherInterface.content.Courses.header')
 
         {{--Including modal windows--}}
@@ -20,7 +20,7 @@
             @endforeach
         {{--Main Content--}}
 
-        <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
+        <div class="container-fluid py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block w-100">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -59,4 +59,4 @@
         </div>
 
     </div>
-</main>
+
