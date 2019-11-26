@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Delete.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Students.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/MainContent.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +192,7 @@
       <workItem from="1571046930718" duration="5443000" />
       <workItem from="1573491454813" duration="8099000" />
       <workItem from="1573937856074" duration="3738000" />
-      <workItem from="1574693054147" duration="17691000" />
+      <workItem from="1574693054147" duration="17942000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -405,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574802467300</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="After added Classrooms functions Add, delete, show without edit">
+      <created>1574806773900</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1574806773900</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +448,8 @@
     <MESSAGE value="After rename class Class to Course" />
     <MESSAGE value="After added saving classes into db." />
     <MESSAGE value="After reorder files." />
-    <option name="LAST_COMMIT_MESSAGE" value="After reorder files." />
+    <MESSAGE value="After added Classrooms functions Add, delete, show without edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="After added Classrooms functions Add, delete, show without edit" />
   </component>
   <component name="masterDetails">
     <states>

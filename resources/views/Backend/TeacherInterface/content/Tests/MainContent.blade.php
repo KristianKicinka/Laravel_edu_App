@@ -15,8 +15,8 @@
         </header>
     </div>
     <div class="row">
-        <div class="container px-2 py-2 mx-3 my-2 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ">
-            <h2>Tests content 5</h2>
+        <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
+            <h2>Tests</h2>
         </div>
     </div>
 </main>
