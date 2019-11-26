@@ -23,7 +23,7 @@
                         <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
                     </div>
-                    <form method="post">
+                    {!! Form::open(["method"=>"post", "url"=>route('classroomCreate')]) !!}
                         {{csrf_field()}}
                         <div class="modal-body">
                             {!! Form::label("class_name_label","Class name :") !!}
@@ -32,7 +32,7 @@
                             {!! Form::number("class_count_val",null,['placeholder'=>"Set the count of students in class",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
                             {!! Form::label("class_type_label","Subject :") !!}
                             <div class="py-2">
-                                <select class="js-example-templating form-control"style="width: 80%" name="states[]">
+                                <select class="js-example-templating form-control"style="width: 80%" name="subjectsArray[]">
                                     @foreach($subjects as $subject)
                                         <option value="{{ $subject->name }}">{{ $subject->name }}</option>
                                     @endforeach
@@ -40,7 +40,7 @@
                             </div>
                             {!! Form::label("class_type_label","Students :") !!}
                             <div class="py-2">
-                                <select class="js-example-placeholder-multiple js-states form-control"style="width: 80%" name="states[]" multiple="multiple">
+                                <select class="js-example-placeholder-multiple js-states form-control"style="width: 80%" name="studentsArray[]" multiple="multiple">
                                   @foreach($users as $user)
                                   <option value="{{ $user->name }}">{{ $user->name }}</option>
                                   @endforeach

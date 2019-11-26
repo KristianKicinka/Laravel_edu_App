@@ -16,5 +16,5 @@ $(document).ready(function() {
 });
 
 $(".js-example-templating").select2({
-    templateResult: formatState
+
 });
