@@ -20,7 +20,7 @@ class SubjectsController extends Controller
     {
         $subjects = DB::table('subjects')->paginate(10);
 
-        return view('Subjects.index',compact("subjects"));
+        return view('Backend.TeacherInterface.content.Subjects.index',compact("subjects"));
     }
 
     /**
@@ -100,7 +100,7 @@ class SubjectsController extends Controller
     public function destroy($id)
     {
         DB::table('subjects')->where('id','=', $id)->delete();
- 
+
         return \Redirect::route("Subjects");
 
 

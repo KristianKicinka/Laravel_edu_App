@@ -75,7 +75,7 @@ test('results:all triggers results:focus on the first item', function (assert) {
 
   results.on('results:focus', function (params) {
     assert.equal(params.data.id, 'test');
-    assert.equal(params.data.text, 'Test');
+    assert.equal(params.data.text, 'Tests');
   });
 
   container.trigger('results:all', {
@@ -83,7 +83,7 @@ test('results:all triggers results:focus on the first item', function (assert) {
       results: [
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         }
       ]
     }
@@ -130,7 +130,7 @@ test('results:append does not trigger results:focus', function (assert) {
       results: [
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         }
       ]
     }
@@ -176,14 +176,14 @@ test('scrollAfterSelect triggers results:focus', function (assert) {
     results: [
       {
         id: 'test',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });
 
   results.on('results:focus', function (params) {
     assert.equal(params.data.id, 'test');
-    assert.equal(params.data.text, 'Test');
+    assert.equal(params.data.text, 'Tests');
   });
 
   container.trigger('select', {});
@@ -228,7 +228,7 @@ test('!scrollAfterSelect does not trigger results:focus', function (assert) {
     results: [
       {
         id: 'test',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });

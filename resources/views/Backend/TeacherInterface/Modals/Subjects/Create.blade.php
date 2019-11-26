@@ -13,7 +13,7 @@
                 {!! Form::text("subject_name_val",null,['placeholder'=>"Set the name of subject",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 {!! Form::label("subject_shortcut_label","Subject shortcut :") !!}
                 {!! Form::text("subject_shortcut_val",null,['placeholder'=>"Set the shortcut of subject",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
-                {!! Form::label("subject_description_label","Subject description :") !!}
+                {!! Form::label("subject_description_label","Subjects") !!}
                 {!! Form::textarea("subject_description_val",null,['placeholder'=>"Set the description of subject",'class'=>'form-control','autofocus'=>true,"required"=>true,]) !!}
 
 

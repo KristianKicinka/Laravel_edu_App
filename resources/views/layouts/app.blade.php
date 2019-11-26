@@ -28,9 +28,9 @@
 <body>
     <div id="app">
         @if(Auth::check())
-            @include('partials.loggedUserNavbar')
+            @include('layouts.loggedUserNavbar')
         @else
-            @include('partials.unLoggedUser')
+            @include('layouts.unLoggedUser')
         @endif
 
         <main >

@@ -14,7 +14,7 @@
 use App\Http\Controllers\SettingsController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Frontend.pages.index');
 });
 
 

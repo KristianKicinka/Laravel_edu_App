@@ -15,7 +15,7 @@ class MaterialsController extends Controller
     public function index()
     {
         $subjects = DB::table('subjects')->paginate(10);
-        return view('Materials.index',compact("subjects"));
+        return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"));
     }
 
     /**

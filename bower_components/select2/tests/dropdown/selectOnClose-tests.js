@@ -81,7 +81,7 @@ test('will not trigger if no results here highlighted', function (assert) {
     results: [
       {
         id: '1',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });
@@ -94,7 +94,7 @@ test('will not trigger if no results here highlighted', function (assert) {
 
   assert.equal(
     $.trim($dropdown.find('li').text()),
-    'Test',
+    'Tests',
     'The result should be the same as the one we appended'
   );
 
@@ -120,7 +120,7 @@ test('will trigger if there is a highlighted result', function (assert) {
     results: [
       {
         id: '1',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });

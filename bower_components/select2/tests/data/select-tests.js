@@ -504,7 +504,7 @@ test('user-defined types are normalized properly', function (assert) {
   };
 
   var testData = [
-    'Test',
+    'Tests',
     {
         id: 4,
         text: 'item'

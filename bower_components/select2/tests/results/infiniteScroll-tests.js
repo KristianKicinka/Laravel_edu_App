@@ -39,7 +39,7 @@ test('loadingMore is triggered even without a scrollbar', function (assert) {
       results: [
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         }
       ],
       pagination: {
@@ -91,31 +91,31 @@ test('loadingMore is not triggered without scrolling', function (assert) {
       results: [
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         },
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         },
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         },
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         },
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         },
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         },
         {
           id: 'test',
-          text: 'Test'
+          text: 'Tests'
         }
       ],
       pagination: {

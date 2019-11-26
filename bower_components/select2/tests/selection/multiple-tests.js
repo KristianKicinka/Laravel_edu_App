@@ -231,7 +231,7 @@ test('clear button respects the disabled state', function (assert) {
 
   // Select an option
   selection.update([{
-    text: 'Test'
+    text: 'Tests'
   }]);
 
   var $rendered = $selection.find('.select2-selection__rendered');

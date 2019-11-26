@@ -213,7 +213,7 @@
 	text-decoration: none;
 }
 
-/*** Test Counts */
+/*** Tests Counts */
 
 #qunit-tests b.counts                       { color: #000; }
 #qunit-tests b.passed                       { color: #5E740B; }

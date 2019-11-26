@@ -8,7 +8,7 @@ use App\Http\Controllers\TestsController;
 ?>
 
     <div class="window">
-        @include('Teacher.sidebars.teacherSidebar')
+        @include('Backend.TeacherInterface.sidebars.teacherSidebar')
         <div class="main-content container-fluid">
 
             <header class="panel-head container-fluid py-3">
@@ -23,7 +23,7 @@ use App\Http\Controllers\TestsController;
                             {{ Form::open(['method' =>"post","action"=>"TestsController@questions"]) }}
                             <h3>Basic info about test</h3>
                             <div class="test-name py-2">
-                                {{ Form::label("testName","Test name") }}
+                                {{ Form::label("testName","Tests") }}
                                 {{ Form::text("testNameVal",null,['placeholder'=>" Set the test name",'class'=>'form-control', "required"=>"true",'autofocus'=>true ]) }}
                             </div>
 

@@ -21,7 +21,7 @@ class CoursesController extends Controller
     {
         $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
         $subjects = DB::table("subjects")->paginate(10);
-        return view('Classrooms.index',compact("users"),compact("subjects"));
+        return view('Backend.TeacherInterface.content.Courses.index',compact("users"),compact("subjects"));
     }
 
     /**

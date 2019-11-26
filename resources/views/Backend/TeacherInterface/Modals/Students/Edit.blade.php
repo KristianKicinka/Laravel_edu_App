@@ -10,9 +10,9 @@
             {!! Form::open(["method"=>"post", "url"=>route('studentsEdit',$subject->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
-               {!! Form::label("student_name_lab","Student name :") !!}
+               {!! Form::label("student_name_lab","Students") !!}
                {!! Form::text("student_name_val",$student->name,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-               {!! Form::label("student_name_lab","Student name :") !!}
+               {!! Form::label("student_name_lab","Students") !!}
                {!! Form::text("student_name_val",$student->name,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
 
 

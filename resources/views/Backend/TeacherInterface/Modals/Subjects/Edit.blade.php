@@ -10,7 +10,7 @@
             {!! Form::open(["method"=>"post", "url"=>route('subjectEdit',$subject->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
-                {!! Form::label("subject_name_label","Subject name :") !!}
+                {!! Form::label("subject_name_label","Subjects") !!}
                 {!! Form::text("subject_name_val",$subject->name,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 {!! Form::label("subject_shortcut_label","Subject shortcut :") !!}
                 {!! Form::text("subject_shortcut_val",$subject->shortcut,['class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}

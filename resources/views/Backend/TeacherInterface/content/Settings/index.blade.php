@@ -3,9 +3,9 @@
 @section('content')
     @if(Auth::user()->is_teacher==1)
         <div class="window">
-            @include('Teacher.sidebars.teacherSidebar')
+            @include('Backend.TeacherInterface.sidebars.teacherSidebar')
             <div class="main-content container-fluid">
-                    @include('Teacher.content.teacherMaterials')
+                    @include('Backend.TeacherInterface.content.Settings.MainContent')
             </div>
         </div>
     @endif

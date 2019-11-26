@@ -623,7 +623,7 @@ function process( last ) {
 				( ( now() - start ) < config.updateRate ) ) {
 			if ( config.current ) {
 
-				// Reset async tracking for each phase of the Test lifecycle
+				// Reset async tracking for each phase of the Tests lifecycle
 				config.current.usedAsync = false;
 			}
 			config.queue.shift()();
@@ -646,9 +646,9 @@ function pauseProcessing() {
 		config.timeout = setTimeout( function() {
 			if ( config.current ) {
 				config.current.semaphore = 0;
-				QUnit.pushFailure( "Test timed out", sourceFromStacktrace( 2 ) );
+				QUnit.pushFailure( "Tests timed out", sourceFromStacktrace( 2 ) );
 			} else {
-				throw new Error( "Test timed out" );
+				throw new Error( "Tests timed out" );
 			}
 			resumeProcessing();
 		}, config.testTimeout );
@@ -934,7 +934,7 @@ Test.prototype = {
 			assertions: this.assertions,
 			testId: this.testId,
 
-			// Source of Test
+			// Source of Tests
 			source: this.stack,
 
 			// DEPRECATED: this property will be removed in 2.0.0, use runtime instead
@@ -1379,7 +1379,7 @@ QUnit.assert = Assert.prototype = {
 		}
 	},
 
-	// Increment this Test's semaphore counter, then return a function that
+	// Increment this Tests's semaphore counter, then return a function that
 	// decrements that counter a maximum of once.
 	async: function( count ) {
 		var test = this.test,
@@ -1647,7 +1647,7 @@ function errorString( error ) {
 	}
 }
 
-// Test for equality any JavaScript type.
+// Tests for equality any JavaScript type.
 // Author: Philippe Rathé <prathe@gmail.com>
 QUnit.equiv = ( function() {
 
@@ -2281,7 +2281,7 @@ QUnit.config.module = urlParams.module;
 // Regular expression or case-insenstive substring match against "moduleName: testName"
 QUnit.config.filter = urlParams.filter;
 
-// Test order randomization
+// Tests order randomization
 if ( urlParams.seed === true ) {
 
 	// Generate a random seed if the option is specified without a value

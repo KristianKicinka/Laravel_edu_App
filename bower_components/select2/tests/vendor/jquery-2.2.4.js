@@ -6552,7 +6552,7 @@ function defaultPrefilter( elem, props, opts ) {
 		// animations on inline elements that are having width/height animated
 		display = jQuery.css( elem, "display" );
 
-		// Test default display if display is currently "none"
+		// Tests default display if display is currently "none"
 		checkDisplay = display === "none" ?
 			dataPriv.get( elem, "olddisplay" ) || defaultDisplay( elem.nodeName ) : display;
 

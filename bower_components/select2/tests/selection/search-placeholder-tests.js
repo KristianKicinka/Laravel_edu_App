@@ -26,7 +26,7 @@ test('width does not extend the search box', function (assert) {
 
     var $element = $('#qunit-fixture .multiple');
     var selection = new CustomSelection($element, new Options({
-      placeholder: 'Test placeholder'
+      placeholder: 'Tests placeholder'
     }));
 
     var $selection = selection.render();

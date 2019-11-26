@@ -15,7 +15,7 @@ class SettingsController extends Controller
     public function index()
     {
 
-        return view('Settings.index');
+        return view('Backend.TeacherInterface.content.Settings.index');
     }
 
     /**

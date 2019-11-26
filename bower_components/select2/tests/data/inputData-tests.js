@@ -15,7 +15,7 @@ test('test that options can be selected', function (assert) {
     data: [
       {
         id: 'test',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });
@@ -42,7 +42,7 @@ test('unselect the single selected option clears the value', function (assert) {
     data: [
       {
         id: 'test',
-        text: 'Test',
+        text: 'Tests',
         selected: true
       }
     ]
@@ -70,7 +70,7 @@ test('options can be unselected individually', function (assert) {
     data: [
       {
         id: 'test',
-        text: 'Test'
+        text: 'Tests'
       },
       {
         id: 'test2',
@@ -108,7 +108,7 @@ test('default values can be set', function (assert) {
     data: [
       {
         id: 'test',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });
@@ -129,7 +129,7 @@ test('default values can be set', function (assert) {
     var item = data[0];
 
     assert.equal(item.id, 'test');
-    assert.equal(item.text, 'Test');
+    assert.equal(item.text, 'Tests');
   });
 
   assert.equal(
@@ -146,7 +146,7 @@ test('no default value', function (assert) {
     data: [
       {
         id: 'test',
-        text: 'Test'
+        text: 'Tests'
       }
     ]
   });

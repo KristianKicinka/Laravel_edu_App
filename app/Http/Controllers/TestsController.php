@@ -13,7 +13,7 @@ class TestsController extends Controller
      */
     public function index()
     {
-        return view('Tests.index');
+        return view('Backend.TeacherInterface.content.Tests.index');
     }
 
     /**
@@ -23,14 +23,14 @@ class TestsController extends Controller
      */
     public function create()
     {
-        return view('Tests.create');
+        return view('Backend.TeacherInterface.content.Tests.create');
     }
 
     public function questions(Request $request)
     {
         $questions=$request->input("testQuestionsVal");
         $answers=$request->input("testOptionsVal");
-       return view('Tests.questions')->with("questions",$questions)->with("answers",$answers);
+       return view('Backend.TeacherInterface.content.Tests.questions')->with("questions",$questions)->with("answers",$answers);
 
     }
 

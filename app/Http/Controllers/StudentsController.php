@@ -17,7 +17,7 @@ class StudentsController extends Controller
     {
         $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
 
-        return view('Students.index',compact("users"));
+        return view('Backend.TeacherInterface.content.Students.index',compact("users"));
     }
 
     /**

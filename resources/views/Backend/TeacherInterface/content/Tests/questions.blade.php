@@ -8,7 +8,7 @@
     ?>
 
     <div class="window">
-        @include('Teacher.sidebars.teacherSidebar')
+        @include('Backend.TeacherInterface.sidebars.teacherSidebar')
         <div class="main-content container-fluid">
 
             <header class="panel-head container-fluid py-3">
@@ -54,7 +54,7 @@
 
                     <div class="row">
                         <div class="handler-button pt-2 pb-4 px-2 d-inline-block float-left ml-4">
-                            {!!  Form::submit('Create Test',['class'=>'btn btn-danger', ]) !!}
+                            {!!  Form::submit('Tests',['class'=>'btn btn-danger', ]) !!}
                         </div>
                     </div>
             {{ Form::close() }}
