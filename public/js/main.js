@@ -16,6 +16,5 @@ $(document).ready(function() {
 });
 
 $(".js-example-templating").select2({
-    templateSelection: formatState
-
+    templateResult: formatState
 });

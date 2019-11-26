@@ -15,8 +15,8 @@ class ClassroomsController extends Controller
     public function index()
     {
         $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
-        /*$subjects = DB::table("subjects")->paginate(10);*/
-        return view('Classrooms.index',compact("users"));
+        $subjects = DB::table("subjects")->paginate(10);
+        return view('Classrooms.index',compact("users"),compact("subjects"));
     }
 
     /**
