@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClassroomsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClassroomsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherClassrooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Teacher/content/teacherClassrooms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +189,7 @@
       <workItem from="1571046930718" duration="5443000" />
       <workItem from="1573491454813" duration="8099000" />
       <workItem from="1573937856074" duration="3738000" />
-      <workItem from="1574693054147" duration="2827000" />
+      <workItem from="1574693054147" duration="3808000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -368,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574693106555</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="After addded classes migration">
+      <created>1574774951380</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1574774951380</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +413,8 @@
     <MESSAGE value="After repair select2" />
     <MESSAGE value="After repair add file design in materials" />
     <MESSAGE value="After last update" />
-    <option name="LAST_COMMIT_MESSAGE" value="After last update" />
+    <MESSAGE value="After addded classes migration" />
+    <option name="LAST_COMMIT_MESSAGE" value="After addded classes migration" />
   </component>
   <component name="masterDetails">
     <states>
