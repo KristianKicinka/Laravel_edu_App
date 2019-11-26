@@ -16,7 +16,8 @@
                     {!! Form::textarea("material_content_val",null,['placeholder'=>"Set the content or description",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                     {{--{!! Form::label("material_file_label","Choose extern file: ") !!}--}}
                     {!! Form::label("material_subject_label","Select subjects: ") !!}
-                    <select class="js-example-templating js-states form-control" style="width: 50%;">
+                    <br>
+                    <select class="js-example-templating js-states form-control py-4 w-50">
                         @foreach($subjects as $subject)
                             <option value="{{ $subject->name }}">{{ $subject->name }}</option>
                         @endforeach
