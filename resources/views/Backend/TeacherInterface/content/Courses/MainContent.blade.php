@@ -4,61 +4,58 @@
 
 <main class="panel-main-content">
     <div class="row">
-        <header class="content-header py-2 px-2 shadow-sm rounded border border-secondary container">
-            <div class="forms col-sm-5 d-inline-block">
-                {{ Form::search('search',null,[
-                'class'=>'form-control',
-                'placeholder'=>'Search Classrooms',
-                ]) }}
-            </div>
-            <button class="btn btn-primary float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> New Classroom</button>
-        </header>
+        @include('Backend.TeacherInterface.content.Courses.header')
 
+        {{--Including modal windows--}}
+       @include('Backend.TeacherInterface.Modals.Courses.Create')
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header py-2">
-                        <h4 class="modal-title" id="myModalLabel">New Class</h4>
-                        <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{--Including action event modal boxes--}}
+        @foreach($courses as $course)
+            <!-- Modal Editing -->
+                {{--@include("Backend.TeacherInterface.Modals.Courses.Edit")--}}
+                {{--ModalDescription--}}
+                @include("Backend.TeacherInterface.Modals.Courses.Students")
 
-                    </div>
-                    {!! Form::open(["method"=>"post", "url"=>route('classroomCreate')]) !!}
-                    {{csrf_field()}}
-                    <div class="modal-body">
-                        {!! Form::label("class_name_label","Class name :") !!}
-                        {!! Form::text("class_name_val",null,['placeholder'=>"Set the name of class",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                        {!! Form::label("class_count_label","Students in class :") !!}
-                        {!! Form::number("class_count_val",null,['placeholder'=>"Set the count of students in class",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
-                        {!! Form::label("class_type_label","Subjects") !!}
-                        <div class="py-2">
-                            <select class="js-example-templating form-control"style="width: 80%" name="subjectsArray[]">
-                                @foreach($subjects as $subject)
-                                    <option value="{{ $subject->name }}">{{ $subject->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        {!! Form::label("class_type_label","Students :") !!}
-                        <div class="py-2">
-                            <select class="js-example-placeholder-multiple js-states form-control"style="width: 80%" name="studentsArray[]" multiple="multiple">
-                                @foreach($users as $user)
-                                    <option value="{{ $user->name }}">{{ $user->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                @include("Backend.TeacherInterface.Modals.Courses.Delete")
+            @endforeach
+        {{--Main Content--}}
 
-                    </div>
+        <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Name of course</th>
+                    <th>Max number of students</th>
+                    <th>subject</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                @forelse($courses as $course)
 
 
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Create</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
+
+                    <tr>
+                        <td>{{ $course->id }}</td>
+                        <td>{{ $course->name }}</td>
+                        <td>{{ $course->count_of_students }}</td>
+                        <td>{{ $course->subject }}</td>
+                        <td>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Students</button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#editModal_{{$course->id}}" >Edit</button>
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_{{$course->id}}">Delete</button>
+                        </td>
+
+                    </tr>
+                @empty
+                    <td colspan="4"> Nothing to display</td>
+                @endforelse
+                </tbody>
+            </table>
+            {{ $courses->links() }}
         </div>
 
     </div>

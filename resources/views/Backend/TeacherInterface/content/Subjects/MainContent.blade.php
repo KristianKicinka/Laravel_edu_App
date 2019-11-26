@@ -11,29 +11,27 @@
         {{--Content--}}
 
             @foreach($subjects as $subject)
-                <!-- Modal Editing -->
-                    @include("Backend.TeacherInterface.Modals.Subjects.Edit")
-                    {{--ModalDescription--}}
-                    @include("Backend.TeacherInterface.Modals.Subjects.Description")
+            <!-- Modal Editing -->
+                @include("Backend.TeacherInterface.Modals.Subjects.Edit")
+                {{--ModalDescription--}}
+                @include("Backend.TeacherInterface.Modals.Subjects.Description")
 
-                    @include("Backend.TeacherInterface.Modals.Subjects.Delete")
+                @include("Backend.TeacherInterface.Modals.Subjects.Delete")
             @endforeach
 
-        <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Subject ID</th>
-                    <th>Name of subject</th>
-                    <th>Subject shortcut</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
+            <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Subject ID</th>
+                        <th>Name of subject</th>
+                        <th>Subject shortcut</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
 
-                <tbody>
+                    <tbody>
                 @forelse($subjects as $subject)
-
-
 
 
                     <tr>
@@ -50,11 +48,10 @@
                 @empty
                     <td colspan="4"> Nothing to display</td>
                 @endforelse
-                </tbody>
-            </table>
-            {{ $subjects->links() }}
-        </div>
+                    </tbody>
+                </table>
+                {{ $subjects->links() }}
+            </div>
 
-
-    </div>
+            </div>
 </main>

@@ -2,55 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/MainContent.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Delete.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Students.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CoursesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CoursesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/inputData-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/data/inputData-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/data/select-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/data/select-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/dropdown/selectOnClose-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/dropdown/selectOnClose-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/results/focusing-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/results/focusing-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/results/infiniteScroll-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/results/infiniteScroll-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/multiple-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/selection/multiple-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/selection/search-placeholder-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/selection/search-placeholder-tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/jquery-1.7.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/vendor/jquery-1.7.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/jquery-2.2.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/vendor/jquery-2.2.4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/qunit-1.23.1.css" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/vendor/qunit-1.23.1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bower_components/select2/tests/vendor/qunit-1.23.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/bower_components/select2/tests/vendor/qunit-1.23.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Classrooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Materials/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Materials/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Settings/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Settings/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Students/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Students/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Subjects/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherClassrooms.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherDashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Dashboard/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherMaterials.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Materials/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherSettings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Settings/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherStudents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Students/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherSubjects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/content/teacherTests.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Teacher/sidebars/teacherSidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/sidebars/teacherSidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Tests/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Tests/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Tests/questions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/questions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/loggedUserNavbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/loggedUserNavbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherStudentsDelete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Students/Delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherStudentsEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Students/Edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherSubjectCreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Subjects/Create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherSubjectDelete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Subjects/Delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherSubjectDescription.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Subjects/Description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherSubjectEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Subjects/Edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/teacherSubjectHeader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/unLoggedUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/unLoggedUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Courses/MainContent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Subjects/MainContent.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -241,7 +200,7 @@
       <workItem from="1571046930718" duration="5443000" />
       <workItem from="1573491454813" duration="8099000" />
       <workItem from="1573937856074" duration="3738000" />
-      <workItem from="1574693054147" duration="13302000" />
+      <workItem from="1574693054147" duration="17691000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -439,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574781460523</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="After reorder files.">
+      <created>1574802467300</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1574802467300</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +448,8 @@
     <MESSAGE value="After addded classes migration" />
     <MESSAGE value="After rename class Class to Course" />
     <MESSAGE value="After added saving classes into db." />
-    <option name="LAST_COMMIT_MESSAGE" value="After added saving classes into db." />
+    <MESSAGE value="After reorder files." />
+    <option name="LAST_COMMIT_MESSAGE" value="After reorder files." />
   </component>
   <component name="masterDetails">
     <states>

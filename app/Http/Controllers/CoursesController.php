@@ -19,9 +19,11 @@ class CoursesController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
+        $courses = DB::table('courses')->paginate(10);
         $subjects = DB::table("subjects")->paginate(10);
-        return view('Backend.TeacherInterface.content.Courses.index',compact("users"),compact("subjects"));
+        return view('Backend.TeacherInterface.content.Courses.index',compact("users"),compact("subjects"))->with("courses",$courses);
     }
 
     /**
@@ -36,7 +38,7 @@ class CoursesController extends Controller
 
         $course->name = Input::get('class_name_val');
         $course->count_of_students = Input::get('class_count_val');
-        $course->subject = json_encode(Input::get('subjectArray'));
+        $course->subject = json_encode(Input::get('subjectsArray'));
         $course->students = json_encode(Input::get('studentsArray'));
         $course->teacher_id = $user->id;
         $course->save();
@@ -97,6 +99,8 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('courses')->where('id','=', $id)->delete();
+
+        return \Redirect::route("Classrooms");
     }
 }
