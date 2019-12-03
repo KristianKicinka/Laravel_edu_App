@@ -18,7 +18,8 @@ class MaterialsController extends Controller
     {
         $subjects = DB::table('subjects')->paginate(10);
         $courses = DB::table('courses')->paginate(10);
-        return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"))->with('courses',$courses);
+        $materials = DB::table('materials')->paginate(10);
+        return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"))->with('courses',$courses)->with('materials',$materials);
     }
 
     /**
@@ -49,7 +50,7 @@ class MaterialsController extends Controller
         /*Work with files*/
         $cover = $request->file('material_file_val');
         $extension = $cover->getClientOriginalExtension();
-        $destination_path = "storage/materials";
+        $destination_path = "materials";
         \Storage::disk('public')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
 
         $material->filename = $cover->getFilename().'.'.$extension;
@@ -104,5 +105,9 @@ class MaterialsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function download($file){
+        return response()->download(storage_path("app/public/materials".'\\'.$file));
     }
 }

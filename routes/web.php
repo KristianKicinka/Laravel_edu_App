@@ -31,6 +31,7 @@ Route::get('/dashboard', ['uses'=>'DashboardController@index','as'=>'Dashboard']
 /*Routes for Materials*/
 Route::get('/materials', ['uses'=>'MaterialsController@index', 'as'=>'Materials']);
 Route::post('/materials/create', ['uses'=>'MaterialsController@store', 'as'=>'materialCreate']);
+Route::get('/materials/download/{file}', ['uses'=>'MaterialsController@download', 'as'=>'materialDownload']);
 Route::post('/materials/edit/{id}', ['uses'=>'MaterialsController@update', 'as'=>'materialEdit']);
 Route::post('/materials/delete/{id}', ['uses'=>'MaterialsController@destroy', 'as'=>'materialDelete']);
 
