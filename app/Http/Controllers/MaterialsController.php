@@ -104,7 +104,9 @@ class MaterialsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('materials')->where('id','=', $id)->delete();
+
+        return \Redirect::route("Materials");
     }
 
     public function download($file){

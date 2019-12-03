@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Materials/Description.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Materials/Delete.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Materials/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Materials/MainContent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +200,7 @@
       <workItem from="1573937856074" duration="3738000" />
       <workItem from="1574693054147" duration="21875000" />
       <workItem from="1574853111936" duration="1283000" />
-      <workItem from="1575358649805" duration="17711000" />
+      <workItem from="1575358649805" duration="19394000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -455,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575390215297</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="After added list all materials and downloading. without edit and delete.">
+      <created>1575392902765</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1575392902765</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pridanie otazok potreba opravit sidebar a pridat nazov a triedu testu" />
     <MESSAGE value="Opravený sidebar v admin panele, je potrebné opraviť responzivitu na malých zariadeniach." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky." />
@@ -500,7 +505,8 @@
     <MESSAGE value="Error 403 on materials page in teacher Interface." />
     <MESSAGE value="Po oprave 403" />
     <MESSAGE value="After add adding materials into database." />
-    <option name="LAST_COMMIT_MESSAGE" value="After add adding materials into database." />
+    <MESSAGE value="After added list all materials and downloading. without edit and delete." />
+    <option name="LAST_COMMIT_MESSAGE" value="After added list all materials and downloading. without edit and delete." />
   </component>
   <component name="masterDetails">
     <states>

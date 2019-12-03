@@ -10,6 +10,7 @@
     @include('Backend.TeacherInterface.Modals.Materials.create')
         @foreach($materials as $material)
             @include('Backend.TeacherInterface.Modals.Materials.Description')
+            @include('Backend.TeacherInterface.Modals.Materials.Delete')
         @endforeach
 
         {{--Main Content--}}
