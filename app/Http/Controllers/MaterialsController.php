@@ -17,8 +17,8 @@ class MaterialsController extends Controller
     public function index()
     {
         $subjects = DB::table('subjects')->paginate(10);
-        //$courses = DB::table('courses')->paginate(10);
-        return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"));
+        $courses = DB::table('courses')->paginate(10);
+        return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"))->with('courses',$courses);
     }
 
     /**
@@ -39,14 +39,26 @@ class MaterialsController extends Controller
      */
     public function store(Request $request)
     {
-        /*$material = new Material();
-        $material->title = Input::get('material_title_val');
+        $user = \Auth::user();
+        $material = new Material();
+        $material->title = Input::get('material_name_val');
         $material->content = Input::get('material_content_val');
-        $material->subject = Input::get('material_subject_val');
-        $material->class = Input::get('material_class_val');
-        $material->filename
-        $material->original_filename
-        $material->author*/
+        $material->subject = Input::get('subjectsArray');
+        $material->class = Input::get('coursesArray');
+
+        /*Work with files*/
+        $cover = $request->file('material_file_val');
+        $extension = $cover->getClientOriginalExtension();
+        $destination_path = "storage/materials";
+        \Storage::disk('public')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
+
+        $material->filename = $cover->getFilename().'.'.$extension;
+        $material->original_filename = $cover->getClientOriginalName();
+        $material->author = Input::get('material_author_val');
+
+        $material->save();
+        return \Redirect::route("Materials");
+
     }
 
     /**

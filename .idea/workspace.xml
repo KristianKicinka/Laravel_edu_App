@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
+    <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="Po oprave 403">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Material.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Material.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Materials/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Materials/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +198,7 @@
       <workItem from="1573937856074" duration="3738000" />
       <workItem from="1574693054147" duration="21875000" />
       <workItem from="1574853111936" duration="1283000" />
-      <workItem from="1575358649805" duration="9908000" />
+      <workItem from="1575358649805" duration="15097000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -434,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575368036057</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Po oprave 403">
+      <created>1575374958543</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1575374958543</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="After reorder files, creating controllers, routes and test create view without functionality." />
     <MESSAGE value="Prerovnanie suborov a Routes v web.php" />
     <MESSAGE value="Pridanie otazok potreba opravit sidebar a pridat nazov a triedu testu" />
     <MESSAGE value="Opravený sidebar v admin panele, je potrebné opraviť responzivitu na malých zariadeniach." />
@@ -479,7 +489,8 @@
     <MESSAGE value="After added Classrooms functions Add, delete, show without edit and repair tests and restyle design of content in windows" />
     <MESSAGE value="making on materials create" />
     <MESSAGE value="Error 403 on materials page in teacher Interface." />
-    <option name="LAST_COMMIT_MESSAGE" value="Error 403 on materials page in teacher Interface." />
+    <MESSAGE value="Po oprave 403" />
+    <option name="LAST_COMMIT_MESSAGE" value="Po oprave 403" />
   </component>
   <component name="masterDetails">
     <states>
