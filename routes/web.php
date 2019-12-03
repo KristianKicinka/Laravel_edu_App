@@ -16,6 +16,9 @@ use App\Http\Controllers\SettingsController;
 Route::get('/', function () {
     return view('Frontend.pages.index');
 });
+Route::get('/home', function () {
+    return view('Backend.TeacherInterface.content.Dashboard.index');
+});
 
 
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Material;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class MaterialsController extends Controller
 {
@@ -15,6 +17,7 @@ class MaterialsController extends Controller
     public function index()
     {
         $subjects = DB::table('subjects')->paginate(10);
+        //$courses = DB::table('courses')->paginate(10);
         return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"));
     }
 
@@ -25,7 +28,7 @@ class MaterialsController extends Controller
      */
     public function create()
     {
-        //
+//
     }
 
     /**
@@ -36,7 +39,14 @@ class MaterialsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*$material = new Material();
+        $material->title = Input::get('material_title_val');
+        $material->content = Input::get('material_content_val');
+        $material->subject = Input::get('material_subject_val');
+        $material->class = Input::get('material_class_val');
+        $material->filename
+        $material->original_filename
+        $material->author*/
     }
 
     /**

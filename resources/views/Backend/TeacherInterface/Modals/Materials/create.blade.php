@@ -22,6 +22,13 @@
                             <option value="{{ $subject->name }}">{{ $subject->name }}</option>
                         @endforeach
                     </select>
+                    {!! Form::label("material_class_label","Select course: ") !!}
+                    <br>
+                    {{--<select class="js-example-templating js-states form-control py-4 w-50">
+                        @foreach($courses as $course)
+                            <option value="{{ $course->name }}">{{ $course->name }}</option>
+                        @endforeach
+                    </select>--}}
                     <div class="py-2 px-2">
                         {!! Form::file("material_file_val",null,['placeholder'=>"Insert File",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                     </div>
