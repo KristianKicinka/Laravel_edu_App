@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Materials/Delete.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/EduPage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EduPage.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Materials/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Materials/MainContent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Dashboard/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Dashboard/MainContent.blade.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,6 +128,11 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TiLDSYqvnnDllUEaLka1WJv1L1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -149,18 +152,6 @@
       <recent name="D:\www\Laravel_edu_App\resources\views\Backend\TeacherInterface\content\Settings" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="TestsController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/TestsController.php">
       <method v="2" />
@@ -170,6 +161,18 @@
         <item itemvalue="PHP Script.TestsController.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -200,7 +203,8 @@
       <workItem from="1573937856074" duration="3738000" />
       <workItem from="1574693054147" duration="21875000" />
       <workItem from="1574853111936" duration="1283000" />
-      <workItem from="1575358649805" duration="19394000" />
+      <workItem from="1575358649805" duration="19688000" />
+      <workItem from="1575533479020" duration="529000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -461,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575392902765</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="After added delete materials.">
+      <created>1575397068137</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1575397068137</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Opravený sidebar v admin panele, je potrebné opraviť responzivitu na malých zariadeniach." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu" />
@@ -506,7 +516,14 @@
     <MESSAGE value="Po oprave 403" />
     <MESSAGE value="After add adding materials into database." />
     <MESSAGE value="After added list all materials and downloading. without edit and delete." />
-    <option name="LAST_COMMIT_MESSAGE" value="After added list all materials and downloading. without edit and delete." />
+    <MESSAGE value="After added delete materials." />
+    <option name="LAST_COMMIT_MESSAGE" value="After added delete materials." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1575533575927">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1575533575927" />
   </component>
   <component name="masterDetails">
     <states>

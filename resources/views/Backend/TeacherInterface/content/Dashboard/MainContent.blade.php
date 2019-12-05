@@ -18,7 +18,7 @@
         <div class="teacher-materials col-md-4 px-3 py-3 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ml-4">
             <h3>Your uploaded Materials:</h3>
             <p>count of uploaded materials :</p>
-            <button class="btn btn-primary float-lg-right mt-3">Make new Material</button>
+            <button class="btn btn-primary float-lg-right mt-3" onclick="window.location='{{ route('Materials') }}'" >Make new Material</button>
         </div>
     </div>
 
