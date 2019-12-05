@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/EduPage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EduPage.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Dashboard/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Dashboard/MainContent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +203,7 @@
       <workItem from="1574693054147" duration="21875000" />
       <workItem from="1574853111936" duration="1283000" />
       <workItem from="1575358649805" duration="19688000" />
-      <workItem from="1575533479020" duration="529000" />
+      <workItem from="1575533479020" duration="670000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -472,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575397068137</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="After added new redirect on dashboard to materials.">
+      <created>1575534051002</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1575534051002</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky." />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu" />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu" />
@@ -517,9 +522,18 @@
     <MESSAGE value="After add adding materials into database." />
     <MESSAGE value="After added list all materials and downloading. without edit and delete." />
     <MESSAGE value="After added delete materials." />
-    <option name="LAST_COMMIT_MESSAGE" value="After added delete materials." />
+    <MESSAGE value="After added new redirect on dashboard to materials." />
+    <option name="LAST_COMMIT_MESSAGE" value="After added new redirect on dashboard to materials." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="379" y="4" key="CommitChangelistDialog2" timestamp="1575534049602">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="379" y="4" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575534049602" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575534062225">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575534062225" />
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1575533575927">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

@@ -39,7 +39,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
-            </form>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
