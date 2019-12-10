@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
+use App\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class TestsController extends Controller
 {
@@ -23,14 +26,28 @@ class TestsController extends Controller
      */
     public function create()
     {
-        return view('Backend.TeacherInterface.content.Tests.create');
+        $name = Input::get('testNameVal');
+        $questions_count = Input::get('testQuestionsVal');
+        $options_count = Input::get('testOptionsVal');
+        return view('Backend.TeacherInterface.content.Tests.create')->with('name',$name)->with('questions_count',$questions_count)->with('options_count',$options_count);
     }
 
     public function questions(Request $request)
     {
-        $questions=$request->input("testQuestionsVal");
-        $answers=$request->input("testOptionsVal");
-       return view('Backend.TeacherInterface.content.Tests.questions')->with("questions",$questions)->with("answers",$answers);
+        $test = new Test();
+        $test->name = $request->input("name");
+        $test->questions_count = $request->input("questions_count");
+        $test->options_count = $request->input("options_count");
+        $questions_count = $request->input("questions_count");
+        $options_count = $request->input("options_count");
+
+
+        for ($index=1;$index<=$questions_count;$index++){
+        $question = new Question();
+
+        }
+
+       return view('Backend.TeacherInterface.content.Tests.questions')->with("questions",$questions_count)->with("answers",$options_count);
 
     }
 
