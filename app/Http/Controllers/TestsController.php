@@ -7,6 +7,7 @@ use App\Question;
 use App\Test;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Route;
 
 class TestsController extends Controller
 {
@@ -17,7 +18,8 @@ class TestsController extends Controller
      */
     public function index()
     {
-        return view('Backend.TeacherInterface.content.Tests.index');
+        $tests = \DB::table("tests")->paginate(10);
+        return view('Backend.TeacherInterface.content.Tests.index',compact("tests"));
     }
 
     /**
@@ -81,7 +83,7 @@ class TestsController extends Controller
 
         }
 
-        return view("Backend.TeacherInterface.content.Tests.index");
+        return \Redirect::route("Tests");
 
     }
 
