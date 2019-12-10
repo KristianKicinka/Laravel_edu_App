@@ -19,6 +19,7 @@
                     {!! Form::hidden("name",$name) !!}
                     {!! Form::hidden("questions_count",$questions_count) !!}
                     {!! Form::hidden("options_count",$options_count) !!}
+                    {!! Form::hidden("current_user",Auth::user()->name) !!}
                 @for($index=1;$index<=$questions_count;$index++)
                     <div class="row">
                         <div class="container px-2 py-2 mx-3 my-2 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ">

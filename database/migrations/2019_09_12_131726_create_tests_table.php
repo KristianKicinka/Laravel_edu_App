@@ -17,6 +17,7 @@ class CreateTestsTable extends Migration
             $table->string('name', 200);
             $table->integer('options_count');
             $table->integer('questions_count');
+            $table->string('author');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateTestsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('table_tests');
+        Schema::drop('tests');
     }
 }

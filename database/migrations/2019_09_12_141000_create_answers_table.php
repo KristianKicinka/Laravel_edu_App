@@ -28,6 +28,6 @@ class CreateAnswersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('table_answers');
+        Schema::drop('answers');
     }
 }

@@ -28,6 +28,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('table_questions');
+        Schema::drop('questions');
     }
 }

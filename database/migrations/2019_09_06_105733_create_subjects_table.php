@@ -14,7 +14,6 @@ class CreateSubjectsTable extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->increments('id');
-            $table->Integer('subject_id')->unsigned();
             $table->string('name', 200);
             $table->text('description');
             $table->String('shortcut', 20);
