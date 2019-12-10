@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 
 </head>
-<body class="{{ Request::segment(1) ?: 'home' }}">
+<body class="{{ Request::segment(1) ?: 'home' }}" style="background-color: olive">
 <header id="app">
     {{--navigation and stuff--}}
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">

@@ -14,7 +14,7 @@
             {!! Form::label("newPassword_edit_lab","New password :") !!}
             {!! Form::password("newPassword_edit_val",["class"=>"form-control","required"=>"true","placeholder"=>"Enter your new Password"]) !!}
             {!! Form::password("newPassword2_edit_val",["class"=>"form-control my-2","required"=>"true","placeholder"=>"Repeat your new Password"]) !!}
-            <button type="submit" class="btn btn-primary my-2" >Submit</button>
+            <button type="submit" class="btn btn-primary my-2" >Save</button>
             {!! Form::close() !!}
         </div>
     </div>
