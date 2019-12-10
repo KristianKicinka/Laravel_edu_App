@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Question;
 use App\Test;
 use Illuminate\Http\Request;
@@ -26,28 +27,15 @@ class TestsController extends Controller
      */
     public function create()
     {
-        $name = Input::get('testNameVal');
-        $questions_count = Input::get('testQuestionsVal');
-        $options_count = Input::get('testOptionsVal');
-        return view('Backend.TeacherInterface.content.Tests.create')->with('name',$name)->with('questions_count',$questions_count)->with('options_count',$options_count);
+        return view('Backend.TeacherInterface.content.Tests.create');
     }
 
     public function questions(Request $request)
     {
-        $test = new Test();
-        $test->name = $request->input("name");
-        $test->questions_count = $request->input("questions_count");
-        $test->options_count = $request->input("options_count");
-        $questions_count = $request->input("questions_count");
-        $options_count = $request->input("options_count");
-
-
-        for ($index=1;$index<=$questions_count;$index++){
-        $question = new Question();
-
-        }
-
-       return view('Backend.TeacherInterface.content.Tests.questions')->with("questions",$questions_count)->with("answers",$options_count);
+        $name = $request->input("testNameVal");
+        $questions_count = $request->input("testQuestionsVal");
+        $options_count = $request->input("testOptionsVal");
+       return view('Backend.TeacherInterface.content.Tests.questions')->with("questions_count",$questions_count)->with("options_count",$options_count)->with("name",$name);
 
     }
 
@@ -61,7 +49,40 @@ class TestsController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $test = new Test();
+        $name = $request->input("name");
+        $questions_count = $request->input("questions_count");
+        $options_count = $request->input("options_count");
+
+        $test->name = $name;
+        $test->questions_count = $questions_count;
+        $test->options_count = $options_count;
+
+        $test->save();
+
+        for ($index=1;$index<=$questions_count;$index++){
+            $question = new Question();
+            $question_question = $request->input("question_$index");
+            $question->question = $question_question;
+            $question->test_id =(integer) json_decode( \DB::table("tests")->select("id")->where("name","=",$name)->pluck("id"));
+            $question->points = 1;
+
+            $question->save();
+
+            for ($i=1;$i<=$options_count;$i++){
+                $answer = new Answer();
+                $answer->question_id = (integer) json_decode(\DB::table("questions")->select("id")->where("question","=",$question_question)->pluck("id"));
+                $answer->answer = $request->input("answer_$i");
+                $answer->is_correct = $request->input('correct_'.$i);
+
+                $answer->save();
+
+            }
+
+        }
+
+        return view("Backend.TeacherInterface.content.Tests.index");
+
     }
 
     /**
@@ -109,6 +130,7 @@ class TestsController extends Controller
         //
     }
     /*This function is used for adding more options in question*/
+
 
 
 }

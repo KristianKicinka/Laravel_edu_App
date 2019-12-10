@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Answer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_12_131946_create_questions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_12_131946_create_questions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/questions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/questions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/pages/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +207,7 @@
       <workItem from="1574693054147" duration="21875000" />
       <workItem from="1574853111936" duration="1283000" />
       <workItem from="1575358649805" duration="19688000" />
-      <workItem from="1575533479020" duration="11010000" />
+      <workItem from="1575533479020" duration="23685000" />
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -495,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575635382108</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="After add new option to db and repair test">
+      <created>1575974028557</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1575974028557</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu" />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu" />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu, detailu" />
     <MESSAGE value="Oprava Edit formulára v sekcii Sunjects." />
@@ -540,21 +547,22 @@
     <MESSAGE value="After added delete materials." />
     <MESSAGE value="After added new redirect on dashboard to materials." />
     <MESSAGE value="After repair database and add new columns to tests table." />
-    <option name="LAST_COMMIT_MESSAGE" value="After repair database and add new columns to tests table." />
+    <MESSAGE value="After add new option to db and repair test" />
+    <option name="LAST_COMMIT_MESSAGE" value="After add new option to db and repair test" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="4" key="CommitChangelistDialog2" timestamp="1575635379050">
+    <state x="379" y="4" key="CommitChangelistDialog2" timestamp="1575974026313">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="379" y="4" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575635379050" />
+    <state x="379" y="4" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575974026313" />
     <state x="604" y="340" key="NewPhpFileDialog" timestamp="1575534199319">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="604" y="340" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1575534199319" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575635385343">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575974079245">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575635385343" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575974079245" />
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1575533575927">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
