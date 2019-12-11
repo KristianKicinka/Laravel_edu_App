@@ -38,7 +38,7 @@ use App\Http\Controllers\TestsController;
                                 <div class="row py-2 d-block px-3">
                                     <div class="handler-buttons">
                                         <div class="hanlder-button  py-2">
-                                            {!!  Form::submit('Save',['class'=>'btn btn-success','type'=>'submit',]) !!}
+                                            {!!  Form::submit('Next',['class'=>'btn btn-success','type'=>'submit',]) !!}
                                         </div>
                                     </div>
                                 </div>

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41188dc4-57af-45fe-b152-c72f302a87b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/Modals/Courses/Edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_12_131726_create_tests_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_12_131726_create_tests_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/MainContent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/TeacherInterface/content/Tests/MainContent.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,9 +205,13 @@
       <workItem from="1574693054147" duration="21875000" />
       <workItem from="1574853111936" duration="1283000" />
       <workItem from="1575358649805" duration="19688000" />
+<<<<<<< HEAD
       <workItem from="1575533479020" duration="5042000" />
       <workItem from="1575968470153" duration="9409000" />
       <workItem from="1575988008989" duration="6202000" />
+=======
+      <workItem from="1575533479020" duration="25323000" />
+>>>>>>> 7544c6cdc304dfbd9d0201e34693682d327ffb23
     </task>
     <task id="LOCAL-00001" summary="After repair checkbox.">
       <created>1567430320395</created>
@@ -490,7 +493,28 @@
       <option name="project" value="LOCAL" />
       <updated>1575534165790</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="After repair database and add new columns to tests table.">
+      <created>1575635382108</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1575635382108</updated>
+    </task>
+    <task id="LOCAL-00042" summary="After add new option to db and repair test">
+      <created>1575974028557</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1575974028557</updated>
+    </task>
+    <task id="LOCAL-00043" summary="After added test function without output">
+      <created>1575990413982</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1575990413982</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,9 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky." />
-    <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu" />
-    <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu" />
     <MESSAGE value="Vytvorenie testu formulara frontend bez uloženia do DB. Pridanie vypisu studentov do jednoduchej tabuľky. Pridanie modal elementu, upravenie subject kontentu, detailu" />
     <MESSAGE value="Oprava Edit formulára v sekcii Sunjects." />
     <MESSAGE value="Pridanie delete formulára v sekcii Sunjects." />
@@ -535,21 +556,24 @@
     <MESSAGE value="After added list all materials and downloading. without edit and delete." />
     <MESSAGE value="After added delete materials." />
     <MESSAGE value="After added new redirect on dashboard to materials." />
-    <option name="LAST_COMMIT_MESSAGE" value="After added new redirect on dashboard to materials." />
+    <MESSAGE value="After repair database and add new columns to tests table." />
+    <MESSAGE value="After add new option to db and repair test" />
+    <MESSAGE value="After added test function without output" />
+    <option name="LAST_COMMIT_MESSAGE" value="After added test function without output" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="4" key="CommitChangelistDialog2" timestamp="1575534164704">
+    <state x="379" y="4" key="CommitChangelistDialog2" timestamp="1575990411774">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="379" y="4" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575534164704" />
+    <state x="379" y="4" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575990411774" />
     <state x="604" y="340" key="NewPhpFileDialog" timestamp="1575534199319">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="604" y="340" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1575534199319" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575534169935">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1575990419107">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575534169935" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1575990419107" />
     <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1575533575927">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
