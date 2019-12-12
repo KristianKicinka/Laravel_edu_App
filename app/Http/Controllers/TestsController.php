@@ -18,7 +18,8 @@ class TestsController extends Controller
      */
     public function index()
     {
-        $tests = \DB::table("tests")->paginate(10);
+        $user = \Auth::user()->name;
+        $tests = \DB::table("tests")->where("author","=",$user)->paginate(10);
         return view('Backend.TeacherInterface.content.Tests.index',compact("tests"));
     }
 
@@ -59,6 +60,7 @@ class TestsController extends Controller
         $test->name = $name;
         $test->questions_count = $questions_count;
         $test->options_count = $options_count;
+        $test->author = $request->input("current_user");
 
         $test->save();
 

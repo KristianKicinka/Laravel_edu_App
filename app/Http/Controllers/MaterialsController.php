@@ -40,7 +40,7 @@ class MaterialsController extends Controller
      */
     public function store(Request $request)
     {
-        $user = \Auth::user();
+        $user = \Auth::user()->name;
         $material = new Material();
         $material->title = Input::get('material_name_val');
         $material->content = Input::get('material_content_val');
@@ -50,7 +50,7 @@ class MaterialsController extends Controller
         /*Work with files*/
         $cover = $request->file('material_file_val');
         $extension = $cover->getClientOriginalExtension();
-        $destination_path = "materials";
+        $destination_path = "materials/".$user."/".Input::get('coursesArray');
         \Storage::disk('public')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
 
         $material->filename = $cover->getFilename().'.'.$extension;
