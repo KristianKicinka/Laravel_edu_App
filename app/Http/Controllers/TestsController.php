@@ -68,16 +68,22 @@ class TestsController extends Controller
             $question = new Question();
             $question_question = $request->input("question_$index");
             $question->question = $question_question;
-            $question->test_id =(integer) json_decode( \DB::table("tests")->select("id")->where("name","=",$name)->pluck("id"));
+            $test_ID =  \DB::table("tests")->select("id")->where("name","=",$name)->pluck("id");
+            $test_ID = json_decode($test_ID);
+            $question->test_id = $test_ID[0];
+
             $question->points = 1;
 
             $question->save();
 
             for ($i=1;$i<=$options_count;$i++){
                 $answer = new Answer();
-                $answer->question_id = (integer) json_decode(\DB::table("questions")->select("id")->where("question","=",$question_question)->pluck("id"));
-                $answer->answer = $request->input("answer_$i");
-                $answer->is_correct = $request->input('correct_'.$i);
+                $answer_ID = \DB::table("questions")->select("id")->where("question","=",$question_question)->pluck("id");
+                $answer_ID = json_decode($answer_ID);
+                $answer->question_id = $answer_ID[0];
+
+                $answer->answer = $request->input("answer_".$index.$i);
+                $answer->is_correct = $request->input('correct_'.$index.$i);
 
                 $answer->save();
 

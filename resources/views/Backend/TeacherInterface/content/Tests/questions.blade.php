@@ -34,12 +34,12 @@
                                         @for($i=1;$i<=$options_count;$i++)
                                             <div class="option py-2">
 
-                                                {{ Form::text("answer_$i",null,['placeholder'=>"Answer $i",'class'=>'form-control','autofocus'=>true,"required"=>true]) }}
+                                                {{ Form::text("answer_".$index.$i,null,['placeholder'=>"Answer $i",'class'=>'form-control','autofocus'=>true,"required"=>true]) }}
                                             </div>
                                             <div class="checkbox float-left px-2 py-1">
                                                 {!! Form::label('correct_'.$i,'Correct',['class'=>'control-label',"required"=>true]) !!}
-                                                {!! Form::hidden('correct_'.$i,0) !!}
-                                                {!! Form::checkbox('correct_'.$i,1,false,[]) !!}
+                                                {!! Form::hidden('correct_'.$index.$i,0) !!}
+                                                {!! Form::checkbox('correct_'.$index.$i,1,false,[]) !!}
                                             </div>
 
                                         @endfor
