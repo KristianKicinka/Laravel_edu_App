@@ -16,8 +16,8 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('count_of_students');
-            $table->string('subject');
-            $table->string('students');
+            $table->json('subject');
+            $table->json('students');
             $table->integer('teacher_id');
             $table->timestamps();
         });

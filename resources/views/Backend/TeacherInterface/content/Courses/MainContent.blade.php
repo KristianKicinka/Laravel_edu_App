@@ -42,7 +42,7 @@
                         <td>{{ $course->id }}</td>
                         <td>{{ $course->name }}</td>
                         <td>{{ $course->count_of_students }}</td>
-                        <td>{{ $course->subject }}</td>
+                        <td>{{ (json_decode($course->subject,true)[0])}}</td>
                         <td>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Students</button>
                             <button class="btn btn-success" data-toggle="modal" data-target="#editModal_{{$course->id}}" >Edit</button>

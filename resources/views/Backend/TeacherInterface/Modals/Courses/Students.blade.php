@@ -8,7 +8,9 @@
 
             {{csrf_field()}}
             <div class="modal-body">
-                <p>{{ $course->students }}</p>
+                @for($index=0;$index<count(json_decode($course->students,true));$index++)
+                    {{ json_decode($course->students,true)[$index]." , " }}
+                @endfor
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

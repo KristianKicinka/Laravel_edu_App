@@ -38,7 +38,7 @@
                         <td>{{ $material->title }}</td>
                         <td>{{ $material->class }}</td>
                         <td>{{ $material->subject }}</td>
-                        <td><a class="text-dark" href="{{ route('materialDownload', $material->filename) }}">{{ $material->original_filename }}</a></td>
+                        <td><a class="text-dark" href="{{ route('materialDownload', $material->filename) }}"><i class="fas fa-download pr-2"></i>{{ $material->original_filename }}</a></td>
                         <td>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#descriptionModal_{{$material->id}}" >Description</button>
                             <button class="btn btn-success" data-toggle="modal" data-target="#editModal_{{$material->id}}" >Edit</button>
