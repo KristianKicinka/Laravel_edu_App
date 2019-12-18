@@ -1,4 +1,4 @@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <nav class="navbar navbar-expand-md navbar-dark shadow-sm bg-dark " style="opacity: 80%">
     <div class="container-fluid">
@@ -60,7 +60,7 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-md navbar-dark shadow-sm bg-dark " style="{border-top: 1px solid navajowhite; opacity: 70%;}">
+<nav class="navbar navbar-expand-md navbar-dark shadow-sm bg-dark " style="{border-top: 1px solid navajowhite; opacity: 70%; width: 200%;position: fixed;}" id="slide" >
     <div class="container-fluid">
         <button class="navbar-toggler colapse-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -73,7 +73,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto font-roboto nav-right-part" id="slide">
+            <ul class="navbar-nav ml-auto font-roboto nav-right-part" style="{position: absolute;}">
                 <!-- Authentication Links -->
 
                     <li class="nav-item active" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
@@ -99,4 +99,13 @@
         </div>
     </div>
 </nav>
+
+<script>
+    $(document).ready(function(){
+            $("#slide").animate({
+                right:'0%'
+                //height:'100px',
+            },1000);
+    });
+</script>
 
