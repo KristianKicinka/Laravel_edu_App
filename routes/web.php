@@ -40,6 +40,8 @@ Route::get('/students', ['uses'=>'StudentsController@index', 'as'=>'Students']);
 /*Routes for Tests*/
 Route::get('/tests', ['uses'=>'TestsController@index', 'as'=>'Tests']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
+Route::post('/tests/delete/{id}',['uses'=>'TestsController@destroy', 'as'=>'testDelete']);
+Route::get('/tests/activate/{id}',['uses'=>'TestsController@activate', 'as'=>'testActivate']);
 Route::post('/tests/create/questions',['uses'=>'TestsController@questions',]);
 Route::post('/tests/create/test',['uses'=>'TestsController@store',]);
 /*Routes for subjects*/

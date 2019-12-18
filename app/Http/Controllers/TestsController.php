@@ -141,6 +141,8 @@ class TestsController extends Controller
     }
     /*This function is used for adding more options in question*/
 
-
+    public function activate($id){
+        //
+    }
 
 }
