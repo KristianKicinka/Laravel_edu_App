@@ -5,5 +5,5 @@
         'placeholder'=>'Search Subjects',
         ]) }}
     </div>
-    <button class="btn btn-primary float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Subject</button>
+    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Subject</button>
 </header>

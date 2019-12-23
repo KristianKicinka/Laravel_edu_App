@@ -13,7 +13,7 @@
                 <p>Are you sure want to delete this item ?</p>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" style="background-color: #3490dc;border-color: #3490dc">Delete</button>
+                <button type="submit" class="btn btn-blue" >Delete</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
             </div>

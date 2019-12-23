@@ -8,12 +8,15 @@
 
             {{csrf_field()}}
             <div class="modal-body">
-                @forelse($questions as $question)
-                <h3>{{ $question->$question }}</h3>
-                    @forelse($answers as $answer)
-
-                    @endforelse
-                @endforelse
+                @foreach($questions as $question)
+                <h3>{{ $question->question }}</h3>
+                    @foreach($answers as $answer)
+                        @if($answer->is_correct == 1)
+                            <p class="text-success py-2">{{ $answer->answer }}</p>
+                        @endif
+                            <p class="py-2">{{ $answer->answer }}</p>
+                    @endforeach
+                @endforeach
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -5,5 +5,5 @@
         'placeholder'=>'Search Materials',
         ]) }}
     </div>
-    <button class="btn btn-primary float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Material</button>
+    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Material</button>
 </header>

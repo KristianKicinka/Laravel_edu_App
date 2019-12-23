@@ -44,14 +44,14 @@
                         <td>{{ $course->count_of_students }}</td>
                         <td>{{ (json_decode($course->subject,true)[0])}}</td>
                         <td>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Students</button>
-                            <button class="btn btn-success" data-toggle="modal" data-target="#editModal_{{$course->id}}" >Edit</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_{{$course->id}}">Delete</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Students</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$course->id}}" >Edit</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$course->id}}">Delete</button>
                         </td>
 
                     </tr>
                 @empty
-                    <td colspan="4"> Nothing to display</td>
+                    <td colspan="5"> Nothing to display</td>
                 @endforelse
                 </tbody>
             </table>

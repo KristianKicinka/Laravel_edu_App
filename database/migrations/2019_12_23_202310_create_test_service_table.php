@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTestsTable extends Migration
+class CreateTestServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateTestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
+        Schema::create('test_service', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 200);
-            $table->integer('options_count');
-            $table->integer('questions_count');
-            $table->string('author');
-            $table->boolean('is_active')->default(false);
+            $table->integer('test_id');
+            $table->time('duration');
+            $table->double('percentage');
+            $table->dateTime('expiration');
+            $table->json('activate_for');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateTestsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tests');
+        Schema::dropIfExists('test_service');
     }
 }

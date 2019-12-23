@@ -5,5 +5,5 @@
         'placeholder'=>'Search Classrooms',
         ]) }}
     </div>
-    <button class="btn btn-primary float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> New Classroom</button>
+    <button class="btn btn-blue float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> New Classroom</button>
 </header>

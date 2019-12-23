@@ -31,8 +31,8 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            <button class="btn btn-success">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-blue">Edit</button>
+                            <button class="btn btn-orange">Delete</button>
                         </td>
 
                     </tr>

@@ -39,9 +39,9 @@
                         <td>{{ $subject->name }}</td>
                         <td>{{ $subject->shortcut }}</td>
                         <td>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#descriptionModal_{{$subject->id}}" >Description</button>
-                            <button class="btn btn-success" data-toggle="modal" data-target="#editModal_{{$subject->id}}" >Edit</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_{{$subject->id}}">Delete</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#descriptionModal_{{$subject->id}}" >Description</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$subject->id}}" >Edit</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$subject->id}}">Delete</button>
                         </td>
 
                     </tr>

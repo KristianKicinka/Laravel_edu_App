@@ -11,7 +11,8 @@
             <!-- Modal Editing -->
                 {{--@include("Backend.TeacherInterface.Modals.Tests.Edit")--}}
                 {{--ModalDescription--}}
-               {{-- @include("Backend.TeacherInterface.Modals.Tests.Show")--}}
+                {{--@include("Backend.TeacherInterface.Modals.Tests.Show")--}}
+                @include("Backend.TeacherInterface.Modals.Tests.Activate")
 
                 @include("Backend.TeacherInterface.Modals.Tests.Delete")
             @endforeach
@@ -38,7 +39,7 @@
                         <td>{{ $test->questions_count }}</td>
                         <td>{{ $test->options_count }}</td>
                         <td>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#showModal_{{$test->id}}" >Show test</button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#showModal_{{$test->id}}" onclick="{{ route("testShow",$test->id) }}">Show test</button>
                             <button class="btn btn-success" data-toggle="modal" data-target="#activateModal_{{$test->id}}" >Activate</button>
                             <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_{{$test->id}}">Delete</button>
                         </td>

@@ -18,6 +18,7 @@ class TestsController extends Controller
      */
     public function index()
     {
+
         $user = \Auth::user()->name;
         $tests = \DB::table("tests")->where("author","=",$user)->paginate(10);
         return view('Backend.TeacherInterface.content.Tests.index',compact("tests"));
@@ -103,7 +104,9 @@ class TestsController extends Controller
      */
     public function show($id)
     {
-        //
+        $questions = \DB::table("questions")->where("test_id","=",$id)->paginate(10);
+        $answers = \DB::table("answers")->paginate(10);
+        return view('Backend.TeacherInterface.content.Tests.index')->with("questions",$questions)->with("answers");
     }
 
     /**
