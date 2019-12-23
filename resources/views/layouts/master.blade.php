@@ -76,7 +76,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
 </header>
 
