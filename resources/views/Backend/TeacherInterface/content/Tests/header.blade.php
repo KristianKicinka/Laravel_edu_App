@@ -5,5 +5,5 @@
         'placeholder'=>'Search Tests',
         ]) }}
     </div>
-    <button class="btn btn-primary float-lg-right mr-2" onclick="window.location='{{ route('testCreate') }}'"> New Test</button>
+    <button class="btn btn-blue float-lg-right mr-2" onclick="window.location='{{ route('testCreate') }}'"> New Test</button>
 </header>
