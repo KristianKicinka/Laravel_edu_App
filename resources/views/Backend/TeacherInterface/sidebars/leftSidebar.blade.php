@@ -12,11 +12,3 @@
         </ul>
     </div>
 @endif
-
-@if(Auth::user()->is_student==1)
-    <h1>Student</h1>
-@endif
-
-@if(Auth::user()->is_admin==1)
-    <h1>Admin</h1>
-@endif

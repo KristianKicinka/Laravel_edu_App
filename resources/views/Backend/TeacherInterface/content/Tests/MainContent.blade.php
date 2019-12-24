@@ -9,12 +9,12 @@
 
         @foreach($tests as $test)
             <!-- Modal Editing -->
-                {{--@include("Backend.TeacherInterface.Modals.Tests.Edit")--}}
+                {{--@include("Backend.TeacherInterface.modals.Tests.Edit")--}}
                 {{--ModalDescription--}}
-                {{--@include("Backend.TeacherInterface.Modals.Tests.Show")--}}
-                @include("Backend.TeacherInterface.Modals.Tests.Activate")
+                {{--@include("Backend.TeacherInterface.modals.Tests.Show")--}}
+                @include("Backend.TeacherInterface.modals.Tests.Activate")
 
-                @include("Backend.TeacherInterface.Modals.Tests.Delete")
+                @include("Backend.TeacherInterface.modals.Tests.Delete")
             @endforeach
 
         <div class="container-fluid py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block w-100">

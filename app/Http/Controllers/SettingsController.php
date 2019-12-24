@@ -14,8 +14,12 @@ class SettingsController extends Controller
      */
     public function index()
     {
-
-        return view('Backend.TeacherInterface.content.Settings.index');
+        if(\Auth::user()->is_teacher==1){
+            return view('Backend.TeacherInterface.content.Dashboard.index');
+        }if(\Auth::user()->is_admin==1){
+        return view('Backend.AdminInterface.content.Dashboard.index');
+    }
+        return view('Backend.StudentInterface.content.Settings.index');
     }
 
     /**

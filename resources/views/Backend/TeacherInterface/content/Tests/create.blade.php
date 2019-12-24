@@ -8,7 +8,7 @@ use App\Http\Controllers\TestsController;
 ?>
 
     <div class="window">
-        @include('Backend.TeacherInterface.sidebars.teacherSidebar')
+        @include('Backend.TeacherInterface.sidebars.leftSidebar')
         <div class="main-content container-fluid">
 
             <header class="panel-head container-fluid py-3">

@@ -7,16 +7,16 @@
         @include('Backend.TeacherInterface.content.Courses.header')
 
         {{--Including modal windows--}}
-       @include('Backend.TeacherInterface.Modals.Courses.Create')
+       @include('Backend.TeacherInterface.modals.Courses.Create')
 
         {{--Including action event modal boxes--}}
         @foreach($courses as $course)
             <!-- Modal Editing -->
-                {{--@include("Backend.TeacherInterface.Modals.Courses.Edit")--}}
+                {{--@include("Backend.TeacherInterface.modals.Courses.Edit")--}}
                 {{--ModalDescription--}}
-                @include("Backend.TeacherInterface.Modals.Courses.Students")
+                @include("Backend.TeacherInterface.modals.Courses.Students")
 
-                @include("Backend.TeacherInterface.Modals.Courses.Delete")
+                @include("Backend.TeacherInterface.modals.Courses.Delete")
             @endforeach
         {{--Main Content--}}
 

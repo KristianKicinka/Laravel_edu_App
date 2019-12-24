@@ -17,7 +17,14 @@ Route::get('/', function () {
     return view('Frontend.pages.index');
 });
 Route::get('/home', function () {
-    return view('Backend.TeacherInterface.content.Dashboard.index');
+    if (Auth::user()->is_teacher==1){
+        return view('Backend.TeacherInterface.content.Dashboard.index');
+    }if (Auth::user()->is_admin==1){
+        return view('Backend.AdminInterface.content.Dashboard.index');
+    }
+
+    return view('Backend.StudentInterface.content.Dashboard.index');
+
 });
 
 

@@ -6,17 +6,17 @@
     <div class="row container-fluid">
         @include("Backend.TeacherInterface.content.Subjects.header")
         <!-- Modal Create-->
-        @include("Backend.TeacherInterface.Modals.Subjects.Create")
+        @include("Backend.TeacherInterface.modals.Subjects.Create")
 
         {{--Content--}}
 
             @foreach($subjects as $subject)
             <!-- Modal Editing -->
-                @include("Backend.TeacherInterface.Modals.Subjects.Edit")
+                @include("Backend.TeacherInterface.modals.Subjects.Edit")
                 {{--ModalDescription--}}
-                @include("Backend.TeacherInterface.Modals.Subjects.Description")
+                @include("Backend.TeacherInterface.modals.Subjects.Description")
 
-                @include("Backend.TeacherInterface.Modals.Subjects.Delete")
+                @include("Backend.TeacherInterface.modals.Subjects.Delete")
             @endforeach
 
             <div class="container-fluid py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block w-100">

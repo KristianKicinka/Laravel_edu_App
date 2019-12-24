@@ -7,10 +7,10 @@
     {{--Include header--}}
     @include('Backend.TeacherInterface.content.Materials.header')
         {{--Include modal windows--}}
-    @include('Backend.TeacherInterface.Modals.Materials.create')
+    @include('Backend.TeacherInterface.modals.Materials.create')
         @foreach($materials as $material)
-            @include('Backend.TeacherInterface.Modals.Materials.Description')
-            @include('Backend.TeacherInterface.Modals.Materials.Delete')
+            @include('Backend.TeacherInterface.modals.Materials.Description')
+            @include('Backend.TeacherInterface.modals.Materials.Delete')
         @endforeach
 
         {{--Main Content--}}
