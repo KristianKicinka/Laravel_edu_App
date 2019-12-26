@@ -2,7 +2,7 @@
     <div class="forms col-sm-5 d-inline-block">
         {{ Form::search('search',null,[
         'class'=>'form-control',
-        'placeholder'=>'Search Classrooms',
+        'placeholder'=>'Search Courses',
         ]) }}
     </div>
     <button class="btn btn-blue float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> New Course</button>

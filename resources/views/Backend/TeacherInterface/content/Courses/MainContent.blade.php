@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Classrooms</h1>
+    <h1>Courses</h1>
 </header>
 
 
