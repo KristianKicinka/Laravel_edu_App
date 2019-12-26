@@ -7,7 +7,7 @@
 
             </div>
 
-            {!! Form::open(["method"=>"post", "url"=>route('studentsEdit',$subject->id)]) !!}
+            {!! Form::open(["method"=>"post", "url"=>route('studentsEdit',$tudent->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
                {!! Form::label("student_name_lab","Users") !!}

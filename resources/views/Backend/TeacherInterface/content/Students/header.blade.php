@@ -2,7 +2,7 @@
     <div class="forms col-sm-5 d-inline-block">
         {{ Form::search('search',null,[
         'class'=>'form-control',
-        'placeholder'=>'Search Users',
+        'placeholder'=>'Search Students',
         ]) }}
     </div>
 </header>
