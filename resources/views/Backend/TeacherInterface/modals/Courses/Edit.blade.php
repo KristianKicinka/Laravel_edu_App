@@ -12,7 +12,7 @@
             <div class="modal-body">
                 {!! Form::label("class_name_label","Class name :") !!}
                 {!! Form::text("class_name_val",$course->name,['placeholder'=>"Set the name of class",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("class_count_label","Students in class :") !!}
+                {!! Form::label("class_count_label","Users in class :") !!}
                 {!! Form::number("class_count_val",$course->count,['placeholder'=>"Set the count of students in class",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
                 {!! Form::label("class_type_label","Subject :") !!}
                 <div class="py-2">
@@ -22,7 +22,7 @@
                         @endforeach
                     </select>
                 </div>
-                {!! Form::label("class_type_label","Students :") !!}
+                {!! Form::label("class_type_label","Users :") !!}
                 <div class="py-2">
                     <select class="js-example-placeholder-multiple js-states form-control"style="width: 80%" name="studentsArray[]" multiple="multiple">
                         @foreach($users as $user)

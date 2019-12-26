@@ -5,4 +5,5 @@
         'placeholder'=>'Search Users',
         ]) }}
     </div>
+    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#createModal"> New User</button>
 </header>

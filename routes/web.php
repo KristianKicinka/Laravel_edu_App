@@ -44,6 +44,16 @@ Route::post('/materials/delete/{id}', ['uses'=>'MaterialsController@destroy', 'a
 
 /*Routes for Students*/
 Route::get('/students', ['uses'=>'StudentsController@index', 'as'=>'Students']);
+Route::post('/students/create', ['uses'=>'StudentsController@create', 'as'=>'studentCreate']);
+Route::post('/students/edit/{id}', ['uses'=>'StudentsController@update', 'as'=>'studentEdit']);
+Route::post('/students/delete/{id}', ['uses'=>'StudentsController@destroy', 'as'=>'studentDelete']);
+
+/*Routes for Users*/
+Route::get('/users', ['uses'=>'UsersController@index', 'as'=>'Users']);
+Route::post('/users/create', ['uses'=>'UsersController@create', 'as'=>'userCreate']);
+Route::post('/users/edit/{id}', ['uses'=>'UsersController@update', 'as'=>'userEdit']);
+Route::post('/users/delete/{id}', ['uses'=>'UsersController@destroy', 'as'=>'userDelete']);
+
 /*Routes for Tests*/
 Route::get('/tests', ['uses'=>'TestsController@index', 'as'=>'Tests']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
@@ -59,7 +69,9 @@ Route::post('/subjects/edit/{id}', ['uses'=>'SubjectsController@update', 'as'=>'
 Route::post('/subjects/delete/{id}', ['uses'=>'SubjectsController@destroy', 'as'=>'subjectDelete']);
 /*Routes for settings*/
 Route::get('/settings', ['uses'=>'SettingsController@index', 'as'=>'Settings']);
-Route::post('/settings/profile/edit/{id}', ['uses'=>'SettingsController@index', 'as'=>'profileEdit']);
+Route::post('/settings/username/edit/{id}', ['uses'=>'SettingsController@username', 'as'=>'usernameEdit']);
+Route::post('/settings/email/edit/{id}', ['uses'=>'SettingsController@email', 'as'=>'emailEdit']);
+Route::post('/settings/password/edit/{id}', ['uses'=>'SettingsController@password', 'as'=>'passwordEdit']);
 /*Routes for Classrooms*/
 Route::get('/classrooms', ['uses'=>'CoursesController@index', 'as'=>'Classrooms']);
 Route::post('/classrooms/create', ['uses'=>'CoursesController@create', 'as'=>'classroomCreate']);

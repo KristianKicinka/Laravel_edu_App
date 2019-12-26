@@ -85,10 +85,7 @@ class SubjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::table('subjects')
-            ->where('id',$id)
-            ->update(["name"=>$request["subject_name_val"], "shortcut"=>$request["subject_shortcut_val"], "description"=>$request["subject_description_val"]]);
-        return \Redirect::route("Subjects");
+
     }
 
     /**

@@ -15,9 +15,14 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
 
-        return view('Backend.TeacherInterface.content.Students.index',compact("users"));
+        if(\Auth::user()->is_teacher==1){
+            $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
+            return view('Backend.TeacherInterface.content.Users.index',compact("users"));
+        }
+
+
+
     }
 
     /**
@@ -85,6 +90,6 @@ class StudentsController extends Controller
     {
         DB::table('sutudents')->where('id','=', $id)->delete();
 
-        return \Redirect::route("Subjects");
+        return \Redirect::route("Students");
     }
 }

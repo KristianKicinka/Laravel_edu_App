@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\MatchOldPassword;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -62,7 +64,7 @@ class SettingsController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -74,7 +76,7 @@ class SettingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -86,5 +88,32 @@ class SettingsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /*Functions for changing profile settings*/
+
+    public function username(Request $request,$id){
+        DB::table("users")->where("id","=",$id)->update(["name"=>$request['userName_edit_val']]);
+
+        return \Redirect::route("Settings");
+    }
+    public function email(Request $request,$id){
+        DB::table("users")->where("id","=",$id)->update(["email"=>$request['userEmail_edit_val']]);
+
+        return \Redirect::route("Settings");
+    }
+    public function password(Request $request,$id){
+        $request->validate([
+            'oldPassword_edit_val' => ['required', new MatchOldPassword],
+            'newPassword_edit_val' => ['required'],
+            'newPassword2_edit_val' => ['same:newPassword_edit_val'],
+        ]);
+
+        $password = \Hash::make($request->newPassword_edit_val);
+
+        DB::table("users")->where("id","=",$id)->update(["password"=>$password]);
+
+        return \Redirect::route("Settings");
+
     }
 }
