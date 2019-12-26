@@ -8,7 +8,6 @@
             <li><a href="{{ route('Materials') }}"><i class="fas fa-book text-left sidebar-icon" ></i> Materials</a></li>
             <li><a href="{{ route('Users') }}"><i class="fas fa-user-graduate text-left sidebar-icon" ></i> Students</a></li>
             <li><a href="{{ route('Classrooms') }}"><i class="fas fa-chalkboard-teacher text-left sidebar-icon" ></i> Clourses</a></li>
-            <li><a href="{{ route('Subjects') }}"><i class="fas fa-flask text-left sidebar-icon"></i> Subjects</a></li>
         </ul>
     </div>
 @endif

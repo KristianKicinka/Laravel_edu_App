@@ -20,7 +20,7 @@ class SubjectsController extends Controller
     {
         $subjects = DB::table('subjects')->paginate(10);
 
-        return view('Backend.TeacherInterface.content.Subjects.index',compact("subjects"));
+        return view('Backend.AdminInterface.content.Subjects.index',compact("subjects"));
     }
 
     /**
@@ -73,7 +73,11 @@ class SubjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $name = Input::get('subject_name_val');
+        $shortcut = Input::get('subject_shortcut_val');
+        $description = Input::get('subject_description_val');
+        DB::table("subjects")->where("id","=",$id)->update(["name"=>$name,"shortcut"=>$shortcut,"description"=>$description]);
+        return \Redirect::route("Subjects");
     }
 
     /**

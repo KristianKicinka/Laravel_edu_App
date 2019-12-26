@@ -65,7 +65,7 @@ Route::post('/tests/create/test',['uses'=>'TestsController@store',]);
 /*Routes for subjects*/
 Route::get('/subjects', ['uses'=>'SubjectsController@index', 'as'=>'Subjects']);
 Route::post('/subjects/create', ['uses'=>'SubjectsController@create', 'as'=>'subjectCreate']);
-Route::post('/subjects/edit/{id}', ['uses'=>'SubjectsController@update', 'as'=>'subjectEdit']);
+Route::post('/subjects/edit/{id}', ['uses'=>'SubjectsController@edit', 'as'=>'subjectEdit']);
 Route::post('/subjects/delete/{id}', ['uses'=>'SubjectsController@destroy', 'as'=>'subjectDelete']);
 /*Routes for settings*/
 Route::get('/settings', ['uses'=>'SettingsController@index', 'as'=>'Settings']);

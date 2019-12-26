@@ -4,19 +4,19 @@
 
 <main class="panel-main-content">
     <div class="row container-fluid">
-        @include("Backend.TeacherInterface.content.Subjects.header")
+        @include("Backend.AdminInterface.content.Subjects.header")
         <!-- Modal Create-->
-        @include("Backend.TeacherInterface.modals.Subjects.Create")
+        @include("Backend.AdminInterface.modals.Subjects.Create")
 
         {{--Content--}}
 
             @foreach($subjects as $subject)
             <!-- Modal Editing -->
-                @include("Backend.TeacherInterface.modals.Subjects.Edit")
+                @include("Backend.AdminInterface.modals.Subjects.Edit")
                 {{--ModalDescription--}}
-                @include("Backend.TeacherInterface.modals.Subjects.Description")
+                @include("Backend.AdminInterface.modals.Subjects.Description")
 
-                @include("Backend.TeacherInterface.modals.Subjects.Delete")
+                @include("Backend.AdminInterface.modals.Subjects.Delete")
             @endforeach
 
             <div class="container-fluid py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block w-100">
