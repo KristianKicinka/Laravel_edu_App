@@ -10,23 +10,27 @@
             {!! Form::open(["method"=>"post", "url"=>route('userCreate')]) !!}
             {{csrf_field()}}
             <div class="modal-body">
-                {!! Form::label("student_name_lab","Users") !!}
-                {!! Form::text("student_name_val",null,['placeholder'=>'User name','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("student_email_lab","Email") !!}
-                {!! Form::text("student_email_val",null,['placeholder'=>'Email','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("student_password_lab","Password") !!}
-                {!! Form::password("student_password_val",['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("user_name_lab","Users :") !!}
+                {!! Form::text("user_name_val",null,['placeholder'=>'Set user name','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("user_email_lab","Email :") !!}
+                {!! Form::text("user_email_val",null,['placeholder'=>'Set email address','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("user_password_lab","Password :") !!}
+                {!! Form::password("user_password_val",['placeholder'=>'Set password','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 <div class="py-2">
-                    {!! Form::label("student_admin_lab","Is admin") !!}
-                    {!! Form::checkbox("student_admin_val",null,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::label("user_admin_lab","Is admin") !!}
+                    {!! Form::hidden("user_admin_val",0,['class'=>'px-2','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::checkbox("user_admin_val",1,false,['class'=>'px-2','autofocus'=>true,]) !!}
+
                     <br>
-                    {!! Form::label("student_teacher_lab","Is teacher") !!}
-                    {!! Form::checkbox("student_admin_val",null,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::label("user_teacher_lab","Is teacher") !!}
+                    {!! Form::hidden("user_teacher_val",0,['class'=>'px-2','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::checkbox("user_teacher_val",1,false,['class'=>'px-2','autofocus'=>true]) !!}
+
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-blue" >Edit</button>
+                <button type="submit" class="btn btn-blue" >Save</button>
             </div>
             {!! Form::close() !!}
         </div>

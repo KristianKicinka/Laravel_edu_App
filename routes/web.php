@@ -51,7 +51,7 @@ Route::post('/students/delete/{id}', ['uses'=>'StudentsController@destroy', 'as'
 /*Routes for Users*/
 Route::get('/users', ['uses'=>'UsersController@index', 'as'=>'Users']);
 Route::post('/users/create', ['uses'=>'UsersController@create', 'as'=>'userCreate']);
-Route::post('/users/edit/{id}', ['uses'=>'UsersController@update', 'as'=>'userEdit']);
+Route::post('/users/edit/{id}', ['uses'=>'UsersController@edit', 'as'=>'userEdit']);
 Route::post('/users/delete/{id}', ['uses'=>'UsersController@destroy', 'as'=>'userDelete']);
 
 /*Routes for Tests*/

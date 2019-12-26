@@ -10,19 +10,23 @@
             {!! Form::open(["method"=>"post", "url"=>route('userEdit',$user->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
-               {!! Form::label("student_name_lab","Users") !!}
-               {!! Form::text("student_name_val",$user->name,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("student_email_lab","Email") !!}
-                {!! Form::text("student_email_val",$user->email,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("student_password_lab","Password") !!}
-                {!! Form::password("student_password_val",['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-               <div class="py-2">
-                   {!! Form::label("student_admin_lab","Is admin") !!}
-                   {!! Form::checkbox("student_admin_val",$user->is_admin,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                   <br>
-                   {!! Form::label("student_teacher_lab","Is teacher") !!}
-                   {!! Form::checkbox("student_admin_val",$user->is_teacher,['class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-               </div>
+                {!! Form::label("user_name_lab","Users :") !!}
+                {!! Form::text("user_name_val",$user->name,['placeholder'=>'Set user name','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("user_email_lab","Email :") !!}
+                {!! Form::text("user_email_val",$user->email,['placeholder'=>'Set email address','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("user_password_lab","Password :") !!}
+                {!! Form::password("user_password_val",['placeholder'=>'Set password','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                <div class="py-2">
+                    {!! Form::label("user_admin_lab","Is admin") !!}
+                    {!! Form::hidden("user_admin_val",0,['class'=>'px-2','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::checkbox("user_admin_val",1,$user->is_admin,['class'=>'px-2','autofocus'=>true,]) !!}
+
+                    <br>
+                    {!! Form::label("user_teacher_lab","Is teacher") !!}
+                    {!! Form::hidden("user_teacher_val",0,['class'=>'px-2','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::checkbox("user_teacher_val",1,$user->is_admin,['class'=>'px-2','autofocus'=>true]) !!}
+
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
