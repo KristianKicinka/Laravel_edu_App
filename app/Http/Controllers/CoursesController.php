@@ -19,11 +19,18 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
-        $courses = DB::table('courses')->paginate(10);
+        if(Auth::user()->is_teacher==1) {
+            $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
+            $courses = DB::table('courses')->paginate(10);
+            $subjects = DB::table("subjects")->paginate(10);
+            return view('Backend.TeacherInterface.content.Courses.index', compact("users"), compact("subjects"))->with("courses", $courses);
+        }
+
+        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
+        $courses = DB::table('courses')->whereJsonContains("students",Auth::user()->name)->paginate(10);
         $subjects = DB::table("subjects")->paginate(10);
-        return view('Backend.TeacherInterface.content.Courses.index',compact("users"),compact("subjects"))->with("courses",$courses);
+        return view('Backend.StudentInterface.content.Courses.index', compact("users"), compact("subjects"))->with("courses", $courses);
+
     }
 
     /**
