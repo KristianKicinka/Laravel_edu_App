@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Material;
+use Auth;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -16,10 +17,19 @@ class MaterialsController extends Controller
      */
     public function index()
     {
+        if(\Auth::user()->is_teacher==1){
+            $subjects = DB::table('subjects')->paginate(10);
+            $courses = DB::table('courses')->paginate(10);
+            $materials = DB::table('materials')->paginate(10);
+            return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"))->with('courses',$courses)->with('materials',$materials);
+        }
+
         $subjects = DB::table('subjects')->paginate(10);
-        $courses = DB::table('courses')->paginate(10);
-        $materials = DB::table('materials')->paginate(10);
-        return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"))->with('courses',$courses)->with('materials',$materials);
+        $courses = DB::table('courses')->select("name")->whereJsonContains("students",Auth::user()->name)->paginate(10);
+
+        $materials = DB::table('materials')->WhereJsonContains("class",$courses)->paginate(10);
+        return view('Backend.StudentInterface.content.Materials.index',compact("subjects"))->with('courses',$courses)->with('materials',$materials);
+
     }
 
     /**
@@ -45,7 +55,7 @@ class MaterialsController extends Controller
         $material->title = Input::get('material_name_val');
         $material->content = Input::get('material_content_val');
         $material->subject = Input::get('subjectsArray');
-        $material->class = Input::get('coursesArray');
+        $material->class = json_encode(Input::get('coursesArray'));
 
         /*Work with files*/
         $cover = $request->file('material_file_val');

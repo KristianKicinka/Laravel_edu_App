@@ -5,12 +5,11 @@
 <main class="panel-main-content">
     <div class="row container-fluid">
     {{--Include header--}}
-    @include('Backend.TeacherInterface.content.Materials.header')
+    @include('Backend.StudentInterface.content.Materials.header')
         {{--Include modal windows--}}
-    @include('Backend.TeacherInterface.modals.Materials.create')
         @foreach($materials as $material)
-            @include('Backend.TeacherInterface.modals.Materials.Description')
-            @include('Backend.TeacherInterface.modals.Materials.Delete')
+            @include('Backend.StudentInterface.modals.Materials.Description')
+
         @endforeach
 
         {{--Main Content--}}

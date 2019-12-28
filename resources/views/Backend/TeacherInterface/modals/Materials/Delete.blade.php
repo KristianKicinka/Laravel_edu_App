@@ -7,7 +7,7 @@
 
             </div>
 
-            {!! Form::open(["method"=>"post", "url"=>route('subjectDelete',$material->id)]) !!}
+            {!! Form::open(["method"=>"post", "url"=>route('materialDelete',$material->id)]) !!}
             {{csrf_field()}}
             <div class="modal-body">
                 <p>Are you sure want to delete this item ?</p>
