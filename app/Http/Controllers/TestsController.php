@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Answer;
 use App\Question;
 use App\Test;
+use App\TestService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,8 @@ class TestsController extends Controller
 
         $user = \Auth::user()->name;
         $tests = \DB::table("tests")->where("author","=",$user)->paginate(10);
-        return view('Backend.TeacherInterface.content.Tests.index',compact("tests"));
+        $courses = \DB::table("courses")->paginate(10);
+        return view('Backend.TeacherInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
     }
 
     /**
@@ -145,7 +147,24 @@ class TestsController extends Controller
     /*This function is used for adding more options in question*/
 
     public function activate($id){
-        //
+        $testService = new TestService();
+        $test_id = $id;
+        $duration = Input::post("duration_val");
+        $percentage = Input::post("percentage_val");
+        $expiration = Input::post("expiration_val");
+        $activate_for = json_encode(Input::post("coursesArray"));
+
+        $testService->test_id = $test_id;
+        $testService->duration = $duration;
+        $testService->percentage = $percentage;
+        $testService->expiration = $expiration;
+        $testService->activate_for = $activate_for;
+
+        $testService->save();
+        \DB::table("tests")->where("id","=",$test_id)->update(["is_active"=>true]);
+
+        return \Redirect::route("Tests");
+
     }
 
 }

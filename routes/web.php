@@ -58,10 +58,11 @@ Route::post('/users/delete/{id}', ['uses'=>'UsersController@destroy', 'as'=>'use
 Route::get('/tests', ['uses'=>'TestsController@index', 'as'=>'Tests']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
 Route::post('/tests/delete/{id}',['uses'=>'TestsController@destroy', 'as'=>'testDelete']);
-Route::get('/tests/activate/{id}',['uses'=>'TestsController@activate', 'as'=>'testActivate']);
+Route::post('/tests/activate/{id}',['uses'=>'TestsController@activate', 'as'=>'testActivate']);
 Route::get('/tests/show/{id}',['uses'=>'TestsController@show', 'as'=>'testShow']);
 Route::post('/tests/create/questions',['uses'=>'TestsController@questions',]);
 Route::post('/tests/create/test',['uses'=>'TestsController@store',]);
+
 /*Routes for subjects*/
 Route::get('/subjects', ['uses'=>'SubjectsController@index', 'as'=>'Subjects']);
 Route::post('/subjects/create', ['uses'=>'SubjectsController@create', 'as'=>'subjectCreate']);

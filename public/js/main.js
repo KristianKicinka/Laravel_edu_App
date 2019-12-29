@@ -10,10 +10,11 @@ $(document).ready(function() {
     $('.js-example-placeholder-multiple').select2({
         placeholder: {
             id: '-1', // the value of the option
-            text: 'Choose students'
+            text: 'Choose'
         }
     });
 });
+
 
 $(".js-example-templating").select2({
 

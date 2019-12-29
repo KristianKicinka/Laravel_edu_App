@@ -40,7 +40,11 @@
                         <td>{{ $test->options_count }}</td>
                         <td>
                             <button class="btn btn-blue" data-toggle="modal" data-target="#showModal_{{$test->id}}" onclick="{{ route("testShow",$test->id) }}">Show test</button>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#activateModal_{{$test->id}}" >Activate</button>
+                            @if($test->is_active==0)
+                                <button class="btn btn-blue" data-toggle="modal" data-target="#activateModal_{{$test->id}}" >Activate</button>
+                            @else
+                                <button class="btn btn-blue" data-toggle="modal" disabled data-target="#activateModal_{{$test->id}}" >Activate</button>
+                            @endif
                             <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$test->id}}">Delete</button>
                         </td>
 
