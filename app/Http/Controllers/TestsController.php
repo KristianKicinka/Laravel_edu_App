@@ -108,7 +108,7 @@ class TestsController extends Controller
     {
         $questions = \DB::table("questions")->where("test_id","=",$id)->paginate(10);
         $answers = \DB::table("answers")->paginate(10);
-        return view('Backend.TeacherInterface.content.Tests.index')->with("questions",$questions)->with("answers");
+        /*return view('Backend.TeacherInterface.content.Tests.index')->with("questions",$questions)->with("answers",$answers);*/
     }
 
     /**
