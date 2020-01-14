@@ -5,5 +5,7 @@
         'placeholder'=>'Search Materials',
         ]) }}
     </div>
+    @if(Auth::user()->is_teacher==1)
     <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Material</button>
+    @endif
 </header>
