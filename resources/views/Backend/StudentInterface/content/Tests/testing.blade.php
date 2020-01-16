@@ -16,7 +16,7 @@ use App\Http\Controllers\TestsController;
             {!! Form::open(["method"=>"post", "url"=>route('Testing',0)]) !!}
             <main class="modal-body">
 
-
+                <?php $i=0 ?>
                 @foreach($questions as $question)
                     <div>
 
@@ -27,8 +27,8 @@ use App\Http\Controllers\TestsController;
                                     <div class="funkyradio">
                                         <div class="funkyradio-primary">
 
-                                            <input type="checkbox" name="checkbox" id="{{ "checkbox_$index" }}" />
-                                            <label for="{{ "checkbox_$index" }}">{{ $options[$index]->answer }}</label>
+                                            <input type="checkbox" name="checkbox" id="{{ "checkbox_$i'_'$index" }}" />
+                                            <label for="{{ "label_$i'_'$index" }}">{{ $options[$index]->answer }}</label>
 
                                         </div>
                                     </div>
@@ -37,6 +37,7 @@ use App\Http\Controllers\TestsController;
                             @endfor
                         </div>
                     </div>
+                    <?php $i++ ?>
                 @endforeach
 
             </main>

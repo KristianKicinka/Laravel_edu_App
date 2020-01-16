@@ -17,10 +17,23 @@
     text-align: center;
 }
 
-.sidebar-ul>a:hover,a:active,a:link,a:visited{
+.left-sidebar-link:visited{
     text-decoration: none;
     color: white;
 }
+.left-sidebar-link:active{
+    text-decoration: none;
+    color: white;
+}
+.left-sidebar-link:hover{
+    text-decoration: none;
+    color: white;
+}
+.left-sidebar-link:link{
+    text-decoration: none;
+    color: white;
+}
+
 
 .side-nav>li:hover{
     background-color: #FCAD0E;
@@ -154,6 +167,24 @@
 .funkyradio-primary input[type="checkbox"]:checked ~ label:before {
     color: #fff;
     background-color: #FCAD0E;
+}
+
+/*Preset of ofject links*/
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #000000;
+    background-color: #FCAD0E;
+    border-color: #FCAD0E;
+}
+.page-link {
+
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+a.page-link:hover{
+    color: black;
 }
 
 
