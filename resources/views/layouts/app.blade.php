@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SPSE Edu App') }}</title>
+    <title>{{ config('app.name', 'SPSE Edu-portal') }}</title>
 
 
     <!-- Fonts -->

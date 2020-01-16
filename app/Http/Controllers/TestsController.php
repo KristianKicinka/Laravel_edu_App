@@ -182,4 +182,35 @@ class TestsController extends Controller
 
     }
 
+    public function testing($id){
+        $test_id = \DB::table("tests")->where("id","=",$id)->pluck("id");
+        $test_name = \DB::table("tests")->where("id","=",$id)->pluck("name");
+        $questions = \DB::table("questions")->where("test_id","=",$test_id)->paginate(1);
+        $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
+        $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
+        $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
+
+        $options = \DB::table("answers")->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+            }
+            })->get();
+
+
+
+
+
+
+
+
+        return view("Backend.StudentInterface.content.Tests.testing")
+            ->with("test_id",$test_id)
+            ->with("test_name",$test_name)
+            ->with("questions",$questions)
+            ->with("questions_id",$questions_id)
+            ->with("options",$options)
+            ->with("questions_count",$questions_count)
+            ->with("options_count",$options_count);
+    }
+
 }

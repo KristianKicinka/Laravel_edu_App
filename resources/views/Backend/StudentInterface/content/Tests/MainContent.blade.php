@@ -34,12 +34,12 @@
 
 
                     <tr>
-                        <td>{{ $test->id }}</td>
+                        <td>{{ $test->test_id }}</td>
                         <td>{{ $test->name }}</td>
                         <td>{{ $test->questions_count }}</td>
                         <td>{{ "RES"." / ".$test->questions_count  }}</td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#showModal_{{$test->id}}" onclick="{{ route("testShow",$test->id) }}">Take Test</button>
+                            <button class="btn btn-blue" onclick="window.open('{{ route('Testing',$test->test_id) }}','_blank')">Take Test</button>
                         </td>
 
                     </tr>
