@@ -20,14 +20,23 @@ class MaterialsController extends Controller
         if(\Auth::user()->is_teacher==1){
             $subjects = DB::table('subjects')->paginate(10);
             $courses = DB::table('courses')->paginate(10);
-            $materials = DB::table('materials')->paginate(10);
+            $materials = DB::table('materials')->where("author","=",Auth::user()->name)->paginate(10);
             return view('Backend.TeacherInterface.content.Materials.index',compact("subjects"))->with('courses',$courses)->with('materials',$materials);
         }
 
         $subjects = DB::table('subjects')->paginate(10);
-        $courses = DB::table('courses')->select("name")->whereJsonContains("students",Auth::user()->name)->paginate(10);
+        $courses = DB::table('courses')->select("name")->whereJsonContains("students",Auth::user()->name);
 
-        $materials = DB::table('materials')->WhereJsonContains("class",$courses)->paginate(10);
+        $courses=$courses->pluck('name')->toArray();
+        /*dd($courses->pluck("name")->toArray());*/
+        $materials = DB::table('materials')->where(function($query) use ($courses){
+            foreach ($courses as $course) {
+                $query->orWhereJsonContains('class',$course);
+            }
+        })->paginate(10);
+
+        /*dd($materials);*/
+
         return view('Backend.StudentInterface.content.Materials.index',compact("subjects"))->with('courses',$courses)->with('materials',$materials);
 
     }
@@ -114,7 +123,10 @@ class MaterialsController extends Controller
      */
     public function destroy($id)
     {
+        $file = DB::table("materials")->select("filename")->where("id","=",$id)->get();
+        \Storage::delete($file);
         DB::table('materials')->where('id','=', $id)->delete();
+
 
         return \Redirect::route("Materials");
     }

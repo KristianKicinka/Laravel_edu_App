@@ -2,10 +2,7 @@
     <div class="forms col-sm-5 d-inline-block">
         {{ Form::search('search',null,[
         'class'=>'form-control',
-        'placeholder'=>'Search Materials',
+        'placeholder'=>'Search Tests',
         ]) }}
     </div>
-    @if(Auth::user()->is_teacher==1)
-    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Material</button>
-    @endif
 </header>

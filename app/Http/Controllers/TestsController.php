@@ -19,11 +19,26 @@ class TestsController extends Controller
      */
     public function index()
     {
+        if(\Auth::user()->is_teacher==1) {
+            $user = \Auth::user()->name;
+            $tests = \DB::table("tests")->where("author", "=", $user)->paginate(10);
+            $courses = \DB::table("courses")->paginate(10);
+            return view('Backend.TeacherInterface.content.Tests.index', compact("tests"))->with("courses", $courses);
+        }
 
-        $user = \Auth::user()->name;
-        $tests = \DB::table("tests")->where("author","=",$user)->paginate(10);
-        $courses = \DB::table("courses")->paginate(10);
-        return view('Backend.TeacherInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
+        /*$user = \Auth::user()->name;*/
+        $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+        $courses=$courses->pluck('name')->toArray();
+
+        $tests = \DB::table('tests')
+            ->join('test_service', 'test_service.test_id', '=', 'tests.id')
+            ->where("tests.is_active","=",1 and function($query) use ($courses){
+            foreach ($courses as $course) {
+                $query->orWhereJsonContains('test_service.activate_for',$course);
+            }
+        })->paginate(10);
+
+        return view('Backend.StudentInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
     }
 
     /**
@@ -108,7 +123,7 @@ class TestsController extends Controller
     {
         $questions = \DB::table("questions")->where("test_id","=",$id)->paginate(10);
         $answers = \DB::table("answers")->paginate(10);
-        return view('Backend.TeacherInterface.content.Tests.index')->with("questions",$questions)->with("answers");
+        /*return view('Backend.TeacherInterface.content.Tests.index')->with("questions",$questions)->with("answers",$answers);*/
     }
 
     /**
@@ -165,6 +180,37 @@ class TestsController extends Controller
 
         return \Redirect::route("Tests");
 
+    }
+
+    public function testing($id){
+        $test_id = \DB::table("tests")->where("id","=",$id)->pluck("id");
+        $test_name = \DB::table("tests")->where("id","=",$id)->pluck("name");
+        $questions = \DB::table("questions")->where("test_id","=",$test_id)->paginate(1);
+        $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
+        $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
+        $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
+
+        $options = \DB::table("answers")->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+            }
+            })->paginate(json_decode($options_count,true)[0]);
+
+
+
+
+
+
+
+
+        return view("Backend.StudentInterface.content.Tests.testing")
+            ->with("test_id",$test_id)
+            ->with("test_name",$test_name)
+            ->with("questions",$questions)
+            ->with("questions_id",$questions_id)
+            ->with("options",$options)
+            ->with("questions_count",$questions_count)
+            ->with("options_count",$options_count);
     }
 
 }
