@@ -194,7 +194,7 @@ class TestsController extends Controller
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
-            })->get();
+            })->paginate(json_decode($options_count,true)[0]);
 
 
 
