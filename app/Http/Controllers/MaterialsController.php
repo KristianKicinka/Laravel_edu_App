@@ -69,7 +69,7 @@ class MaterialsController extends Controller
         /*Work with files*/
         $cover = $request->file('material_file_val');
         $extension = $cover->getClientOriginalExtension();
-        $destination_path = "materials/".$user."/".Input::get('coursesArray');
+        $destination_path = "materials/";
         \Storage::disk('public')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
 
         $material->filename = $cover->getFilename().'.'.$extension;
@@ -132,6 +132,6 @@ class MaterialsController extends Controller
     }
 
     public function download($file){
-        return response()->download(storage_path("app/public/materials".'\\'.$file));
+        return response()->download(storage_path("app/public/materials/".'\\'.$file));
     }
 }
