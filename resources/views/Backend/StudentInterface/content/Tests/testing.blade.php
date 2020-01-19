@@ -18,6 +18,7 @@ use App\Http\Controllers\TestsController;
 
     <div class="window bg-">
         <div class="container mt-lg-5 py-lg-4 px-4 my-4 shadow  bg-white rounded ">
+
             <header class=" modal-header">
                 <h1>{{ (json_decode($test_name,true)[0]) }}</h1>
             </header>
@@ -60,8 +61,7 @@ use App\Http\Controllers\TestsController;
     </div>
 @endsection
 <script>
-
-       var seconds = 120;
+       var seconds = 600;
        function secondsPassed() {
            var minutes = Math.round((seconds-30)/60);
            var rem_seconds = seconds % 60;
