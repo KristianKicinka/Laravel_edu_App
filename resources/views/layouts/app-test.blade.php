@@ -25,14 +25,14 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="bg-blue">
+<body onload="secondsPassed()" class="bg-blue">
 <div id="app">
    {{-- @if(Auth::check())
         @include('layouts.loggedUserNavbar')
     @else
         @include('layouts.unLoggedUser')
     @endif--}}
-    @include('layouts.testing-nav')
+    {{--@include('layouts.testing-nav')--}}
 
     <main >
         @yield('content')
@@ -64,6 +64,8 @@
 
 
 <script src="{{ asset('js/main.js') }}" defer></script>
+
+
 
 
 </body>
