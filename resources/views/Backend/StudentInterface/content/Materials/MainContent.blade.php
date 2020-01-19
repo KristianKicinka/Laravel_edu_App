@@ -39,7 +39,7 @@
                         <td>{{ $material->subject }}</td>
                         <td><a class="text-dark" href="{{ route('materialDownload', $material->filename) }}"><i class="fas fa-download pr-2"></i>{{ $material->original_filename }}</a></td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#descriptionModal_{{$material->id}}" >Description</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#descriptionModal_{{$material->id}}" >Show material</button>
                             @if(Auth::user()->is_teacher==1)
                             <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$material->id}}" >Edit</button>
                             <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$material->id}}">Delete</button>

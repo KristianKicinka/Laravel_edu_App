@@ -21,3 +21,11 @@ $(".js-example-templating").select2({
 });
 
 
+$(document).ready(function() {
+    $('#SummerText').summernote({
+        height: 350
+    });
+
+});
+
+

@@ -23,6 +23,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "bower": "^1.8.8"
+        "bower": "^1.8.8",
+        "summernote": "^0.8.15"
     }
 }

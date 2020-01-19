@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
                 <h4 class="modal-title" id="myModalLabel">New Material</h4>
@@ -13,7 +13,7 @@
                     {!! Form::label("material_name_label","Material Title: ") !!}
                     {!! Form::text("material_name_val",null,['placeholder'=>"Set the title of material",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                     {!! Form::label("material_content_label","Material content/description: ") !!}
-                    {!! Form::textarea("material_content_val",null,['placeholder'=>"Set the content or description",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::textarea("material_content_val",null,['placeholder'=>"Set the content or description",'class'=>'form-control','autofocus'=>true,"required"=>true,"id"=>"SummerText"]) !!}
                     {{--{!! Form::label("material_file_label","Choose extern file: ") !!}--}}
                     {!! Form::label("material_subject_label","Select subjects: ") !!}
                     <br>
