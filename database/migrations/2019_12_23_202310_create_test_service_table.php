@@ -15,7 +15,7 @@ class CreateTestServiceTable extends Migration
         Schema::create('test_service', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('test_id');
-            $table->time('duration');
+            $table->integer('duration');
             $table->double('percentage');
             $table->dateTime('expiration');
             $table->json('activate_for');

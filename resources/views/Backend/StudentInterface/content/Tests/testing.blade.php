@@ -21,6 +21,7 @@ use App\Http\Controllers\TestsController;
 
             <header class=" modal-header">
                 <h1>{{ (json_decode($test_name,true)[0]) }}</h1>
+                {{ json_decode($duration,true)[0]}}
             </header>
 
             {!! Form::open(["method"=>"post", "url"=>route('Testing',0)]) !!}
@@ -60,8 +61,9 @@ use App\Http\Controllers\TestsController;
         </div>
     </div>
 @endsection
+
 <script>
-       var seconds = 600;
+       var seconds = parseInt({!! $duration !!})*60;
        function secondsPassed() {
            var minutes = Math.round((seconds-30)/60);
            var rem_seconds = seconds % 60;
@@ -72,7 +74,7 @@ use App\Http\Controllers\TestsController;
 
            if (seconds==0){
                clearInterval(countdownTimer);
-               document.getElementById('countdown').innerHTML = "End";
+               document.getElementById('countdown').innerHTML = "Mission Failed!";
            }else {
                seconds--;
            }

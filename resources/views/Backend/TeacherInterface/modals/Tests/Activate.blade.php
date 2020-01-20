@@ -11,7 +11,7 @@
             {{csrf_field()}}
             <div class="modal-body">
                 {!! Form::label("duration_label","Set duration:") !!}
-                {!! Form::time("duration_val",null,['placeholder'=>"Set the time limit of the test",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::number("duration_val",null,['placeholder'=>"Set the time limit of the test in minutes",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 {!! Form::label("percentage_label","Set minimal percentage :") !!}
                 {!! Form::number("percentage_val",null,['placeholder'=>"Set minimal percentage to pass the test",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
                 {!! Form::label("expiration_label","Set the expiration of test :") !!}
