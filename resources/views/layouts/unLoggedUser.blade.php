@@ -70,7 +70,7 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-md shadow-sm " style="{border-top: 1px solid navajowhite; opacity: 70%; width: 200%; background-color:white; position: fixed;}" id="slide" >
+<nav class="navbar navbar-expand-md shadow-sm " style="{border-top: 1px solid navajowhite; opacity: 70%; width: 100%; background-color:white;}" id="slide" >
     <div class="container-fluid">
         <button class="navbar-toggler colapse-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -78,30 +78,35 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto nav-left-part">
+            <ul class="navbar-nav mr-auto nav-left-part" style="width: 100%;">
 
+                <p style="{color: #112134; font-size: 25px;font-weight: bold; width: 100%;}"><i class="fas fa-university" style="{color: #112134; font-size: 35px;margin-right: 1%;}"></i>Edu - Portal</p>
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto font-roboto nav-right-part" style="{position: absolute; color: #112134;}">
+            <ul class="navbar-nav ml-auto font-roboto nav-right-part" style="{position: absolute;}" id="second_Menu">
                 <!-- Authentication Links -->
 
                     <li class="nav-item active" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="nav-link" href="">Kontakt</a>
                     </li>
 
                         <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
                         >
-                            <a class="nav-link" href="">About</a>
+                            <a class="nav-link" href="">O nás</a>
                         </li>
                     <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
                     >
-                        <a class="nav-link" href="">More</a>
+                        <a class="nav-link" href="">Aktuality</a>
                     </li>
+                <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
+                >
+                    <a class="nav-link" href="">Predmety</a>
+                </li>
 
                     <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
                     >
-                        <a class="nav-link" href="">More</a>
+                        <a class="nav-link" href="">Newsletter</a>
                     </li>
 
 
@@ -109,13 +114,52 @@
         </div>
     </div>
 </nav>
+<div id="top-image">
+    <div id="left_text_info"></div>
+    <div id="right_text_info">
+        <div id="rounded_div"></div>
+        <p id="first_paragraph">Máš chuť sa vzdelávať, <br>
+        no nebaví ťa chodiť do školy?</p>
+
+        <p id="second_paragraph">
+            Skús náš vzdelávací portál.
+        </p>
+        <button class="btn btn-orange" style="{z-index: 100;}">Pridaj sa</button>
+    </div>
+
+<div id="bottom_statistics">
+
+    <p class="px-5 statistics_Text" >
+        <i class="fas fa-chart-line"></i>
+        75%
+    </p>
+    <p class="px-5 statistics_Text" >
+        <i class="far fa-clipboard"></i>
+        255 251
+    </p>
+    <p class="px-5 statistics_Text" >
+        <i class="fas fa-chalkboard-teacher"></i>
+        120
+    </p>
+    <p class="px-5 statistics_Text" >
+        <i class="fas fa-graduation-cap"></i>
+        750
+    </p>
+
+</div>
+    <div id="help_Div"></div>
+</div>
+
+<div id="statistics">
+
+</div>
 
 <script>
-    $(document).ready(function(){
+   /* $(document).ready(function(){
             $("#slide").animate({
                 right:'0%'
                 //height:'100px',
             },1000);
-    });
+    });*/
 </script>
 
