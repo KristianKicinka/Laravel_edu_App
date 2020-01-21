@@ -1,4 +1,13 @@
 @extends('layouts.app-test')
+
+<nav class="navbar navbar-expand-md navbar-light shadow-sm bg-orange py-2 ">
+    <div class="container-fluid pt-1">
+        <div class="text-center w-100">
+            <h4 id="countdown" class="timer"></h4>
+        </div>
+    </div>
+</nav>
+
 @section('content')
 
 <?php
@@ -9,8 +18,10 @@ use App\Http\Controllers\TestsController;
 
     <div class="window bg-">
         <div class="container mt-lg-5 py-lg-4 px-4 my-4 shadow  bg-white rounded ">
+
             <header class=" modal-header">
                 <h1>{{ (json_decode($test_name,true)[0]) }}</h1>
+                {{ json_decode($duration,true)[0]}}
             </header>
 
             {!! Form::open(["method"=>"post", "url"=>route('Testing',0)]) !!}
@@ -50,6 +61,28 @@ use App\Http\Controllers\TestsController;
         </div>
     </div>
 @endsection
+
+<script>
+       var seconds = parseInt({!! $duration !!})*60;
+       function secondsPassed() {
+           var minutes = Math.round((seconds-30)/60);
+           var rem_seconds = seconds % 60;
+           if (rem_seconds<10){
+               rem_seconds = "0"+rem_seconds;
+           }
+           document.getElementById('countdown').innerHTML = minutes+":"+rem_seconds;
+
+           if (seconds==0){
+               clearInterval(countdownTimer);
+               document.getElementById('countdown').innerHTML = "Mission Failed!";
+           }else {
+               seconds--;
+           }
+       }
+       var countdownTimer = setInterval('secondsPassed()',1000);
+
+
+</script>
 
 
 

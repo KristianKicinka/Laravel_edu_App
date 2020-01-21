@@ -1,5 +1,5 @@
 <div class="modal fade" id="descriptionModal_{{ $material->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
                 <h4 class="modal-title" id="myModalLabel">Description</h4>
@@ -8,7 +8,7 @@
 
                 {{csrf_field()}}
                 <div class="modal-body">
-                    <p>{{ $material->content }}</p>
+                    {!! ($material->content) !!}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

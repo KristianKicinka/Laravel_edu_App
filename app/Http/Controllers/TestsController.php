@@ -189,6 +189,7 @@ class TestsController extends Controller
         $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
         $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
         $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
+        $duration = \DB::table("test_service")->where("test_id","=",$test_id)->pluck("duration");
 
         $options = \DB::table("answers")->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
@@ -209,6 +210,7 @@ class TestsController extends Controller
             ->with("questions",$questions)
             ->with("questions_id",$questions_id)
             ->with("options",$options)
+            ->with("duration",$duration)
             ->with("questions_count",$questions_count)
             ->with("options_count",$options_count);
     }

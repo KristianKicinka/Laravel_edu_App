@@ -33,8 +33,6 @@
     text-decoration: none;
     color: white;
 }
-
-
 .side-nav>li:hover{
     background-color: #FCAD0E;
     z-index: 500;
