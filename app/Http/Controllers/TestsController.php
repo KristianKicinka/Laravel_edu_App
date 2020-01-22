@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use App\Question;
+use App\StudentAnswer;
 use App\Test;
 use App\TestService;
 use Illuminate\Http\Request;
@@ -185,7 +186,7 @@ class TestsController extends Controller
     public function testing($id){
         $test_id = \DB::table("tests")->where("id","=",$id)->pluck("id");
         $test_name = \DB::table("tests")->where("id","=",$id)->pluck("name");
-        $questions = \DB::table("questions")->where("test_id","=",$test_id)->paginate(1);
+        $questions = \DB::table("questions")->where("test_id","=",$test_id)->get();
         $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
         $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
         $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
@@ -195,7 +196,7 @@ class TestsController extends Controller
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
-            })->paginate(json_decode($options_count,true)[0]);
+            })->get();
 
 
 
@@ -213,6 +214,83 @@ class TestsController extends Controller
             ->with("duration",$duration)
             ->with("questions_count",$questions_count)
             ->with("options_count",$options_count);
+    }
+
+    public function saveResaults($id){
+
+        /*Saving to db*/
+        $user = \Auth::user();
+        $questions = \DB::table("questions")->where("test_id","=",$id)->get();
+        $questions_id = \DB::table("questions")->where("test_id","=",$id)->pluck("id");
+        $options = \DB::table("answers")->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+            }
+        })->get();
+
+
+        foreach ($questions as $question){
+            foreach ($options->where("question_id","=",$question->id) as $option){
+                $studentAnswer = new StudentAnswer();
+                $studentAnswer->user_id = $user->id;
+                $studentAnswer->test_id = $id;
+                $studentAnswer->answer_id = Input::get("option_id_$question->id".'_'."$option->id");
+                $studentAnswer->question_id = $question->id;
+                $studentAnswer->answer = Input::get("labelVal_$question->id".'_'."$option->id");
+                $studentAnswer->is_checked = Input::get("checkboxVal_$question->id".'_'."$option->id");
+                if ($studentAnswer->is_checked == 1){
+                    $student_answ_table = \DB::table("student_answers")
+                        ->where("user_id","=",$studentAnswer->user_id)
+                        ->where("test_id","=",$studentAnswer->test_id)
+                        ->where("answer_id","=",$studentAnswer->answer_id)->first();
+                    if(!$student_answ_table){
+                        $studentAnswer->save();
+                    }
+
+                }
+            }
+        }
+        /*Generating resaults*/
+        $answers = \DB::table("student_answers")->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+            }
+        })->get();
+        $points =0;
+        $point = 0;
+        $uncorrect =0;
+
+
+        foreach ($questions as $question){
+
+            foreach ($answers->where("question_id","=",$question->id) as $answer) {
+                $correctAnswer = \DB::table("answers")->where("answer", "=", $answer->answer)->get();
+
+
+
+                if ($correctAnswer[0]->id == $answer->answer_id && $correctAnswer[0]->is_correct==0){
+                    $uncorrect++;
+
+                }
+                if ($correctAnswer[0]->id == $answer->answer_id && $correctAnswer[0]->is_correct==1){
+                    $point++;
+                }
+                }
+            /*dd($uncorrect);*/
+            if ($uncorrect>0){
+                $uncorrect = 0;
+                $point = 0;
+            }
+            else{
+                $points= $points+$point;
+                $uncorrect = 0;
+                $point = 0;
+            }
+            }
+        $opt = $options->where("is_correct","=",1);
+        $max_points = count($opt);
+
+        return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points);
     }
 
 }

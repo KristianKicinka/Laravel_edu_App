@@ -57,6 +57,7 @@ Route::post('/users/delete/{id}', ['uses'=>'UsersController@destroy', 'as'=>'use
 /*Routes for Tests*/
 Route::get('/tests', ['uses'=>'TestsController@index', 'as'=>'Tests']);
 Route::get('/tests/testing/{id}',['uses'=>'TestsController@testing', 'as'=>'Testing']);
+Route::get('/tests/resaults/{id}',['uses'=>'TestsController@saveResaults', 'as'=>'saveResaults']);
 Route::get('/tests/testing/resaults/{id}',['uses'=>'TestsController@testingResaults', 'as'=>'Resaults']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
 Route::post('/tests/delete/{id}',['uses'=>'TestsController@destroy', 'as'=>'testDelete']);
