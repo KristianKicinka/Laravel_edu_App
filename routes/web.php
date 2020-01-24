@@ -57,7 +57,7 @@ Route::post('/users/delete/{id}', ['uses'=>'UsersController@destroy', 'as'=>'use
 /*Routes for Tests*/
 Route::get('/tests', ['uses'=>'TestsController@index', 'as'=>'Tests']);
 Route::get('/tests/testing/{id}',['uses'=>'TestsController@testing', 'as'=>'Testing']);
-Route::get('/tests/resaults/{id}',['uses'=>'TestsController@saveResaults', 'as'=>'saveResaults']);
+Route::get('/tests/results/{id}',['uses'=>'TestsController@saveResaults', 'as'=>'saveResaults']);
 Route::get('/tests/testing/resaults/{id}',['uses'=>'TestsController@testingResaults', 'as'=>'Resaults']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
 Route::post('/tests/delete/{id}',['uses'=>'TestsController@destroy', 'as'=>'testDelete']);
@@ -81,6 +81,11 @@ Route::get('/classrooms', ['uses'=>'CoursesController@index', 'as'=>'Classrooms'
 Route::post('/classrooms/create', ['uses'=>'CoursesController@create', 'as'=>'classroomCreate']);
 Route::post('/classrooms/edit/{id}', ['uses'=>'CoursesController@update', 'as'=>'classroomEdit']);
 Route::post('/classrooms/delete/{id}', ['uses'=>'CoursesController@destroy', 'as'=>'classroomDelete']);
+
+/*Routes for Results*/
+Route::get('/results', ['uses'=>'ResultsController@index', 'as'=>'Results']);
+Route::post('/result/edit/{id}', ['uses'=>'ResultsController@update', 'as'=>'resultEdit']);
+Route::post('/result/delete/{id}', ['uses'=>'ResultsController@destroy', 'as'=>'resultDelete']);
 
 
 
