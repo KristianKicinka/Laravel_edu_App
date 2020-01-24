@@ -24,18 +24,28 @@ use App\Http\Controllers\TestsController;
             </header>
 
             {{--{!! Form::open(["method"=>"get", "url"=>route('saveResaults',json_decode($test_id,true)[0])]) !!}--}}
+            {{csrf_field()}}
             <main class="modal-body">
+
                 <div class="row">
                     <div class="col-md-6">
 
                         <ul class="list-group ">
                             <li class="list-group-item">Your points : {{ $points }}</li>
                             <li class="list-group-item">Max points : {{ $max_points }}</li>
-                            <li class="list-group-item">Percentage : {{ ($points/$max_points)*100 }} %</li>
+                            <li class="list-group-item">Percentage : {{ round(($points/$max_points)*100 )}} %</li>
                         </ul>
+                        <button class="btn btn-orange mx-2 my-3" onclick="window.close()">Close</button>
                     </div>
                     <div class="col-md-6">
-                        <h2>Graph</h2>
+                        <h2>Score chart</h2>
+                        <div class="card rounded">
+                            <div class="card-body py-3 px-3">
+                                {!! $resaultGraph->container() !!}
+
+                            </div>
+                        </div>
+                        {!! $resaultGraph->script() !!}
                     </div>
                 </div>
             </main>
@@ -49,20 +59,19 @@ use App\Http\Controllers\TestsController;
     </div>
 @endsection
 
-{{--
 <script>
-       var seconds = parseInt({!! $duration !!})*60;
+       var seconds = 12*60;
        function secondsPassed() {
            var minutes = Math.round((seconds-30)/60);
            var rem_seconds = seconds % 60;
            if (rem_seconds<10){
                rem_seconds = "0"+rem_seconds;
            }
-           document.getElementById('countdown').innerHTML = minutes+":"+rem_seconds;
+           /*document.getElementById('countdown').innerHTML = minutes+":"+rem_seconds;*/
 
            if (seconds==0){
                clearInterval(countdownTimer);
-               document.getElementById('countdown').innerHTML = "Mission Failed!";
+              /* document.getElementById('countdown').innerHTML = "Mission Failed!";*/
            }else {
                seconds--;
            }
@@ -71,7 +80,6 @@ use App\Http\Controllers\TestsController;
 
 
 </script>
---}}
 
 
 

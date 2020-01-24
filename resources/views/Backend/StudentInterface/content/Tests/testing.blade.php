@@ -25,7 +25,8 @@ use App\Http\Controllers\TestsController;
 
             </header>
 
-            {!! Form::open(["method"=>"get", "url"=>route('saveResaults',json_decode($test_id,true)[0])]) !!}
+            {!! Form::open(["method"=>"get", "url"=>route('saveResaults',json_decode($test_id,true)[0]), 'id' => 'test_form']) !!}
+            {{ csrf_field() }}
             <main class="modal-body">
 
 
@@ -76,7 +77,8 @@ use App\Http\Controllers\TestsController;
 
            if (seconds==0){
                clearInterval(countdownTimer);
-               document.getElementById('countdown').innerHTML = "Mission Failed!";
+               document.getElementById("test_form").submit();
+              /* document.getElementById('countdown').innerHTML = "Mission Failed!";*/
            }else {
                seconds--;
            }

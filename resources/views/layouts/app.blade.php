@@ -46,10 +46,6 @@
     </div>
 
     <!-- Scripts -->
-    {{--<script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>--}}
 
     <script
             src="https://code.jquery.com/jquery-3.4.1.js"
@@ -64,12 +60,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js" defer></script>
-
-
-    {{--<link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="bower_components/select2/dist/js/select2.min.js"></script>--}}
-
-
 
     <script src="{{ asset('js/main.js') }}" defer></script>
 

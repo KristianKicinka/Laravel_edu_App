@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\Charts\TestResault;
 use App\Question;
+use App\Result;
 use App\StudentAnswer;
 use App\Test;
 use App\TestService;
+use ConsoleTVs\Charts\ChartsServiceProvider;
+use ConsoleTVs\Charts\Classes\C3\Chart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
+use ConsoleTVs\Charts;
 
 class TestsController extends Controller
 {
@@ -245,6 +250,14 @@ class TestsController extends Controller
                         ->where("answer_id","=",$studentAnswer->answer_id)->first();
                     if(!$student_answ_table){
                         $studentAnswer->save();
+                    }else{
+                        \DB::table("student_answers")
+                            ->where("user_id","=",$studentAnswer->user_id)
+                            ->where("test_id","=",$studentAnswer->test_id)
+                            ->delete();
+                        $studentAnswer->save();
+
+
                     }
 
                 }
@@ -290,7 +303,44 @@ class TestsController extends Controller
         $opt = $options->where("is_correct","=",1);
         $max_points = count($opt);
 
-        return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points);
+        $fillColors = [
+            "rgba(255, 158, 48, 0.8)",
+            "rgba(29,56,89, 0.8)",
+
+
+        ];
+        $percentage = round($points/$max_points*100);
+        $resaultGraph = new TestResault();
+        $resaultGraph->minimalist(false);
+        $resaultGraph->labels(["correct answers (%)","bad answers (%)"]);
+        $resaultGraph->dataset("Count of percents","pie",[$percentage,100-$percentage])->backgroundcolor($fillColors);
+
+
+
+        /*Saving data to results*/
+        $result = new Result();
+        $result->user_id = $user->id;
+        $result->test_id = $id;
+        $result->points = $points;
+        $result->percentage = round(($points/$max_points)*100);
+
+        $results_table = \DB::table("results")
+            ->where("user_id","=",$user->id)
+            ->where("test_id","=",$id)
+            ->first();
+        if(!$results_table){
+            $result->save();
+        }else{
+            \DB::table("results")
+                ->where("user_id","=",$user->id)
+                ->where("test_id","=",$id)
+                ->update(["points"=>$result->points,"percentage"=>$result->percentage]);
+        }
+
+
+
+
+        return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points)->with('resaultGraph',$resaultGraph);
     }
 
 }
