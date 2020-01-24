@@ -14,12 +14,12 @@
         </div>
         <div class="teacher-tests col-md-3 px-3 py-3 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ml-4">
             <h3>Your tests:</h3>
-            <p>count of tests :</p>
+            <p>count of tests : {{ $tests_count }}</p>
             <button class="btn btn-orange float-lg-right mt-3" onclick="window.location='{{ route('testCreate') }}'">Make new Test</button>
         </div>
         <div class="teacher-materials col-md-4 px-3 py-3 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ml-4">
             <h3>Your uploaded Materials:</h3>
-            <p>count of uploaded materials :</p>
+            <p>count of uploaded materials : {{ $materials_count }}</p>
             <button class="btn btn-blue float-lg-right mt-3" onclick="window.location='{{ route('Materials') }}'" >Make new Material</button>
         </div>
     </div>
