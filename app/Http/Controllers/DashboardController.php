@@ -26,9 +26,13 @@ class DashboardController extends Controller
     public function index()
     {
         if(\Auth::user()->is_teacher==1){
-            return view('Backend.TeacherInterface.content.Dashboard.index');
+            $tests_count = \DB::table("tests")->where("author","=",\Auth::user()->name)->count();
+            $materials_count = \DB::table("materials")->where("author","=",\Auth::user()->name)->count();
+            return view('Backend.TeacherInterface.content.Dashboard.index')->with("tests_count",$tests_count)->with("materials_count",$materials_count);
         }if(\Auth::user()->is_admin==1){
-        return view('Backend.AdminInterface.content.Dashboard.index');
+            $tests_count = \DB::table("test_servi")->where("author","=",\Auth::user()->name)->count();
+            $materials_count = \DB::table("materials")->where("author","=",\Auth::user()->name)->count();
+            return view('Backend.AdminInterface.content.Dashboard.index');
     }
 
         return view('Backend.StudentInterface.content.Dashboard.index');

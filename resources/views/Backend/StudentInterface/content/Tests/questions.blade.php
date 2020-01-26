@@ -16,6 +16,7 @@
 
             <main class="panel-main-content">
                 {{ Form::open(['method' =>"post","action"=>"TestsController@store"]) }}
+                {{ csrf_field() }}
                     {!! Form::hidden("name",$name) !!}
                     {!! Form::hidden("questions_count",$questions_count) !!}
                     {!! Form::hidden("options_count",$options_count) !!}

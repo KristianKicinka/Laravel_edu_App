@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\Charts\TestResault;
 use App\Question;
+use App\Result;
+use App\StudentAnswer;
 use App\Test;
 use App\TestService;
+use ConsoleTVs\Charts\ChartsServiceProvider;
+use ConsoleTVs\Charts\Classes\C3\Chart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
+use ConsoleTVs\Charts;
 
 class TestsController extends Controller
 {
@@ -185,7 +191,7 @@ class TestsController extends Controller
     public function testing($id){
         $test_id = \DB::table("tests")->where("id","=",$id)->pluck("id");
         $test_name = \DB::table("tests")->where("id","=",$id)->pluck("name");
-        $questions = \DB::table("questions")->where("test_id","=",$test_id)->paginate(1);
+        $questions = \DB::table("questions")->where("test_id","=",$test_id)->get();
         $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
         $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
         $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
@@ -195,7 +201,7 @@ class TestsController extends Controller
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
-            })->paginate(json_decode($options_count,true)[0]);
+            })->get();
 
 
 
@@ -213,6 +219,128 @@ class TestsController extends Controller
             ->with("duration",$duration)
             ->with("questions_count",$questions_count)
             ->with("options_count",$options_count);
+    }
+
+    public function saveResaults($id){
+
+        /*Saving to db*/
+        $user = \Auth::user();
+        $questions = \DB::table("questions")->where("test_id","=",$id)->get();
+        $questions_id = \DB::table("questions")->where("test_id","=",$id)->pluck("id");
+        $options = \DB::table("answers")->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+            }
+        })->get();
+
+
+        foreach ($questions as $question){
+            foreach ($options->where("question_id","=",$question->id) as $option){
+                $studentAnswer = new StudentAnswer();
+                $studentAnswer->user_id = $user->id;
+                $studentAnswer->test_id = $id;
+                $studentAnswer->answer_id = Input::get("option_id_$question->id".'_'."$option->id");
+                $studentAnswer->question_id = $question->id;
+                $studentAnswer->answer = Input::get("labelVal_$question->id".'_'."$option->id");
+                $studentAnswer->is_checked = Input::get("checkboxVal_$question->id".'_'."$option->id");
+                if ($studentAnswer->is_checked == 1){
+                    $student_answ_table = \DB::table("student_answers")
+                        ->where("user_id","=",$studentAnswer->user_id)
+                        ->where("test_id","=",$studentAnswer->test_id)
+                        ->where("answer_id","=",$studentAnswer->answer_id)->first();
+                    if(!$student_answ_table){
+                        $studentAnswer->save();
+                    }else{
+                        \DB::table("student_answers")
+                            ->where("user_id","=",$studentAnswer->user_id)
+                            ->where("test_id","=",$studentAnswer->test_id)
+                            ->delete();
+                        $studentAnswer->save();
+
+
+                    }
+
+                }
+            }
+        }
+        /*Generating resaults*/
+        $answers = \DB::table("student_answers")->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+            }
+        })->get();
+        $points =0;
+        $point = 0;
+        $uncorrect =0;
+
+
+        foreach ($questions as $question){
+
+            foreach ($answers->where("question_id","=",$question->id) as $answer) {
+                $correctAnswer = \DB::table("answers")->where("answer", "=", $answer->answer)->get();
+
+
+
+                if ($correctAnswer[0]->id == $answer->answer_id && $correctAnswer[0]->is_correct==0){
+                    $uncorrect++;
+
+                }
+                if ($correctAnswer[0]->id == $answer->answer_id && $correctAnswer[0]->is_correct==1){
+                    $point++;
+                }
+                }
+            /*dd($uncorrect);*/
+            if ($uncorrect>0){
+                $uncorrect = 0;
+                $point = 0;
+            }
+            else{
+                $points= $points+$point;
+                $uncorrect = 0;
+                $point = 0;
+            }
+            }
+        $opt = $options->where("is_correct","=",1);
+        $max_points = count($opt);
+
+        $fillColors = [
+            "rgba(255, 158, 48, 0.8)",
+            "rgba(29,56,89, 0.8)",
+
+
+        ];
+        $percentage = round($points/$max_points*100);
+        $resaultGraph = new TestResault();
+        $resaultGraph->minimalist(false);
+        $resaultGraph->labels(["correct answers (%)","bad answers (%)"]);
+        $resaultGraph->dataset("Count of percents","pie",[$percentage,100-$percentage])->backgroundcolor($fillColors);
+
+
+
+        /*Saving data to results*/
+        $result = new Result();
+        $result->user_id = $user->id;
+        $result->test_id = $id;
+        $result->points = $points;
+        $result->percentage = round(($points/$max_points)*100);
+
+        $results_table = \DB::table("results")
+            ->where("user_id","=",$user->id)
+            ->where("test_id","=",$id)
+            ->first();
+        if(!$results_table){
+            $result->save();
+        }else{
+            \DB::table("results")
+                ->where("user_id","=",$user->id)
+                ->where("test_id","=",$id)
+                ->update(["points"=>$result->points,"percentage"=>$result->percentage]);
+        }
+
+
+
+
+        return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points)->with('resaultGraph',$resaultGraph);
     }
 
 }

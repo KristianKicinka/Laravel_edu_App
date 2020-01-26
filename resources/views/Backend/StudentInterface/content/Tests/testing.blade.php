@@ -21,15 +21,17 @@ use App\Http\Controllers\TestsController;
 
             <header class=" modal-header">
                 <h1>{{ (json_decode($test_name,true)[0]) }}</h1>
-                {{ json_decode($duration,true)[0]}}
+
+
             </header>
 
-            {!! Form::open(["method"=>"post", "url"=>route('Testing',0)]) !!}
+            {!! Form::open(["method"=>"get", "url"=>route('saveResaults',json_decode($test_id,true)[0]), 'id' => 'test_form']) !!}
+            {{ csrf_field() }}
             <main class="modal-body">
 
 
                 @foreach($questions as $question)
-                    <div>
+                    <div class="py-2">
 
                         <h3>{{ $question->question }}</h3>
                         <div class="container py-2">
@@ -37,9 +39,11 @@ use App\Http\Controllers\TestsController;
                                 <div class="custom-checkbox px-2 py-2" >
                                     <div class="funkyradio">
                                         <div class="funkyradio-primary">
-
-                                            <input type="checkbox" name="checkbox" id="{{ "checkbox_$question->id._.$option->id" }}" />
-                                            <label for="{{ "checkbox_$question->id._.$option->id" }}">{{ $option->answer }}</label>
+                                            <input type="hidden" name="{{"checkboxVal_$question->id".'_'."$option->id" }}" value="0">
+                                            {!! Form::checkbox("checkboxVal_$question->id".'_'."$option->id",1,false,["id"=>"checkbox_$question->id".'_'."$option->id","type"=>"checkbox"]) !!}
+                                            <label name="{{"labelVal_$question->id".'_'."$option->id" }}" value="{!! $option->answer !!}" for="{{ "checkbox_$question->id".'_'."$option->id" }}" >{{ $option->answer }}</label>
+                                            <input type="hidden" name="{{"labelVal_$question->id".'_'."$option->id" }}" value="{!! $option->answer !!}">
+                                            <input type="hidden" name="{{"option_id_$question->id".'_'."$option->id" }}" value="{!! $option->id !!}">
 
                                         </div>
                                     </div>
@@ -53,7 +57,6 @@ use App\Http\Controllers\TestsController;
             </main>
             <footer class="modal-footer">
                 <div class="w-100 float-left">
-                    {{ $questions->links() }}
                 </div>
                 <button type="submit" class="btn btn-orange">Finish Test</button>
             </footer>
@@ -74,7 +77,8 @@ use App\Http\Controllers\TestsController;
 
            if (seconds==0){
                clearInterval(countdownTimer);
-               document.getElementById('countdown').innerHTML = "Mission Failed!";
+               document.getElementById("test_form").submit();
+              /* document.getElementById('countdown').innerHTML = "Mission Failed!";*/
            }else {
                seconds--;
            }

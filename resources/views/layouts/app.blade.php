@@ -32,7 +32,7 @@
 
 
 </head>
-<body>
+<body onload="display_ct();" >
     <div id="app">
         @if(Auth::check())
             @include('layouts.loggedUserNavbar')
@@ -46,10 +46,6 @@
     </div>
 
     <!-- Scripts -->
-    {{--<script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>--}}
 
     <script
             src="https://code.jquery.com/jquery-3.4.1.js"
@@ -65,13 +61,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js" defer></script>
 
-
-    {{--<link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="bower_components/select2/dist/js/select2.min.js"></script>--}}
-
-
-
     <script src="{{ asset('js/main.js') }}" defer></script>
+
+    <script>
+
+
+        function display_c(){
+            var refresh=1000; // Refresh rate in milli seconds
+            mytime=setTimeout('display_ct()',refresh)
+        }
+
+        function display_ct() {
+            var x = new Date()
+            // date part ///
+            var month=x.getMonth()+1;
+            var day=x.getDate();
+            var year=x.getFullYear();
+            if (month <10 ){month='0' + month;}
+            if (day <10 ){day='0' + day;}
+            var x3= day+'.'+month+'.'+year;
+
+            // time part //
+            var hour=x.getHours();
+            var minute=x.getMinutes();
+            var second=x.getSeconds();
+            if(hour <10 ){hour='0'+hour;}
+            if(minute <10 ) {minute='0' + minute; }
+            if(second<10){second='0' + second;}
+            var x3 = x3 + ' ' +  hour+':'+minute+':'+second
+            if(window.location.href=="{!! $url = route('Dashboard'); !!}"){
+                document.getElementById('ct').innerHTML = x;
+                display_c();
+            }
+
+        }
+    </script>
 
 
 </body>
