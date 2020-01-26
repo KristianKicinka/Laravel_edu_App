@@ -1,4 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <nav class="navbar navbar-expand-md navbar-blue shadow-sm bg-blue " style="{opacity: 80%; text-align: center;}">
     <div class="container-fluid">
@@ -93,7 +94,7 @@
 
                         <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
                         >
-                            <a class="nav-link" href="">O nás</a>
+                            <a class="nav-link" href="" style="{width: 57px;}">O nás</a>
                         </li>
                     <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
                     >
@@ -129,9 +130,9 @@
 
 <div id="bottom_statistics">
 
-    <p class="px-5 statistics_Text" >
+    <p class="px-5 statistics_Text">
         <i class="fas fa-chart-line"></i>
-        75%
+        <span id="count">75</span>%
     </p>
     <p class="px-5 statistics_Text" >
         <i class="far fa-clipboard"></i>
@@ -139,7 +140,7 @@
     </p>
     <p class="px-5 statistics_Text" >
         <i class="fas fa-chalkboard-teacher"></i>
-        120
+        <span id="">120</span>
     </p>
     <p class="px-5 statistics_Text" >
         <i class="fas fa-graduation-cap"></i>
@@ -151,9 +152,78 @@
 </div>
 
 <div id="statistics">
+        <div id="right_info">
+            <h1>O nás</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloremque earum expedita id odio quaerat quam quod repellendus ut? Consequuntur culpa explicabo facilis illum maxime minus odio qui sit voluptatibus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa dolore esse et id ipsam necessitatibus neque, odio repudiandae? Animi autem earum hic iste nihil perspiciatis provident quod rerum velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorem dolorum eligendi, enim esse explicabo fuga ipsum labore, magni necessitatibus, nostrum placeat quaerat quasi qui tempora tenetur unde voluptas voluptatum.</p>
+
+        </div>
+        <div id="left_info">
+            <i class="fas fa-question" id="left_question_solid"></i>
+            <i class="fas fa-question" id="right_question_solid"></i>
+
+        </div>
+</div>
+<div id="kurzy">
+    <h2>Kurzy</h2>
+
+    <div class="kurzy_main">
+        <div class="kurzy_left_icon">
+            <i class="fas fa-calculator"></i>
+            <p>Matematika</p>
+        </div>
+        <div class="kurzy_right_text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consectetur consequatur doloremque id magnam natus officiis omnis ut. Amet architecto dolore, doloribus eveniet hic ipsam libero omnis ratione vero. Ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt doloribus maxime officia! Ab architecto aspernatur delectus, dignissimos distinctio ea, illo in iste nostrum odio quis ratione rerum saepe. Molestias, velit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque exercitationem explicabo facere minus, molestiae nesciunt nulla quis repudiandae ullam. Autem esse expedita ipsa iste laboriosam minima molestiae nisi ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi, aspernatur atque commodi consequatur delectus deleniti ducimus esse eveniet facere fugit, ipsum maiores modi natus necessitatibus nisi repudiandae totam veritatis! Lorem ipsum dolor
+        </div>
+    </div>
+
+    <div class="kurzy_main">
+        <div class="kurzy_right_icon">
+            <i class="fas fa-graduation-cap"></i>
+            <p>Chémia</p>
+        </div>
+        <div class="kurzy_left_text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consectetur consequatur doloremque id magnam natus officiis omnis ut. Amet architecto dolore, doloribus eveniet hic ipsam libero omnis ratione vero. Ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt doloribus maxime officia! Ab architecto aspernatur delectus, dignissimos distinctio ea, illo in iste nostrum odio quis ratione rerum saepe. Molestias, velit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque exercitationem explicabo facere minus, molestiae nesciunt nulla quis repudiandae ullam. Autem esse expedita ipsa iste laboriosam minima molestiae nisi ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi, aspernatur atque commodi consequatur delectus deleniti ducimus esse eveniet facere fugit, ipsum maiores modi natus necessitatibus nisi repudiandae totam veritatis! Lorem ipsum dolor
+        </div>
+
+
+    </div>
+    <div class="kurzy_main">
+        <div class="kurzy_left_icon">
+            <i class="fas fa-calculator"></i>
+            <p>Matematika</p>
+        </div>
+        <div class="kurzy_right_text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consectetur consequatur doloremque id magnam natus officiis omnis ut. Amet architecto dolore, doloribus eveniet hic ipsam libero omnis ratione vero. Ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt doloribus maxime officia! Ab architecto aspernatur delectus, dignissimos distinctio ea, illo in iste nostrum odio quis ratione rerum saepe. Molestias, velit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque exercitationem explicabo facere minus, molestiae nesciunt nulla quis repudiandae ullam. Autem esse expedita ipsa iste laboriosam minima molestiae nisi ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi, aspernatur atque commodi consequatur delectus deleniti ducimus esse eveniet facere fugit, ipsum maiores modi natus necessitatibus nisi repudiandae totam veritatis! Lorem ipsum dolor
+        </div>
+    </div>
+
+    <div class="kurzy_main">
+        <div class="kurzy_right_icon">
+            <i class="fas fa-graduation-cap"></i>
+            <p>Chémia</p>
+        </div>
+        <div class="kurzy_left_text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consectetur consequatur doloremque id magnam natus officiis omnis ut. Amet architecto dolore, doloribus eveniet hic ipsam libero omnis ratione vero. Ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt doloribus maxime officia! Ab architecto aspernatur delectus, dignissimos distinctio ea, illo in iste nostrum odio quis ratione rerum saepe. Molestias, velit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque exercitationem explicabo facere minus, molestiae nesciunt nulla quis repudiandae ullam. Autem esse expedita ipsa iste laboriosam minima molestiae nisi ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi, aspernatur atque commodi consequatur delectus deleniti ducimus esse eveniet facere fugit, ipsum maiores modi natus necessitatibus nisi repudiandae totam veritatis! Lorem ipsum dolor
+        </div>
+
+
+    </div>
+
 
 </div>
 
+<div id="newsletter">
+    <h3>Chceš byť stále informovaný o novinkách na portáli?</h3>
+    <p>Prihlás sa na odber nášho newslettra</p>
+    <form action="">
+        <input type="email" name="email" placeholder="email@example.com" id="email">
+        <input type="submit" name="submit" value="Odoberať" id="submit" class="btn btn-orange">
+    </form>
+</div>
 <script>
    /* $(document).ready(function(){
             $("#slide").animate({
@@ -161,5 +231,43 @@
                 //height:'100px',
             },1000);
     });*/
+/*function myFunction() {*/
+    $('#count').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 4000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+/*}
+myFunction();*/
+
+/*   let start // set on the first step to the timestamp provided
+   const el = document.getElementById('count') // get the element
+   const final = parseInt(el.textContent, 10) // parse out the final number
+   const duration = 4000 // duration in ms
+   const step = ts => {
+       if (!start) {
+           start = ts
+       }
+       // get the time passed as a fraction of total duration
+       let progress = (ts - start) / duration
+
+       el.textContent = Math.floor(progress * final) // set the text
+       if (progress < 1) {
+           // if we're not 100% complete, request another animation frame
+           requestAnimationFrame(step)
+       }
+   }
+
+   // start the animation
+   requestAnimationFrame(step)*/
+
+
+
 </script>
 
