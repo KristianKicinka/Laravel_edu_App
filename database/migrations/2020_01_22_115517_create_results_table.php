@@ -17,6 +17,7 @@ class CreateResultsTable extends Migration
             $table->integer('user_id');
             $table->integer('test_id');
             $table->integer('points');
+            $table->integer('max_points');
             $table->double('percentage');
             $table->timestamps();
         });

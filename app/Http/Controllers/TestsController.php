@@ -35,14 +35,34 @@ class TestsController extends Controller
         /*$user = \Auth::user()->name;*/
         $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
         $courses=$courses->pluck('name')->toArray();
+        $test = \DB::table("tests")
+            ->join("results","results.test_id","=","tests.id")
+            ->where("tests.id","=","results.test_id")
+            ->get();
 
-        $tests = \DB::table('tests')
-            ->join('test_service', 'test_service.test_id', '=', 'tests.id')
-            ->where("tests.is_active","=",1 and function($query) use ($courses){
-            foreach ($courses as $course) {
-                $query->orWhereJsonContains('test_service.activate_for',$course);
-            }
-        })->paginate(10);
+        /*dd($test);*/
+
+        if($test==null){
+            $tests = \DB::table('tests')
+                ->join('test_service', 'test_service.test_id', '=', 'tests.id')
+                ->where("tests.is_active","=",1 and function($query) use ($courses){
+                        foreach ($courses as $course) {
+                            $query->orWhereJsonContains('test_service.activate_for',$course);
+                        }
+                    })->paginate(10);
+        }else{
+            $tests = \DB::table('tests')
+                ->join('test_service', 'test_service.test_id', '=', 'tests.id')
+                ->join('results','results.test_id','=','tests.id')
+                ->where("tests.is_active","=",1 and function($query) use ($courses){
+                        foreach ($courses as $course) {
+                            $query->orWhereJsonContains('test_service.activate_for',$course);
+                        }
+                    })->paginate(10);
+        }
+
+
+
 
         return view('Backend.StudentInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
     }
@@ -322,6 +342,7 @@ class TestsController extends Controller
         $result->user_id = $user->id;
         $result->test_id = $id;
         $result->points = $points;
+        $result->max_points = $max_points;
         $result->percentage = round(($points/$max_points)*100);
 
         $results_table = \DB::table("results")

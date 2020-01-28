@@ -37,7 +37,10 @@
                         <td>{{ $test->test_id }}</td>
                         <td>{{ $test->name }}</td>
                         <td>{{ $test->questions_count }}</td>
-                        <td>{{ "RES"." / ".$test->questions_count  }}</td>
+                        <td>@if($test->points){{
+                            $test->points." / ".$test->max_points
+                        }} @else {{ "0 / 0" }}</td>
+                        @endif
                         <td>
                             <button class="btn btn-blue" onclick="window.open('{{ route('Testing',$test->test_id) }}','_blank')">Take Test</button>
                         </td>
