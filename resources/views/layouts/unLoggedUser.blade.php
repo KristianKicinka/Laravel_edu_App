@@ -125,7 +125,7 @@
         <p id="second_paragraph">
             Skús náš vzdelávací portál.
         </p>
-        <button class="btn btn-orange" style="{z-index: 100;}">Pridaj sa</button>
+        <button class="btn btn-orange btn-lg" style="{z-index: 100;}">Pridaj sa</button>
     </div>
 
 <div id="bottom_statistics">
@@ -241,7 +241,7 @@
             <input type="email" name="email" placeholder="Email" class="contact_input">
             <input type="text" name="predmet" placeholder="Predmet" class="contact_input">
             <textarea name="text" id="" cols="30" rows="10" placeholder="Text..."></textarea>
-            <input type="submit" name="submit_contact" id="submit_contact" value="Odoslať" class="btn btn-orange">
+            <input type="submit" name="submit_contact" id="submit_contact" value="Odoslať" class="btn btn-orange btn-lg my-3">
         </form>
 
     </div>
@@ -257,6 +257,10 @@
         </div>
     </div>
 
+</div>
+
+<div id="footer">
+    <p>Designed by DK-Development Copyright {{ now()->year }}</p>
 </div>
 <script>
     // Initialize and add the map
