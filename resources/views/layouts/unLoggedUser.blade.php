@@ -15,7 +15,7 @@
         <p class="text-light" style="{font-size: 14px; margin-top: auto; margin-left: 32%;}">
             {{--<i class="fas fa-map-marked" style="font-size: 17px"></i>--}}
             <i class="fas fa-map-marker-alt" style="{font-size: 17px;}"></i>
-            Ľubovnianska 22, Stará Ľubovňa
+            Plzenská 1, Prešov
         </p>
         <p class="text-light px-5" style="font-size: 14px">
             <i class="fas fa-phone-square" style="font-size: 17px"></i>
@@ -71,7 +71,7 @@
     </div>
 </nav>
 
-<nav class="navbar navbar-expand-md shadow-sm " style="{border-top: 1px solid navajowhite; opacity: 70%; width: 100%; background-color:white;}" id="slide" >
+<nav class="navbar navbar-expand-md shadow-sm " style="{border-top: 1px solid navajowhite; width: 100%; background-color:white;}" id="slide" >
     <div class="container-fluid">
         <button class="navbar-toggler colapse-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -81,7 +81,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto nav-left-part" style="width: 100%;">
 
-                <p style="{color: #112134; font-size: 25px;font-weight: bold; width: 100%;}"><i class="fas fa-university" style="{color: #112134; font-size: 35px;margin-right: 1%;}"></i>Edu - Portal</p>
+                <p style="{color: #112134; font-size: 20px;font-weight: bold; width: 100%;}"><i class="fas fa-university" style="{color: #112134; font-size: 30px;margin-right: 1%;}"></i>Edu - Portal</p>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -216,15 +216,60 @@
 
 </div>
 
+
+
 <div id="newsletter">
     <h3>Chceš byť stále informovaný o novinkách na portáli?</h3>
     <p>Prihlás sa na odber nášho newslettra</p>
     <form action="">
-        <input type="email" name="email" placeholder="email@example.com" id="email">
+        <input type="email" name="email" placeholder="email@example.com" id="email_newsletter">
         <input type="submit" name="submit" value="Odoberať" id="submit" class="btn btn-orange">
     </form>
 </div>
+
+<div id="aktuality">
+    <h4>Aktuality</h4>
+</div>
+
+<div id="contact_us">
+    <div id="left_side_of_contact">
+
+
+    <h5>Kontakt</h5>
+    <div id="contact_us_form">
+        <form action="">
+            <input type="email" name="email" placeholder="Email" class="contact_input">
+            <input type="text" name="predmet" placeholder="Predmet" class="contact_input">
+            <textarea name="text" id="" cols="30" rows="10" placeholder="Text..."></textarea>
+            <input type="submit" name="submit_contact" id="submit_contact" value="Odoslať" class="btn btn-orange">
+        </form>
+
+    </div>
+    </div>
+    <div id="right_side_of_contact">
+    <div id="map">
+
+    </div>
+        <div id="contact_information">
+            <p><i class="fas fa-phone-square" style="{font-size: 17px; color: #FCAD0E;}"></i>+421 911 369 365</p>
+            <p><i class="fas fa-map-marker-alt" style="{font-size: 17px; color: #FCAD0E;}"></i>Plzenská 1, Prešov</p>
+
+        </div>
+    </div>
+
+</div>
 <script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var uluru = {lat: 48.990, lng: 21.247};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 16, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+
    /* $(document).ready(function(){
             $("#slide").animate({
                 right:'0%'
@@ -269,5 +314,8 @@ myFunction();*/
 
 
 
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB13Ioe9BT8AqK5tq26RWnjNd4zlnLA5OQ&callback=initMap">
 </script>
 
