@@ -37,7 +37,7 @@
                         <td>{{ $test->test_id }}</td>
                         <td>{{ $test->name }}</td>
                         <td>{{ $test->questions_count }}</td>
-                        <td>@if($test->points){{
+                        <td>@if(isset($test->points)){{
                             $test->points." / ".$test->max_points
                         }} @else {{ "0 / 0" }}</td>
                         @endif

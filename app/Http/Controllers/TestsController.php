@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
 use ConsoleTVs\Charts;
+use function MongoDB\BSON\toJSON;
 
 class TestsController extends Controller
 {
@@ -35,34 +36,16 @@ class TestsController extends Controller
         /*$user = \Auth::user()->name;*/
         $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
         $courses=$courses->pluck('name')->toArray();
-        $test = \DB::table("tests")
-            ->join("results","results.test_id","=","tests.id")
-            ->where("tests.id","=","results.test_id")
-            ->get();
 
-        /*dd($test);*/
-
-        if($test==null){
-            $tests = \DB::table('tests')
-                ->join('test_service', 'test_service.test_id', '=', 'tests.id')
-                ->where("tests.is_active","=",1 and function($query) use ($courses){
-                        foreach ($courses as $course) {
-                            $query->orWhereJsonContains('test_service.activate_for',$course);
-                        }
-                    })->paginate(10);
-        }else{
-            $tests = \DB::table('tests')
+        $tests = \DB::table('tests')
                 ->join('test_service', 'test_service.test_id', '=', 'tests.id')
                 ->join('results','results.test_id','=','tests.id')
+                ->where("results.user_id","=",\Auth::user()->id)
                 ->where("tests.is_active","=",1 and function($query) use ($courses){
                         foreach ($courses as $course) {
                             $query->orWhereJsonContains('test_service.activate_for',$course);
                         }
                     })->paginate(10);
-        }
-
-
-
 
         return view('Backend.StudentInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
     }
@@ -183,7 +166,18 @@ class TestsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \DB::table("answers")
+            ->join("questions","questions.id","=","answers.question_id")
+            ->where("questions.test_id","=",$id)->delete();
+        \DB::table("questions")->where("questions.test_id","=",$id)->delete();
+        \DB::table("results")->where("test_id","=",$id)->delete();
+        \DB::table("test_service")->where("test_id","=",$id)->delete();
+        \DB::table("student_answers")->where("test_id","=",$id)->delete();
+        \DB::table("tests")->where("id","=",$id)->delete();
+
+        return \Redirect::route("Tests");
+
+
     }
     /*This function is used for adding more options in question*/
 
@@ -203,6 +197,44 @@ class TestsController extends Controller
 
         $testService->save();
         \DB::table("tests")->where("id","=",$test_id)->update(["is_active"=>true]);
+
+        /*Creating results table*/
+
+        $max_points = \DB::table("answers")
+            ->select("answers.is_correct")
+            ->join("questions","questions.id","=","answers.question_id")
+            ->join("tests","tests.id","=","questions.test_id")
+            ->where("tests.id","=",$test_id)
+            ->where("answers.is_correct","=",1)->count();
+
+        $studentArray = json_decode($activate_for);
+       /* dd($studentArray);*/
+
+        $students = \DB::table('courses')
+            ->select("courses.students")
+            ->where( function($query) use ($studentArray){
+                    foreach ($studentArray as $activate) {
+                        $query->where('courses.name',"=",$activate);
+                    }
+                })->get();
+        $students = json_decode($students,true)[0];
+        $students = json_decode($students["students"],true);
+
+
+        foreach ($students as $student){
+            $result = new Result();
+            $result->user_id = \DB::table("users")->where("name","=",$student)->pluck("id")[0];
+            $result->test_id = $test_id;
+            $result->points = 0;
+            $result->max_points = $max_points;
+            $result->percentage = 0;
+
+            $result->save();
+        }
+
+
+
+
 
         return \Redirect::route("Tests");
 
@@ -332,31 +364,17 @@ class TestsController extends Controller
         $percentage = round($points/$max_points*100);
         $resaultGraph = new TestResault();
         $resaultGraph->minimalist(false);
-        $resaultGraph->labels(["correct answers (%)","bad answers (%)"]);
+        $resaultGraph->labels(["correct answers (%)","incorrect answers (%)"]);
         $resaultGraph->dataset("Count of percents","pie",[$percentage,100-$percentage])->backgroundcolor($fillColors);
 
 
 
         /*Saving data to results*/
-        $result = new Result();
-        $result->user_id = $user->id;
-        $result->test_id = $id;
-        $result->points = $points;
-        $result->max_points = $max_points;
-        $result->percentage = round(($points/$max_points)*100);
-
-        $results_table = \DB::table("results")
-            ->where("user_id","=",$user->id)
-            ->where("test_id","=",$id)
-            ->first();
-        if(!$results_table){
-            $result->save();
-        }else{
             \DB::table("results")
                 ->where("user_id","=",$user->id)
                 ->where("test_id","=",$id)
-                ->update(["points"=>$result->points,"percentage"=>$result->percentage]);
-        }
+                ->update(["points"=>$points,"percentage"=>$percentage]);
+
 
 
 
