@@ -31,7 +31,7 @@
                         @endforeach
                     </select>
                     <div class="py-2 px-2">
-                        {!! Form::file("material_file_val",['placeholder'=>"Insert File",'autofocus'=>true,"required"=>true]) !!}
+                        {!! Form::file("material_file_val",['placeholder'=>"Insert File",'autofocus'=>true,"required"=>true,"accept"=>".pdf"]) !!}
                     </div>
                     {!! Form::hidden("material_author_val",Auth::user()->name,["type"=>"hidden"]) !!}
 

@@ -14,7 +14,7 @@
                 {!! Form::label("actuality_description_label","Actuality") !!}
                 {!! Form::textarea("actuality_description_val",null,['placeholder'=>"Set the description of actuality",'class'=>'form-control','autofocus'=>true,"required"=>true,"id"=>"SummerText"]) !!}
                 <div class="py-2 px-2">
-                    {!! Form::file("actuality_image_val",['placeholder'=>"Choose Image",'autofocus'=>true,"required"=>true]) !!}
+                    {!! Form::file("actuality_image_val",['placeholder'=>"Choose Image",'autofocus'=>true,"required"=>true,"accept"=>"image/*"]) !!}
                 </div>
                 {!! Form::hidden("actuality_author_val",Auth::user()->name,["type"=>"hidden"]) !!}
 
