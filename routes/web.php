@@ -30,6 +30,10 @@ Route::get('/home', function () {
 
 
 Auth::routes();
+/*Actuality routes*/
+Route::get('/actualities', ['uses'=>'ActualityController@index', 'as'=>'Actuality']);
+Route::post('/actuality/create', ['uses'=>'ActualityController@store', 'as'=>'actualityCreate']);
+Route::post('/actuality/delete/{id}', ['uses'=>'ActualityController@destroy', 'as'=>'actualityDelete']);
 
 /*Teacher panel sidebar routes*/
 

@@ -2,41 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Actuality;
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
-class DashboardController extends Controller
+class ActualityController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        if(\Auth::user()->is_teacher==1){
-            $tests_count = \DB::table("tests")->where("author","=",\Auth::user()->name)->count();
-            $materials_count = \DB::table("materials")->where("author","=",\Auth::user()->name)->count();
-            return view('Backend.TeacherInterface.content.Dashboard.index')->with("tests_count",$tests_count)->with("materials_count",$materials_count);
-        }if(\Auth::user()->is_admin==1){
-            /*$tests_count = \DB::table("test_service")->where("author","=",\Auth::user()->name)->count();
-            $materials_count = \DB::table("materials")->where("author","=",\Auth::user()->name)->count();*/
-            return view('Backend.AdminInterface.content.Dashboard.index');
-    }
-
-        return view('Backend.StudentInterface.content.Dashboard.index');
-
+        $actualities = \DB::table("actuality")->paginate(10);
+        return view("Backend.AdminInterface.content.Actuality.index")->with("actualities",$actualities);
     }
 
     /**
@@ -46,7 +27,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -57,7 +38,24 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $actuality = new Actuality();
+        $actuality->title = Input::post("actuality_title_val");
+        $actuality->description = Input::post("actuality_description_val");
+
+        /*Work with files*/
+        $cover = $request->file('actuality_image_val');
+        $extension = $cover->getClientOriginalExtension();
+        $destination_path = "actualities/";
+        \Storage::disk('public')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
+
+        $actuality->filename = $cover->getFilename().'.'.$extension;
+        $actuality->original_filename = $cover->getClientOriginalName();
+        $actuality->author = Input::get('actuality_author_val');
+
+        $actuality->save();
+
+        return \Redirect::route("Actuality");
+
     }
 
     /**
@@ -102,6 +100,9 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $file = \DB::table("actuality")->select("filename")->where("id","=",$id)->get();
+        \Storage::delete(url("../storage/app/public/actualities/".$file));
+        \DB::table("actuality")->where("id","=",$id)->delete();
+        return \Redirect::route("Actuality");
     }
 }
