@@ -20,7 +20,7 @@ class PDFController extends Controller
         $data = [
             'test_name' => json_decode($testname,true)[0],
             'student_name'=>\Auth::user()->name,
-            'percentage'=>json_decode($percentage,true)[0].'%'
+            'percentage'=>json_decode($percentage,true)[0].' %'
             ];
         $pdf = PDF::loadView('layouts.certificate',$data)->setPaper('a4', 'landscape');
         return $pdf->download('certificate.pdf');
