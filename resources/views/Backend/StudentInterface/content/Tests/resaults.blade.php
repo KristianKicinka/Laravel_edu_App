@@ -35,6 +35,7 @@ use App\Http\Controllers\TestsController;
                             <li class="list-group-item">Max points : {{ $max_points }}</li>
                             <li class="list-group-item">Percentage : {{ round(($points/$max_points)*100 )}} %</li>
                         </ul>
+                        <button class="btn btn-blue mx-2 my-3" onclick="window.location='{{route('Certificate',$test_id) }}'">Get Certificate</button>
                         <button class="btn btn-orange mx-2 my-3" onclick="window.close()">Close</button>
                     </div>
                     <div class="col-md-6">

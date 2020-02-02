@@ -30,6 +30,8 @@ Route::get('/home', function () {
 
 
 Auth::routes();
+/*Routes for pdf*/
+Route::get('/pdf/{id}',['uses'=>'PDFController@index','as'=>'Certificate']);
 /*Actuality routes*/
 Route::get('/actualities', ['uses'=>'ActualityController@index', 'as'=>'Actuality']);
 Route::post('/actuality/create', ['uses'=>'ActualityController@store', 'as'=>'actualityCreate']);

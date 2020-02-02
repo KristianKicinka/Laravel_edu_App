@@ -375,11 +375,12 @@ class TestsController extends Controller
                 ->where("test_id","=",$id)
                 ->update(["points"=>$points,"percentage"=>$percentage]);
 
+            $testname = \DB::table("tests")->where("id","=",$id)->pluck("name");
 
 
 
 
-        return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points)->with('resaultGraph',$resaultGraph);
+        return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points)->with('resaultGraph',$resaultGraph)->with("test_id",$id);
     }
 
 }
