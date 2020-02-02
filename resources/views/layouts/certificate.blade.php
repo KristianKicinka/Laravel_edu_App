@@ -27,21 +27,21 @@
             font-family: Arial, sans-serif;
             font-size: 400%;
             top: 700px;
-            left:2200px;
+            left:1100px;
         }
         h3{
             position: fixed;
             font-family: Arial, sans-serif;
             font-size: 300%;
             top: 1200px;
-            left:1800px;
+            left:800px;
         }
         h4{
             position: fixed;
             font-family: Arial, sans-serif;
             font-size: 300%;
             top: 1500px;
-            left:2200px;
+            left:1200px;
         }
     </style>
 </head>
@@ -49,9 +49,9 @@
 <img src="{{ public_path("img/Certificate.jpg") }}" alt="" class="background">
 <div class="window">
 <h1>Certificate</h1>
-    <h2>{{ $test_name }}</h2>
-    <h3>{{ $student_name }}</h3>
-    <h4>{{ $percentage }}</h4>
+    <h2>{{ "Test name: ".$test_name }}</h2>
+    <h3>{{ "Student name: ".$student_name }}</h3>
+    <h4>{{ "Your percentage: ".$percentage }}</h4>
 </div>
 
 </body>
