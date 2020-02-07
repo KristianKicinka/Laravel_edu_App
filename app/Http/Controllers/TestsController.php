@@ -105,8 +105,9 @@ class TestsController extends Controller
 
             for ($i=1;$i<=$options_count;$i++){
                 $answer = new Answer();
-                $answer_ID = \DB::table("questions")->select("id")->where("question","=",$question_question)->pluck("id");
+                $answer_ID = \DB::table("questions")->select("id")->where("question","=",$question_question)->where("test_id","=",$test_ID)->pluck("id");
                 $answer_ID = json_decode($answer_ID);
+                $answer->test_id = $test_ID[0];
                 $answer->question_id = $answer_ID[0];
 
                 $answer->answer = $request->input("answer_".$index.$i);
@@ -201,6 +202,7 @@ class TestsController extends Controller
         /*Creating results table*/
 
         $max_points = \DB::table("answers")
+            ->where("answers.test_id","=",$test_id)
             ->select("answers.is_correct")
             ->join("questions","questions.id","=","answers.question_id")
             ->join("tests","tests.id","=","questions.test_id")
@@ -249,7 +251,7 @@ class TestsController extends Controller
         $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
         $duration = \DB::table("test_service")->where("test_id","=",$test_id)->pluck("duration");
 
-        $options = \DB::table("answers")->where(function($query) use ($questions_id){
+        $options = \DB::table("answers")->where("test_id","=",$test_id)->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
@@ -274,9 +276,7 @@ class TestsController extends Controller
     }
 
     public function saveResaults($id){
-        $points =0;
-        $point = 0;
-        $uncorrect =0;
+
 
         /*Saving to db*/
         $user = \Auth::user();
@@ -324,6 +324,10 @@ class TestsController extends Controller
                 $query->orWhere('question_id', $question_id);
             }
         })->get();
+
+        $points =0;
+        $point = 0;
+        $uncorrect =0;
 
 
         foreach ($questions as $question){
