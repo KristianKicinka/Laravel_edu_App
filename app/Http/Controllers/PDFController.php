@@ -23,7 +23,7 @@ class PDFController extends Controller
             'percentage'=>json_decode($percentage,true)[0].' %'
             ];
         $pdf = PDF::loadView('layouts.certificate',$data)->setPaper('a4', 'landscape');
-        return $pdf->download('certificate.pdf');
+        return $pdf->stream('certificate.pdf');
     }
 
     /**

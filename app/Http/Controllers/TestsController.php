@@ -274,6 +274,9 @@ class TestsController extends Controller
     }
 
     public function saveResaults($id){
+        $points =0;
+        $point = 0;
+        $uncorrect =0;
 
         /*Saving to db*/
         $user = \Auth::user();
@@ -316,14 +319,11 @@ class TestsController extends Controller
             }
         }
         /*Generating resaults*/
-        $answers = \DB::table("student_answers")->where(function($query) use ($questions_id){
+        $answers = \DB::table("student_answers")->where("user_id","=",\Auth::user()->id)->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
         })->get();
-        $points =0;
-        $point = 0;
-        $uncorrect =0;
 
 
         foreach ($questions as $question){
@@ -347,7 +347,7 @@ class TestsController extends Controller
                 $point = 0;
             }
             else{
-                $points= $points+$point;
+                $points = $points+$point;
                 $uncorrect = 0;
                 $point = 0;
             }
@@ -361,6 +361,7 @@ class TestsController extends Controller
 
 
         ];
+
         $percentage = round($points/$max_points*100);
         $resaultGraph = new TestResault();
         $resaultGraph->minimalist(false);
@@ -376,9 +377,6 @@ class TestsController extends Controller
                 ->update(["points"=>$points,"percentage"=>$percentage]);
 
             $testname = \DB::table("tests")->where("id","=",$id)->pluck("name");
-
-
-
 
         return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points)->with('resaultGraph',$resaultGraph)->with("test_id",$id);
     }

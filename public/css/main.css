@@ -630,9 +630,9 @@ a.page-link:hover{
 .carousel-indicators{
     bottom: -65px;
 }
-.btn:not(:disabled):not(.disabled){
+/*.btn:not(:disabled):not(.disabled){
     color: white;
-}
+}*/
 
 .controls-top a i{
     color: #112134;

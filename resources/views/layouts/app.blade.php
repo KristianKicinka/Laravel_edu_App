@@ -89,7 +89,7 @@
             if(minute <10 ) {minute='0' + minute; }
             if(second<10){second='0' + second;}
             var x3 = x3 + ' ' +  hour+':'+minute+':'+second
-            if(window.location.href=="{!! $url = route('Dashboard'); !!}"){
+            if(window.location.href=="{!! $url = route('Dashboard'); !!}"|| window.location.href=="{!! $url = url("/home"); !!}" ){
                 document.getElementById('ct').innerHTML = x;
                 display_c();
             }
