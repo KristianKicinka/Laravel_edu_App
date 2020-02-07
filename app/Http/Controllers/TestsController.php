@@ -319,7 +319,7 @@ class TestsController extends Controller
             }
         }
         /*Generating resaults*/
-        $answers = \DB::table("student_answers")->where("user_id","=",\Auth::user()->id)->where(function($query) use ($questions_id){
+        $answers = \DB::table("student_answers")->where("user_id","=",\Auth::user()->id)->where("test_id","=",$id)->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
@@ -332,8 +332,8 @@ class TestsController extends Controller
 
         foreach ($questions as $question){
 
-            foreach ($answers->where("question_id","=",$question->id) as $answer) {
-                $correctAnswer = \DB::table("answers")->where("answer", "=", $answer->answer)->get();
+            foreach ($answers->where("question_id","=",$question->id)->where("test_id","=",$id) as $answer) {
+                $correctAnswer = \DB::table("answers")->where("answer", "=", $answer->answer)->where("test_id","=",$id)->get();
 
 
 
