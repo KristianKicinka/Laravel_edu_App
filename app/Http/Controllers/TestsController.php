@@ -47,6 +47,7 @@ class TestsController extends Controller
                         }
                     })->paginate(10);
 
+
         return view('Backend.StudentInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
     }
 
