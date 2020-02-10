@@ -106,8 +106,9 @@ class TestsController extends Controller
 
             for ($i=1;$i<=$options_count;$i++){
                 $answer = new Answer();
-                $answer_ID = \DB::table("questions")->select("id")->where("question","=",$question_question)->pluck("id");
+                $answer_ID = \DB::table("questions")->select("id")->where("question","=",$question_question)->where("test_id","=",$test_ID)->pluck("id");
                 $answer_ID = json_decode($answer_ID);
+                $answer->test_id = $test_ID[0];
                 $answer->question_id = $answer_ID[0];
 
                 $answer->answer = $request->input("answer_".$index.$i);
@@ -202,6 +203,7 @@ class TestsController extends Controller
         /*Creating results table*/
 
         $max_points = \DB::table("answers")
+            ->where("answers.test_id","=",$test_id)
             ->select("answers.is_correct")
             ->join("questions","questions.id","=","answers.question_id")
             ->join("tests","tests.id","=","questions.test_id")
@@ -250,7 +252,7 @@ class TestsController extends Controller
         $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
         $duration = \DB::table("test_service")->where("test_id","=",$test_id)->pluck("duration");
 
-        $options = \DB::table("answers")->where(function($query) use ($questions_id){
+        $options = \DB::table("answers")->where("test_id","=",$test_id)->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
@@ -275,6 +277,7 @@ class TestsController extends Controller
     }
 
     public function saveResaults($id){
+
 
         /*Saving to db*/
         $user = \Auth::user();
@@ -317,11 +320,12 @@ class TestsController extends Controller
             }
         }
         /*Generating resaults*/
-        $answers = \DB::table("student_answers")->where(function($query) use ($questions_id){
+        $answers = \DB::table("student_answers")->where("user_id","=",\Auth::user()->id)->where("test_id","=",$id)->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
         })->get();
+
         $points =0;
         $point = 0;
         $uncorrect =0;
@@ -329,8 +333,8 @@ class TestsController extends Controller
 
         foreach ($questions as $question){
 
-            foreach ($answers->where("question_id","=",$question->id) as $answer) {
-                $correctAnswer = \DB::table("answers")->where("answer", "=", $answer->answer)->get();
+            foreach ($answers->where("question_id","=",$question->id)->where("test_id","=",$id) as $answer) {
+                $correctAnswer = \DB::table("answers")->where("answer", "=", $answer->answer)->where("test_id","=",$id)->get();
 
 
 
@@ -348,7 +352,7 @@ class TestsController extends Controller
                 $point = 0;
             }
             else{
-                $points= $points+$point;
+                $points = $points+$point;
                 $uncorrect = 0;
                 $point = 0;
             }
@@ -362,6 +366,7 @@ class TestsController extends Controller
 
 
         ];
+
         $percentage = round($points/$max_points*100);
         $resaultGraph = new TestResault();
         $resaultGraph->minimalist(false);
@@ -377,9 +382,6 @@ class TestsController extends Controller
                 ->update(["points"=>$points,"percentage"=>$percentage]);
 
             $testname = \DB::table("tests")->where("id","=",$id)->pluck("name");
-
-
-
 
         return view("Backend.StudentInterface.content.Tests.resaults")->with("points",$points)->with("max_points",$max_points)->with('resaultGraph',$resaultGraph)->with("test_id",$id);
     }
