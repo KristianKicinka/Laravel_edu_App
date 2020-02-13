@@ -54,6 +54,14 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    @if (count($errors) > 0)
+        <script>
+            $( document ).ready(function() {
+                $('#myModal').modal('toggle');
+            });
+        </script>
+    @endif
+
     {{--Select 2 plugin--}}
 
 
@@ -64,8 +72,6 @@
     <script src="{{ asset('js/main.js') }}" defer></script>
 
     <script>
-
-
         function display_c(){
             var refresh=1000; // Refresh rate in milli seconds
             mytime=setTimeout('display_ct()',refresh)

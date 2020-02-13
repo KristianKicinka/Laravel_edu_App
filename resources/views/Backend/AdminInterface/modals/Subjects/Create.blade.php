@@ -9,6 +9,15 @@
             {!! Form::open(["method"=>"post", "url"=>route('subjectCreate')]) !!}
             {{csrf_field()}}
             <div class="modal-body">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 {!! Form::label("subject_name_label","Subject name :") !!}
                 {!! Form::text("subject_name_val",null,['placeholder'=>"Set the name of subject",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 {!! Form::label("subject_shortcut_label","Subject shortcut :") !!}

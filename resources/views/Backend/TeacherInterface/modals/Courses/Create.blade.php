@@ -10,6 +10,15 @@
             {!! Form::open(["method"=>"post", "url"=>route('classroomCreate')]) !!}
             {{csrf_field()}}
             <div class="modal-body">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 {!! Form::label("class_name_label","Class name :") !!}
                 {!! Form::text("class_name_val",null,['placeholder'=>"Set the name of class",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 {!! Form::label("class_count_label","Users in class :") !!}

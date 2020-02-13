@@ -14,7 +14,7 @@ class CreateActualityTable extends Migration
     {
         Schema::create('actuality', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('title')->unique();
             $table->text('description');
             $table->string('filename');
             $table->string('original_filename');

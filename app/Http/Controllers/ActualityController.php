@@ -6,6 +6,7 @@ use App\Actuality;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 
 class ActualityController extends Controller
 {
@@ -33,13 +34,24 @@ class ActualityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'actuality_title_val.unique:actuality,title' => 'The :attribute is already used'
+        ];
+
+        $validate = \Validator::make($request->all(),[
+            'actuality_title_val'=> 'required|unique:actuality,title'
+        ], $messages)->validated();
+
+
         $actuality = new Actuality();
-        $actuality->title = Input::post("actuality_title_val");
+        $actuality->title = $validate['actuality_title_val'];
         $actuality->description = Input::post("actuality_description_val");
 
         /*Work with files*/

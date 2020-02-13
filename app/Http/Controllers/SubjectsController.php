@@ -26,13 +26,22 @@ class SubjectsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function create()
+    public function create(Request $request)
     {
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'subject_name_val.unique:subjects,name' => 'The :attribute is already used'
+        ];
+
+        $validate = \Validator::make($request->all(),[
+            'subject_name_val'=> 'required|unique:subjects,name'
+        ], $messages)->validated();
         $subject = new Subject;
 
-        $subject->name = Input::get('subject_name_val');
+        $subject->name = $validate['subject_name_val'];
         $subject->shortcut = Input::get('subject_shortcut_val');
         $subject->description = Input::get('subject_description_val');
         $subject->save();
@@ -68,12 +77,23 @@ class SubjectsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @param \Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function edit($id)
+    public function edit($id,Request $request)
     {
-        $name = Input::get('subject_name_val');
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'subject_name_val.unique:subjects,name' => 'The :attribute is already used'
+        ];
+
+        $validate = \Validator::make($request->all(),[
+            'subject_name_val'=> 'required|unique:subjects,name'
+        ], $messages)->validated();
+        $subject = new Subject;
+
+        $name = $validate['subject_name_val'];
         $shortcut = Input::get('subject_shortcut_val');
         $description = Input::get('subject_description_val');
         DB::table("subjects")->where("id","=",$id)->update(["name"=>$name,"shortcut"=>$shortcut,"description"=>$description]);
