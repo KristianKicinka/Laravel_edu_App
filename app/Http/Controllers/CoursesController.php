@@ -36,14 +36,24 @@ class CoursesController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param \Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function create()
+    public function create(Request $request)
     {
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'class_name_val.unique:courses,name' => 'The :attribute is already used'
+        ];
+
+        $validate = \Validator::make($request->all(),[
+            'class_name_val'=> 'required|unique:courses,name'
+        ], $messages)->validated();
+
         $course = new Course;
         $user = Auth::user();
 
-        $course->name = Input::get('class_name_val');
+        $course->name = $validate['class_name_val'];
         $course->count_of_students = Input::get('class_count_val');
         $course->subject = json_encode(Input::get('subjectsArray'));
         $course->students = json_encode(Input::get('studentsArray'));

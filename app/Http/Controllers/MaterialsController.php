@@ -54,14 +54,25 @@ class MaterialsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'material_name_val.unique:materials,title' => 'The :attribute is already used'
+        ];
+
+        $validate = \Validator::make($request->all(),[
+            'material_name_val'=> 'required|unique:materials,title'
+        ], $messages)->validated();
+
+
         $user = \Auth::user()->name;
         $material = new Material();
-        $material->title = Input::get('material_name_val');
+        $material->title = $validate['material_name_val'];
         $material->content = Input::get('material_content_val');
         $material->subject = Input::get('subjectsArray');
         $material->class = json_encode(Input::get('coursesArray'));

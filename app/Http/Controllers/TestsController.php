@@ -63,7 +63,17 @@ class TestsController extends Controller
 
     public function questions(Request $request)
     {
-        $name = $request->input("testNameVal");
+
+        /*Validation*/
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'testNameVal.unique:tests,name' => 'The :attribute is already used'
+        ];
+
+        $validate = \Validator::make($request->all(),[
+            'testNameVal'=> 'required|unique:tests,name'
+        ], $messages)->validated();
+        $name = $validate['testNameVal'];
         $questions_count = $request->input("testQuestionsVal");
         $options_count = $request->input("testOptionsVal");
        return view('Backend.TeacherInterface.content.Tests.questions')->with("questions_count",$questions_count)->with("options_count",$options_count)->with("name",$name);
@@ -71,17 +81,17 @@ class TestsController extends Controller
     }
 
 
-
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
         $test = new Test();
-        $name = $request->input("name");
+        $name = $request->input('name');
         $questions_count = $request->input("questions_count");
         $options_count = $request->input("options_count");
 

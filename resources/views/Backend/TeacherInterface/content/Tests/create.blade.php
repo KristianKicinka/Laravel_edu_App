@@ -22,8 +22,17 @@ use App\Http\Controllers\TestsController;
                         <div class="label form-group col-md-6">
                             {{ Form::open(['method' =>"post","action"=>"TestsController@questions"]) }}
                             <h3>Basic info about test</h3>
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="test-name py-2">
-                                {{ Form::label("testName","Tests") }}
+                                {{ Form::label("testName","Test name") }}
                                 {{ Form::text("testNameVal",null,['placeholder'=>" Set the test name",'class'=>'form-control', "required"=>"true",'autofocus'=>true ]) }}
                             </div>
 

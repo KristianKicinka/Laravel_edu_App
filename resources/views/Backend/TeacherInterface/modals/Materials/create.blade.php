@@ -10,6 +10,15 @@
             {!! Form::open(["method"=>"post", "url"=>route('materialCreate'), "enctype"=>"multipart/form-data"]) !!}
                 {{csrf_field()}}
                 <div class="modal-body">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     {!! Form::label("material_name_label","Material Title: ") !!}
                     {!! Form::text("material_name_val",null,['placeholder'=>"Set the title of material",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                     {!! Form::label("material_content_label","Material content/description: ") !!}

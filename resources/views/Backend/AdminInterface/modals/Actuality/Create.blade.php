@@ -9,8 +9,18 @@
             {!! Form::open(["method"=>"post", "url"=>route('actualityCreate'),"enctype"=>"multipart/form-data"]) !!}
             {{csrf_field()}}
             <div class="modal-body">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 {!! Form::label("actuality_title_label","Actuality title :") !!}
                 {!! Form::text("actuality_title_val",null,['placeholder'=>"Set the title of actuality",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+
                 {!! Form::label("actuality_description_label","Actuality") !!}
                 {!! Form::textarea("actuality_description_val",null,['placeholder'=>"Set the description of actuality",'class'=>'form-control','autofocus'=>true,"required"=>true,"id"=>"SummerText"]) !!}
                 <div class="py-2 px-2">

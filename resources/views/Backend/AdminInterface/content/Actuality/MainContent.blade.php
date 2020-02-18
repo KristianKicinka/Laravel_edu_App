@@ -20,6 +20,7 @@
                 @include("Backend.AdminInterface.modals.Actuality.Delete")
             @endforeach
 
+
             <div class="container-fluid py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block w-100">
                 <table class="table table-bordered">
                     <thead>
