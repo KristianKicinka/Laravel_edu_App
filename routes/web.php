@@ -13,9 +13,8 @@
 
 use App\Http\Controllers\SettingsController;
 
-Route::get('/', function () {
-    return view('Frontend.pages.index');
-});
+
+Route::get('/',['uses'=>'MainController@index','as'=>'Index']);
 Route::get('/home', function () {
     if (Auth::user()->is_teacher==1){
         return view('Backend.TeacherInterface.content.Dashboard.index');
@@ -92,6 +91,10 @@ Route::post('/classrooms/delete/{id}', ['uses'=>'CoursesController@destroy', 'as
 Route::get('/results', ['uses'=>'ResultsController@index', 'as'=>'Results']);
 Route::post('/result/edit/{id}', ['uses'=>'ResultsController@update', 'as'=>'resultEdit']);
 Route::post('/result/delete/{id}', ['uses'=>'ResultsController@destroy', 'as'=>'resultDelete']);
+
+/*Routes for search*/
+Route::post('/searchCourses',['uses' => 'SearchControllers@courses', 'as' => 'courses']);
+Route::post('/searchMaterials',['uses' => 'SearchControllers@materials', 'as' => 'materials']);
 
 
 
