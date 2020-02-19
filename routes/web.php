@@ -99,5 +99,7 @@ Route::post('/searchStudents',['uses'=>'SearchControllers@students', 'as' => 'st
 Route::post('/searchTests',['uses'=>'SearchControllers@tests', 'as' => 'tests']);
 Route::post('/searchResults',['uses'=>'SearchControllers@results', 'as' => 'results']);
 
+Route::post('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender']);
+
 
 
