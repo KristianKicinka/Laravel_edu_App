@@ -197,13 +197,7 @@ class SearchControllers extends Controller
 
 
             if (($_REQUEST['searchResults']) != null ){
-              /*  $results = DB::table('results')
-                    ->select('*')
-                    ->where("name", 'Like','%'.$search.'%')
-                    ->orWhere('email','Like','%'.$search.'%')
-                    ->where('is_teacher',0)
-                    ->where('is_admin',0)
-                    ->paginate(5);*/
+
 
                 $results = \DB::table("results")
                     ->join('users','users.id','=','results.user_id')
