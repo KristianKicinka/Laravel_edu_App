@@ -95,6 +95,9 @@ Route::post('/result/delete/{id}', ['uses'=>'ResultsController@destroy', 'as'=>'
 /*Routes for search*/
 Route::post('/searchCourses',['uses' => 'SearchControllers@courses', 'as' => 'courses']);
 Route::post('/searchMaterials',['uses' => 'SearchControllers@materials', 'as' => 'materials']);
+Route::post('/searchStudents',['uses'=>'SearchControllers@students', 'as' => 'students']);
+Route::post('/searchTests',['uses'=>'SearchControllers@tests', 'as' => 'tests']);
+Route::post('/searchResults',['uses'=>'SearchControllers@results', 'as' => 'results']);
 
 
 

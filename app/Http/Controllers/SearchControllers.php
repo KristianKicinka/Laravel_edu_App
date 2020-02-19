@@ -155,4 +155,142 @@ class SearchControllers extends Controller
     }
 
 
+    public function students(){
+        if(($_REQUEST['searchStudents']) != null){
+            if (($_REQUEST['searchStudents']) != null){
+                $search = $_REQUEST['searchStudents'];
+            }
+
+
+            if (($_REQUEST['searchStudents']) != null ){
+                $users = DB::table('users')
+                    ->select('*')
+                    ->where("name", 'Like','%'.$search.'%')
+                    ->orWhere('email','Like','%'.$search.'%')
+                    ->where('is_teacher',0)
+                    ->where('is_admin',0)
+                    ->paginate(5);
+
+                $subjects = DB::table("subjects")->paginate(10);
+                $courses = DB::table('courses')->paginate(10);
+
+                return view("Backend.TeacherInterface.content.Students.index",compact("users"),compact("subjects"))->with("courses",$courses);
+            }
+            else{
+                $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
+                return view("Backend.TeacherInterface.content.Students.index", compact("subjects"),compact("courses"))->with("users",$users);
+
+            }
+        }
+        $subjects = DB::table("subjects")->paginate(10);
+        $courses = DB::table('courses')->paginate(10);
+        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin',0)->paginate(10);
+        return view("Backend.TeacherInterface.content.Students.index", compact("subjects"), compact("courses"))->with("users",$users);
+    }
+
+
+    public function results(){
+        if(($_REQUEST['searchResults']) != null){
+            if (($_REQUEST['searchResults']) != null){
+                $search = $_REQUEST['searchResults'];
+            }
+
+
+            if (($_REQUEST['searchResults']) != null ){
+              /*  $results = DB::table('results')
+                    ->select('*')
+                    ->where("name", 'Like','%'.$search.'%')
+                    ->orWhere('email','Like','%'.$search.'%')
+                    ->where('is_teacher',0)
+                    ->where('is_admin',0)
+                    ->paginate(5);*/
+
+                $results = \DB::table("results")
+                    ->join('users','users.id','=','results.user_id')
+                    ->join('tests','tests.id','=','results.test_id')
+                    ->join('test_service',"test_service.test_id","=","results.test_id")
+                    ->select(
+                        ["results.id AS id",
+                            "users.name AS user_name",
+                            "test_service.activate_for AS activate_for",
+                            "tests.name AS test_name",
+                            "results.points AS points",
+                            "results.percentage AS percentage"])
+                    ->where('users.name','Like','%'.$search.'%')
+                    ->orWhere('test_service.activate_for','Like','%'.$search.'%')
+                    ->orWhere('tests.name','Like','%'.$search.'%')
+                    ->orWhere('results.points','Like','%'.$search.'%')
+                    ->orWhere('results.percentage','Like','%'.$search.'%')
+                    ->paginate(10);
+
+
+                return view("Backend.TeacherInterface.content.Results.index",compact("results"));
+            }
+            else{
+                $results = \DB::table("results")
+                    ->join('users','users.id','=','results.user_id')
+                    ->join('tests','tests.id','=','results.test_id')
+                    ->join('test_service',"test_service.test_id","=","results.test_id")
+                    ->select(
+                        ["results.id AS id",
+                            "users.name AS user_name",
+                            "test_service.activate_for AS activate_for",
+                            "tests.name AS test_name",
+                            "results.points AS points",
+                            "results.percentage AS percentage"])
+                    ->paginate(10);
+                return view("Backend.TeacherInterface.content.Results.index", compact("results"));
+
+            }
+        }
+
+        $results = \DB::table("results")
+            ->join('users','users.id','=','results.user_id')
+            ->join('tests','tests.id','=','results.test_id')
+            ->join('test_service',"test_service.test_id","=","results.test_id")
+            ->select(
+                ["results.id AS id",
+                    "users.name AS user_name",
+                    "test_service.activate_for AS activate_for",
+                    "tests.name AS test_name",
+                    "results.points AS points",
+                    "results.percentage AS percentage"])
+            ->paginate(10);
+        return view("Backend.TeacherInterface.content.Results.index", compact("results"));
+    }
+
+
+    public function tests(){
+        if(($_REQUEST['searchTests']) != null){
+            if (($_REQUEST['searchTests']) != null){
+                $search = $_REQUEST['searchTests'];
+            }
+
+
+            if (($_REQUEST['searchTests']) != null ){
+                $tests = DB::table('tests')
+                    ->select('*')
+                    ->where("name", 'Like','%'.$search.'%')
+                    ->orWhere('options_count','Like','%'.$search.'%')
+                    ->orWhere('questions_count','Like','%'.$search.'%')
+                    ->paginate(5);
+
+                $subjects = DB::table("subjects")->paginate(10);
+                $courses = DB::table('courses')->paginate(10);
+
+                return view("Backend.TeacherInterface.content.Tests.index",compact("tests"),compact("subjects"))->with("courses",$courses);
+            }
+            else{
+                $tests = DB::table('tests')->paginate(10);
+                return view("Backend.TeacherInterface.content.Tests.index", compact("subjects"),compact("courses"))->with("tests",$tests);
+
+            }
+        }
+        $subjects = DB::table("subjects")->paginate(10);
+        $courses = DB::table('courses')->paginate(10);
+        $tests = DB::table('tests')->paginate(10);
+        return view("Backend.TeacherInterface.content.Tests.index", compact("subjects"),compact("courses"))->with("tests",$tests);
+    }
+
+
 }

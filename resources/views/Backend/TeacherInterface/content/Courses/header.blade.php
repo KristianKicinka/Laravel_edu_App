@@ -3,7 +3,7 @@
         {{Form::open(["method"=>"post", "url"=>route('courses')])}}
         {{Form::search('searchCourses',null,[
         'class'=>'form-control search_everything',
-        'placeholder'=>'Search Materials',
+        'placeholder'=>'Search Courses',
         ])}}
         {{--Form::submit('Search',[
         'class' =>'btn btn-orange',
@@ -11,8 +11,8 @@
         ])}}--}}
         {{Form::submit('Search',[
         'class' =>'btn btn-orange submit_button_everywhere',
-        ]),
-        form::close()}}
+        ])}}
+        {{Form::close()}}
     </div>
     <button class="btn btn-blue float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> New Course</button>
 </header>
