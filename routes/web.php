@@ -103,3 +103,5 @@ Route::post('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender'
 
 
 
+
+

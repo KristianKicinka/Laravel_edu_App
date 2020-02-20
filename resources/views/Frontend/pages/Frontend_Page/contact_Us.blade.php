@@ -4,7 +4,7 @@
 
         <h5>Kontakt</h5>
         <div id="contact_us_form">
-            <form action="">
+            <form action="{{ url('/contact') }}">
                 <input type="email" name="email" placeholder="Email" class="contact_input">
                 <input type="text" name="predmet" placeholder="Predmet" class="contact_input">
                 <textarea name="text" id="" cols="30" rows="10" placeholder="Text..."></textarea>
