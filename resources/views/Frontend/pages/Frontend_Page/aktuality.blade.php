@@ -21,10 +21,15 @@
             <!--/.Controls-->
 
             <!--Indicators-->
+
             <ol class="carousel-indicators">
-                <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-                <li data-target="#multi-item-example" data-slide-to="1"></li>
-                <li data-target="#multi-item-example" data-slide-to="2"></li>
+                @for($i=0;$i<count($actualities)/3;$i=$i+1)
+                    @if($i==0)
+                        <li data-target="#multi-item-example" data-slide-to="{{ $i }}" class="active"></li>
+                    @else
+                        <li data-target="#multi-item-example" data-slide-to="{{ $i }}"></li>
+                    @endif
+                @endfor
             </ol>
             <!--/.Indicators-->
 
