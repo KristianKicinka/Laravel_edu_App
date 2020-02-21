@@ -19,21 +19,17 @@
                     <a class="nav-link" onclick="(document.getElementById('contact_us')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">Kontakt</a>
                 </li>
 
-                <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-                >
-                    <a class="nav-link" onclick="(document.getElementById('statistics')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">O nás</a>
+                <li class="nav-item active" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
+                    <a class="nav-link" onclick="(document.getElementById('statistics')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">O portáli</a>
                 </li>
-                <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-                >
+                <li class="nav-item active" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
                     <a class="nav-link" onclick="(document.getElementById('aktuality')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;" >Aktuality</a>
                 </li>
-                <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-                >
+                <li class="nav-item active" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
                     <a class="nav-link" onclick="(document.getElementById('kurzy')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;" >Predmety</a>
                 </li>
 
-                <li class="nav-item active" style="{}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-                >
+                <li class="nav-item active" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
                     <a class="nav-link" onclick="(document.getElementById('newsletter')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">Newsletter</a>
                 </li>
 
