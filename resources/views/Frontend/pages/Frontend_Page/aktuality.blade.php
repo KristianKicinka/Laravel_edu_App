@@ -30,6 +30,7 @@
 
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
+                {{--{{ dd($actualities) }}--}}
                 @for($i=0;$i<count($actualities);$i=$i+3)
                     @if($i!=0)
                         <div class="carousel-item">
