@@ -34,10 +34,12 @@
                 @for($i=0;$i<count($actualities);$i=$i+3)
                     @if($i!=0)
                         <div class="carousel-item">
+                    @else
+                                <div class="carousel-item active">
                     @endif
 
                     <!--First slide-->
-                        <div class="carousel-item active">
+
 
                             <div class="row">
                                 <div class="col-md-4">
