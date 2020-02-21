@@ -4,12 +4,12 @@
 
         <h5>Kontakt</h5>
         <div id="contact_us_form">
-            <form action="{{ url('/contact') }}">
+            {!! Form::open(["method"=>"post", "url"=>route('sendContactMail'),"enctype"=>"multipart/form-data"]) !!}
                 <input type="email" name="email" placeholder="Email" class="contact_input">
                 <input type="text" name="predmet" placeholder="Predmet" class="contact_input">
-                <textarea name="text" id="" cols="30" rows="10" placeholder="Text..."></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Text..."></textarea>
                 <input type="submit" name="submit_contact" id="submit_contact" value="Odoslať" class="btn btn-orange btn-lg my-3">
-            </form>
+            {!! Form::close() !!}
 
         </div>
     </div>

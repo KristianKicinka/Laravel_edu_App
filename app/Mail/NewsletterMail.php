@@ -2,26 +2,23 @@
 
 namespace App\Mail;
 
-use http\Env\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactMail extends Mailable
+class NewsletterMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $data;
 
     /**
      * Create a new message instance.
      *
-     * @param \Request $request
+     * @return void
      */
     public function __construct($request)
     {
         $this->request = $request;
-
     }
 
     /**
@@ -31,9 +28,8 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->request['predmet'])
-                    ->from($this->request['email'])
-                    ->view('Frontend.pages.Frontend_Page.mail_tmp')
-                    ->with('request',$this->request);
+        return $this->subject('Edu-App Newsletter')
+            ->from('testemailsending29@gmail.com')
+            ->view('Frontend.pages.Frontend_Page.newsletter_mail');
     }
 }
