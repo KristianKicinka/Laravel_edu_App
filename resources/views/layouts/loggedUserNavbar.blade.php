@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm panel-navbar">
     <div class="container-fluid">
         <div class="col-sm-2 logo-panel text-center">
-            <a class="navbar-brand font-roboto" href="{{ url('/') }}">
+            <a class="navbar-brand font-roboto" href="">
                 {{ config('app.name', 'Edu-Portal SPSE-PO') }}
             </a>
         </div>
