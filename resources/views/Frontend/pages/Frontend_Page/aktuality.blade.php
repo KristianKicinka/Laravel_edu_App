@@ -39,8 +39,7 @@
                     @endif
 
                     <!--First slide-->
-
-
+                        @if(($i)<=count($actualities)-1)
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card mb-2">
@@ -53,19 +52,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
 
-                                <div class="col-md-4 clearfix d-none d-md-block">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top" src="{!! url("../storage/app/public/actualities/".$actualities[$i+1]->filename) !!}"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title ml-1">{!! $actualities[$i+1]->title !!} </h4>
-                                            <div class="card-text">{!! Str::words($actualities[$i+1]->description,5,"...") !!}</div>
-                                            <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i+1]->id}}">Read more</button>
+                                @if(($i+1)<count($actualities))
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top" src="{!! url("../storage/app/public/actualities/".$actualities[$i+1]->filename) !!}"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title ml-1">{!! $actualities[$i+1]->title !!} </h4>
+                                                <div class="card-text">{!! Str::words($actualities[$i+1]->description,5,"...") !!}</div>
+                                                <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i+1]->id}}">Read more</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                @endif
+                                @if(($i+2)<=count($actualities))
                                 <div class="col-md-4 clearfix d-none d-md-block">
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="{!! url("../storage/app/public/actualities/".$actualities[$i+2]->filename) !!}"
@@ -77,7 +79,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
+
 
                         </div>
                         <!--/.First slide-->
