@@ -16,7 +16,7 @@
         </p>
         <p class="text-light px-5" style="font-size: 14px">
             <i class="fas fa-phone-square" style="font-size: 17px"></i>
-            <a style="color: white;" href="tel:+421 905 589 555">+421 905 589 555</a>
+            <a style="color: white;" href="tel:+421 911 369 367">+421 911 369 367</a>
         </p>
         <button class="navbar-toggler colapse-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>

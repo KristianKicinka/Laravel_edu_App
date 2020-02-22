@@ -18,7 +18,7 @@
 
         </div>
         <div id="contact_information">
-            <p><i class="fas fa-phone-square" style="font-size: 200%; color: #fcad0e;"></i>+421 911 369 365</p>
+            <p><i class="fas fa-phone-square" style="font-size: 200%; color: #fcad0e;"></i>+421 911 369 367</p>
             <p><i class="fas fa-map-marker-alt" style="font-size: 200%; color: #fcad0e;"></i>Plzenská 1, Prešov</p>
 
         </div>
