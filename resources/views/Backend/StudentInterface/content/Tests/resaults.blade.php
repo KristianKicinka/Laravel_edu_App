@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg-orange py-2 ">
     <div class="container-fluid pt-1">
         <div class="text-center w-100">
-            <h4>The test is complete</h4>
+            <h4>Test je hotový</h4>
         </div>
     </div>
 </nav>
@@ -20,7 +20,7 @@ use App\Http\Controllers\TestsController;
         <div class="container mt-lg-5 py-lg-4 px-4 my-4 shadow  bg-white rounded ">
 
             <header class=" modal-header">
-                <h1>Results</h1>
+                <h1>Výsledok</h1>
             </header>
 
             {{--{!! Form::open(["method"=>"get", "url"=>route('saveResaults',json_decode($test_id,true)[0])]) !!}--}}
@@ -31,15 +31,15 @@ use App\Http\Controllers\TestsController;
                     <div class="col-md-6">
 
                         <ul class="list-group ">
-                            <li class="list-group-item">Your points : {{ $points }}</li>
-                            <li class="list-group-item">Max points : {{ $max_points }}</li>
-                            <li class="list-group-item">Percentage : {{ round(($points/$max_points)*100 )}} %</li>
+                            <li class="list-group-item">Vaše body: {{ $points }}</li>
+                            <li class="list-group-item">Maximum bodov: {{ $max_points }}</li>
+                            <li class="list-group-item">Percento: {{ round(($points/$max_points)*100 )}} %</li>
                         </ul>
-                        <button class="btn btn-blue mx-2 my-3" onclick="window.location='{{route('Certificate',$test_id) }}'">Get Certificate</button>
-                        <button class="btn btn-orange mx-2 my-3" onclick="window.close()">Close</button>
+                        <button class="btn btn-blue mx-2 my-3" onclick="window.location='{{route('Certificate',$test_id) }}'">Vygenerovať certifikát</button>
+                        <button class="btn btn-orange mx-2 my-3" onclick="window.close()">Zatvoriť</button>
                     </div>
                     <div class="col-md-6">
-                        <h2>Score chart</h2>
+                        <h2>Graf skóre</h2>
                         <div class="card rounded">
                             <div class="card-body py-3 px-3">
                                 {!! $resaultGraph->container() !!}

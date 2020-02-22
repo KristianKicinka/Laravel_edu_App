@@ -28,10 +28,14 @@ class TestsController extends Controller
     {
         if(\Auth::user()->is_teacher==1) {
             $user = \Auth::user()->name;
-            \DB::table("tests")
-                ->join('test_service','test_service.test_id','=','tests.id')
+            \DB::table("test_service")
+                ->join('tests','tests.id','=','test_service.test_id')
                 ->where('test_service.expiration','<=',now())
                 ->update(["is_active" => 0]);
+            \DB::table("test_service")
+                ->join('tests','tests.id','=','test_service.test_id')
+                ->where('test_service.expiration','<=',now())->delete();
+
             $tests = \DB::table("tests")->where("author", "=", $user)->paginate(10);
             $courses = \DB::table("courses")->paginate(10);
             return view('Backend.TeacherInterface.content.Tests.index', compact("tests"))->with("courses", $courses);

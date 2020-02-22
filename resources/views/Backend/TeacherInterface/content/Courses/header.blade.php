@@ -3,16 +3,16 @@
         {{Form::open(["method"=>"post", "url"=>route('courses')])}}
         {{Form::search('searchCourses',null,[
         'class'=>'form-control search_everything',
-        'placeholder'=>'Search Courses',
+        'placeholder'=>'Vyhľadať kurz',
         ])}}
         {{--Form::submit('Search',[
         'class' =>'btn btn-orange',
         'id' => 'submit_button_materials'
         ])}}--}}
-        {{Form::submit('Search',[
+        {{Form::submit('Hľadať',[
         'class' =>'btn btn-orange submit_button_everywhere',
         ])}}
         {{Form::close()}}
     </div>
-    <button class="btn btn-blue float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> New Course</button>
+    <button class="btn btn-blue float-lg-right mr-2" type="button"  data-toggle="modal" data-target="#myModal"> Nový kurz</button>
 </header>

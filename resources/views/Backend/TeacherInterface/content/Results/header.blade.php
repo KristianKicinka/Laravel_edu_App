@@ -3,9 +3,9 @@
         {{Form::open(["method"=>"post", "url"=>route('results')])}}
         {{Form::search('searchResults',null,[
         'class'=>'form-control search_everything',
-        'placeholder'=>'Search Results',
+        'placeholder'=>'Vyhľadať výsledok',
         ])}}
-        {{Form::submit('Search',[
+        {{Form::submit('Hľadať',[
         'class' =>'btn btn-orange submit_button_everywhere',
         ])}}
         {{Form::close()}}

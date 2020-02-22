@@ -3,12 +3,12 @@
         {{Form::open(["method"=>"post", "url"=>route('tests')])}}
         {{Form::search('searchTests',null,[
         'class'=>'form-control search_everything',
-        'placeholder'=>'Search Tests',
+        'placeholder'=>'Vyhľadať test',
         ])}}
-        {{Form::submit('Search',[
+        {{Form::submit('Hľadať',[
         'class' =>'btn btn-orange submit_button_everywhere',
         ])}}
         {{Form::close()}}
     </div>
-    <button class="btn btn-blue float-lg-right mr-2" onclick="window.location='{{ route('testCreate') }}'"> New Test</button>
+    <button class="btn btn-blue float-lg-right mr-2" onclick="window.location='{{ route('testCreate') }}'"> Nový test</button>
 </header>

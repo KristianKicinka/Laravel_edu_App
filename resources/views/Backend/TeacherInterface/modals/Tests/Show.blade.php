@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
-                <h4 class="modal-title" id="myModalLabel">Test Details</h4>
+                <h4 class="modal-title" id="myModalLabel">Detail testu</h4>
                 <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
 
@@ -19,7 +19,7 @@
                 @endforeach
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zatvoriť</button>
             </div>
         </div>
     </div>

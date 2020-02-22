@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
-                <h4 class="modal-title" id="myModalLabel">New Class</h4>
+                <h4 class="modal-title" id="myModalLabel">Nový kurz</h4>
                 <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
             </div>
@@ -19,11 +19,11 @@
                         </ul>
                     </div>
                 @endif
-                {!! Form::label("class_name_label","Class name :") !!}
-                {!! Form::text("class_name_val",null,['placeholder'=>"Set the name of class",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("class_count_label","Users in class :") !!}
-                {!! Form::number("class_count_val",null,['placeholder'=>"Set the count of students in class",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
-                {!! Form::label("class_type_label","Subject :") !!}
+                {!! Form::label("class_name_label","Názov kurzu:") !!}
+                {!! Form::text("class_name_val",null,['placeholder'=>"Zadajte názov kurzu",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("class_count_label","Študenti v triede:") !!}
+                {!! Form::number("class_count_val",null,['placeholder'=>"Zadajte počet študentov v kurze",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
+                {!! Form::label("class_type_label","Predmet:") !!}
                 <div class="py-2">
                     <select class="js-example-templating form-control"style="width: 80%" name="subjectsArray[]">
                         @foreach($subjects as $subject)
@@ -31,7 +31,7 @@
                         @endforeach
                     </select>
                 </div>
-                {!! Form::label("class_type_label","Users :") !!}
+                {!! Form::label("class_type_label","Študenti:") !!}
                 <div class="py-2">
                     <select class="js-example-placeholder-multiple js-states form-control"style="width: 80%" name="studentsArray[]" multiple="multiple">
                         @foreach($users as $user)
@@ -45,8 +45,8 @@
 
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-blue">Create</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zatvoriť</button>
+                <button type="submit" class="btn btn-blue">Vytvoriť</button>
             </div>
             {!! Form::close() !!}
         </div>

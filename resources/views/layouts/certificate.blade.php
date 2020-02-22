@@ -5,7 +5,7 @@
 
 
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Certificate</title>
+    <title>Certifikát</title>
     <style>
         .background{
             background-color: #1E2458;
@@ -74,11 +74,11 @@
 <img src="{{ public_path("img/Certificate.jpg") }}" alt="" class="background">
 <div class="window">
     <img src="{{ public_path("img/CertifikatPNG.png") }}" alt="" class="logoPNG">
-<h1>Certificate</h1>
+<h1>Certifikát</h1>
     <div id="main_context_of_certificate">
-    <h2>{{ "Test name: ".$test_name }}</h2>
-    <h3>{{ "Student name: ".$student_name }}</h3>
-    <h4>{{ "Your percentage: ".$percentage }}</h4>
+    <h2>{{ "Názov testu: ".$test_name }}</h2>
+    <h3>{{ "Meno Študenta: ".$student_name }}</h3>
+    <h4>{{ "Percento: ".$percentage }}</h4>
     </div>
     <img src="{{ public_path("img/Asset 1.png") }}" alt="" class="stamp">
 </div>

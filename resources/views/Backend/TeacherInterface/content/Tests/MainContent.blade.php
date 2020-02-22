@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Tests</h1>
+    <h1>Testy</h1>
 </header>
 
 <main class="panel-main-content">
@@ -21,11 +21,11 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Test ID</th>
-                    <th>Name of Test</th>
-                    <th>Questions Count</th>
-                    <th>Options Count</th>
-                    <th>Actions</th>
+                    <th>ID</th>
+                    <th>Názov testu</th>
+                    <th>Počet otázok</th>
+                    <th>Počet možností</th>
+                    <th>Možnosti</th>
                 </tr>
                 </thead>
 
@@ -39,19 +39,19 @@
                         <td>{{ $test->questions_count }}</td>
                         <td>{{ $test->options_count }}</td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#showModal_{{$test->id}}" onclick="{{ route("testShow",$test->id) }}">Show test</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#showModal_{{$test->id}}" onclick="{{ route("testShow",$test->id) }}">Ukázať test</button>
 
                             @if($test->is_active==0)
-                                <button class="btn btn-blue" data-toggle="modal" data-target="#activateModal_{{$test->id}}" >Activate</button>
+                                <button class="btn btn-blue" data-toggle="modal" data-target="#activateModal_{{$test->id}}" >Aktivovať</button>
                             @else
-                                <button class="btn btn-blue" data-toggle="modal" disabled data-target="#activateModal_{{$test->id}}" >Activate</button>
+                                <button class="btn btn-blue" data-toggle="modal" disabled data-target="#activateModal_{{$test->id}}" >Aktivovať</button>
                             @endif
-                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$test->id}}">Delete</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$test->id}}">Vymazať</button>
                         </td>
 
                     </tr>
                 @empty
-                    <td colspan="5"> Nothing to display</td>
+                    <td colspan="5"> Nič na zobrazenie</td>
                 @endforelse
                 </tbody>
             </table>

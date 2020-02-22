@@ -58,7 +58,7 @@ use App\Http\Controllers\TestsController;
             <footer class="modal-footer">
                 <div class="w-100 float-left">
                 </div>
-                <button type="submit" class="btn btn-orange">Finish Test</button>
+                <button type="submit" class="btn btn-orange">Ukončiť test</button>
             </footer>
             {!! Form::close() !!}
         </div>

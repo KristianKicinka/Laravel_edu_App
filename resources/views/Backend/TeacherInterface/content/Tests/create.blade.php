@@ -12,7 +12,7 @@ use App\Http\Controllers\TestsController;
         <div class="main-content container-fluid">
 
             <header class="panel-head container-fluid py-3">
-                <h1>Create new Test</h1>
+                <h1>Vytvoriť nový test</h1>
             </header>
 
             <main class="panel-main-content">
@@ -21,7 +21,7 @@ use App\Http\Controllers\TestsController;
                     <div class="container px-2 py-2 mx-3 my-2 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ">
                         <div class="label form-group col-md-6">
                             {{ Form::open(['method' =>"post","action"=>"TestsController@questions"]) }}
-                            <h3>Basic info about test</h3>
+                            <h3>Základné informácie o teste</h3>
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <ul>
@@ -32,22 +32,22 @@ use App\Http\Controllers\TestsController;
                                 </div>
                             @endif
                             <div class="test-name py-2">
-                                {{ Form::label("testName","Test name") }}
-                                {{ Form::text("testNameVal",null,['placeholder'=>" Set the test name",'class'=>'form-control', "required"=>"true",'autofocus'=>true ]) }}
+                                {{ Form::label("testName","Názov testu") }}
+                                {{ Form::text("testNameVal",null,['placeholder'=>" Zadajte názov testu",'class'=>'form-control', "required"=>"true",'autofocus'=>true ]) }}
                             </div>
 
                             <div class="test-questions py-2">
-                                {{ Form::label("testQuestions","Count of questions") }}
-                                {{ Form::number("testQuestionsVal",null,['placeholder'=>" Set count of Questions",'class'=>'form-control', "min"=>"1","required"=>"true",'autofocus'=>true ]) }}
+                                {{ Form::label("testQuestions","Počet otázok") }}
+                                {{ Form::number("testQuestionsVal",null,['placeholder'=>" Zadajte počet otázok",'class'=>'form-control', "min"=>"1","required"=>"true",'autofocus'=>true ]) }}
                             </div>
                             <div class="test-options py-2">
-                                {{ Form::label("testOptions","Count of options") }}
-                                {{ Form::number("testOptionsVal",null,['placeholder'=>" Set count of Options",'class'=>'form-control', "min"=>"1","required"=>"true",'autofocus'=>true ]) }}
+                                {{ Form::label("testOptions","Počet možností") }}
+                                {{ Form::number("testOptionsVal",null,['placeholder'=>" Zadajte počet možností",'class'=>'form-control', "min"=>"1","required"=>"true",'autofocus'=>true ]) }}
 
                                 <div class="row py-2 d-block px-3">
                                     <div class="handler-buttons">
                                         <div class="hanlder-button  py-2">
-                                            {!!  Form::submit('Next',['class'=>'btn btn-blue','type'=>'submit',]) !!}
+                                            {!!  Form::submit('Ďalej',['class'=>'btn btn-blue','type'=>'submit',]) !!}
                                         </div>
                                     </div>
                                 </div>

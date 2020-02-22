@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
-                <h4 class="modal-title" id="myModalLabel">Students in class</h4>
+                <h4 class="modal-title" id="myModalLabel">Študenti v kurze</h4>
                 <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
 
@@ -13,7 +13,7 @@
                 @endfor
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zatvoriť</button>
             </div>
         </div>
     </div>

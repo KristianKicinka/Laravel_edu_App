@@ -100,10 +100,12 @@ Route::post('/searchMaterials',['uses' => 'SearchControllers@materials', 'as' =>
 Route::post('/searchStudents',['uses'=>'SearchControllers@students', 'as' => 'students']);
 Route::post('/searchTests',['uses'=>'SearchControllers@tests', 'as' => 'tests']);
 Route::post('/searchResults',['uses'=>'SearchControllers@results', 'as' => 'results']);
+Route::post('/searchCoursesStudent',['uses' => 'SearchControllers@coursesStudent', 'as' => 'coursesStudent']);
 
-<<<<<<< HEAD
+
+
 Route::get('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender']);
-=======
+
 Route::post('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender']);
 Route::post("/sendNewsletter",function (){
     $request = request()->all();
@@ -117,7 +119,7 @@ Route::post("/contact",function (){
 })->name('sendContactMail');
 
 
->>>>>>> origin/master
+
 
 
 

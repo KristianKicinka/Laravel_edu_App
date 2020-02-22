@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Courses</h1>
+    <h1>Kurzy</h1>
 </header>
 
 
@@ -24,11 +24,11 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Course ID</th>
-                    <th>Name of course</th>
-                    <th>Max number of students</th>
-                    <th>subject</th>
-                    <th>Actions</th>
+                    <th>ID</th>
+                    <th>Názov kurzu</th>
+                    <th>Maximálny počet študentov</th>
+                    <th>Predmet</th>
+                    <th>Možnosti</th>
                 </tr>
                 </thead>
 
@@ -44,14 +44,14 @@
                         <td>{{ $course->count_of_students }}</td>
                         <td>{{ (json_decode($course->subject,true)[0])}}</td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Students</button>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$course->id}}" >Edit</button>
-                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$course->id}}">Delete</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Študenti</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$course->id}}" >Upraviť</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$course->id}}">Vymazať</button>
                         </td>
 
                     </tr>
                 @empty
-                    <td colspan="5"> Nothing to display</td>
+                    <td colspan="5"> Nič na zobrazenie</td>
                 @endforelse
                 </tbody>
             </table>

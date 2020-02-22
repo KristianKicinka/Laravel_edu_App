@@ -3,14 +3,14 @@
         {{Form::open(["method"=>"post", "url"=>route('materials')])}}
         {{Form::search('searchMaterials',null,[
         'class'=>'form-control search_everything',
-        'placeholder'=>'Search Materials',
+        'placeholder'=>'Vyhľadať materiál',
         ])}}
 
-        {{Form::submit('Search',[
+        {{Form::submit('Hľadať',[
         'class' =>'btn btn-orange submit_button_everywhere',
         ])}}
 
         {{ Form::close() }}
     </div>
-    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Material</button>
+    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> Nový materiál</button>
 </header>

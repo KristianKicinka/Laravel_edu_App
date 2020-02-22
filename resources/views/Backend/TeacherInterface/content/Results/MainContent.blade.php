@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Results</h1>
+    <h1>Výsledky testov</h1>
 </header>
 
 <main class="panel-main-content">
@@ -17,13 +17,13 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Result ID</th>
-                    <th>User name</th>
-                    <th>Courses</th>
-                    <th>Test name</th>
-                    <th>Score</th>
-                    <th>Percentage</th>
-                    <th>Actions</th>
+                    <th>ID</th>
+                    <th>Meno Študenta</th>
+                    <th>Kurz</th>
+                    <th>Názov testu</th>
+                    <th>Skóre</th>
+                    <th>Percento</th>
+                    <th>Možnosti</th>
                 </tr>
                 </thead>
 
@@ -41,13 +41,13 @@
                         <td>{{ $result->points }}</td>
                         <td>{{ $result->percentage }}</td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$result->id}}" >Edit</button>
-                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$result->id}}">Delete</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$result->id}}" >Upraviť</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$result->id}}">Vymazať</button>
                         </td>
 
                     </tr>
                 @empty
-                    <td colspan="6"> Nothing to display</td>
+                    <td colspan="6"> Nič na zobrazenie</td>
                 @endforelse
                 </tbody>
             </table>

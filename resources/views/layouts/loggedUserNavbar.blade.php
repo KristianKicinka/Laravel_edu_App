@@ -38,7 +38,7 @@
                             <a class="dropdown-item" id="logout-button" style="color:black" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Odhlásiť') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

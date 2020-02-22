@@ -119,6 +119,42 @@ class SearchControllers extends Controller
     }
 
 
+    public function coursesStudent(){
+        if(($_REQUEST['searchCoursesStudent']) != null){
+            if (($_REQUEST['searchCoursesStudent']) != null){
+                $search = $_REQUEST['searchCoursesStudent'];
+            }
+
+
+            if (($_REQUEST['searchCoursesStudent']) != null ){
+                $courses = DB::table('courses')
+                    ->select('*')
+                    ->where("name", 'Like','%'.$search.'%')
+                    ->orWhere('count_of_students','Like','%'.$search.'%')
+                    ->orWhere('subject','Like','%'.$search.'%')
+                    ->orWhere('students','Like','%'.$search.'%')
+                    ->whereJsonContains("students",Auth::user()->name)
+                    ->paginate(5);
+                //->paginate(5);
+                // $categoriesArray = DB::table("categories")->select("name")->get();
+                $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
+                $subjects = DB::table("subjects")->paginate(10);
+
+                return view("Backend.TeacherInterface.content.Courses.index",compact("courses"),compact("subjects"))->with("users",$users);
+            }
+            else{
+                return view("Backend.TeacherInterface.content.Courses.index",compact("subjects"),compact("users"));
+
+            }
+
+        }
+        $subjects = DB::table("subjects")->paginate(10);
+        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
+        return view("Backend.TeacherInterface.content.Courses.index", compact("subjects"), compact("users"));
+
+    }
+
+
     public function materials(){
         if(($_REQUEST['searchMaterials']) != null){
             if (($_REQUEST['searchMaterials']) != null){

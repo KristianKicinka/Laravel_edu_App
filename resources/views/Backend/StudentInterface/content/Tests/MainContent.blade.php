@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Tests</h1>
+    <h1>Testy</h1>
 </header>
 
 <main class="panel-main-content">
@@ -21,11 +21,11 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Test ID</th>
-                    <th>Name of Test</th>
-                    <th>Questions Count</th>
-                    <th>Your score</th>
-                    <th>Actions</th>
+                    <th>ID</th>
+                    <th>Názov testu</th>
+                    <th>Počet otázok</th>
+                    <th>Vaše skóre</th>
+                    <th>Možnosti</th>
                 </tr>
                 </thead>
 
@@ -42,12 +42,12 @@
                         }} @else {{ "0 / 0" }}</td>
                         @endif
                         <td>
-                            <button class="btn btn-blue" onclick="window.open('{{ route('Testing',$test->test_id) }}','_blank')">Take Test</button>
+                            <button class="btn btn-blue" onclick="window.open('{{ route('Testing',$test->test_id) }}','_blank')">Spustiť test</button>
                         </td>
 
                     </tr>
                 @empty
-                    <td colspan="5"> Nothing to display</td>
+                    <td colspan="5"> Nič na zobrazenie</td>
                 @endforelse
                 </tbody>
             </table>
