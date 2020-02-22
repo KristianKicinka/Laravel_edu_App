@@ -28,6 +28,10 @@ class TestsController extends Controller
     {
         if(\Auth::user()->is_teacher==1) {
             $user = \Auth::user()->name;
+            \DB::table("tests")
+                ->join('test_service','test_service.test_id','=','tests.id')
+                ->where('test_service.expiration','<=',now())
+                ->update(["is_active" => 0]);
             $tests = \DB::table("tests")->where("author", "=", $user)->paginate(10);
             $courses = \DB::table("courses")->paginate(10);
             return view('Backend.TeacherInterface.content.Tests.index', compact("tests"))->with("courses", $courses);
@@ -37,15 +41,18 @@ class TestsController extends Controller
         $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
         $courses=$courses->pluck('name')->toArray();
 
+
         $tests = \DB::table('tests')
                 ->join('test_service', 'test_service.test_id', '=', 'tests.id')
                 ->join('results','results.test_id','=','tests.id')
                 ->where("results.user_id","=",\Auth::user()->id)
+                ->where('test_service.expiration','>=', now() )
                 ->where("tests.is_active","=",1 and function($query) use ($courses){
                         foreach ($courses as $course) {
                             $query->orWhereJsonContains('test_service.activate_for',$course);
                         }
                     })->paginate(10);
+
 
 
         return view('Backend.StudentInterface.content.Tests.index',compact("tests"))->with("courses",$courses);
