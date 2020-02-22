@@ -12,6 +12,8 @@
 */
 
 use App\Http\Controllers\SettingsController;
+use App\Mail\ContactMail;
+use App\Mail\NewsletterMail;
 
 
 Route::get('/',['uses'=>'MainController@index','as'=>'Index']);
@@ -99,7 +101,23 @@ Route::post('/searchStudents',['uses'=>'SearchControllers@students', 'as' => 'st
 Route::post('/searchTests',['uses'=>'SearchControllers@tests', 'as' => 'tests']);
 Route::post('/searchResults',['uses'=>'SearchControllers@results', 'as' => 'results']);
 
+<<<<<<< HEAD
 Route::get('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender']);
+=======
+Route::post('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender']);
+Route::post("/sendNewsletter",function (){
+    $request = request()->all();
+    Mail::to($request['email'])->send(new NewsletterMail($request));
+    return redirect('/');
+})->name('sendNewsletterMail');
+Route::post("/contact",function (){
+    $request = request()->all();
+    Mail::to('kicinka@spse-po.sk')->send(new ContactMail($request));
+    return redirect('/');
+})->name('sendContactMail');
+
+
+>>>>>>> origin/master
 
 
 

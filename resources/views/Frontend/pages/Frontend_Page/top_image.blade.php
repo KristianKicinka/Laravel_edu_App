@@ -8,7 +8,7 @@
         <p id="second_paragraph">
             Skús náš vzdelávací portál.
         </p>
-        <button class="btn btn-orange btn-lg" style="{z-index: 100;}">Pridaj sa</button>
+        <button class="btn btn-orange btn-lg" onclick="(document.getElementById('statistics')).scrollIntoView({behavior: 'smooth'})" style="{z-index: 100;}">Pridaj sa</button>
     </div>
 
     <div id="bottom_statistics">

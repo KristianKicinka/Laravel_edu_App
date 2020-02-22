@@ -1,7 +1,12 @@
 <div id="statistics">
     <div id="right_info">
-        <h1>O nás</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloremque earum expedita id odio quaerat quam quod repellendus ut? Consequuntur culpa explicabo facilis illum maxime minus odio qui sit voluptatibus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa dolore esse et id ipsam necessitatibus neque, odio repudiandae? Animi autem earum hic iste nihil perspiciatis provident quod rerum velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorem dolorum eligendi, enim esse explicabo fuga ipsum labore, magni necessitatibus, nostrum placeat quaerat quasi qui tempora tenetur unde voluptas voluptatum.</p>
+        <h1>O portáli</h1>
+        <p>Tento portál bol vytvorený za účelom sprostredkovania učebných materiálov študentom ako aj širokej verejnosti, ktorí
+            majú záujem o výučbu online. Umožnuje jednoduché a rýchle zdieľanie učebných materiálov, vytváranie testov
+            určených na overenie študentových vedomostí. Inštruktorom resp. vyučujúcim aplikácia umožňuje vytvárať kontrolné testy,
+            rozdeľovať študentov do skupín a jednotlivo im prideľovať materiály a testy. Po absolvovaní testu je študentovi vystavený
+            certifikát s dosiahnutým výsledkom.
+        </p>
 
     </div>
     <div id="left_info">
