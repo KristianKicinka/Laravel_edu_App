@@ -33,12 +33,12 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item active" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';" style="margin-top: 3%;">
-                        <a class="nav-link" href="{{ route('login') }}" style="color: white">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}" style="color: white">{{ __('Prihlásiť') }}</a>
 
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item active" style="{margin-right: 1%; margin-top: 3%;}" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-                            <a class="nav-link" href="{{ route('register') }}" style="color: white">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}" style="color: white">{{ __('Registrovať') }}</a>
                         </li>
                     @endif
                 @else
