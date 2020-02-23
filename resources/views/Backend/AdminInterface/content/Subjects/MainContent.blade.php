@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Subjects</h1>
+    <h1>Predmety</h1>
 </header>
 
 <main class="panel-main-content">
@@ -23,10 +23,10 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Subject ID</th>
-                        <th>Name of subject</th>
-                        <th>Subject shortcut</th>
-                        <th>Actions</th>
+                        <th>ID</th>
+                        <th>Názov predmetu</th>
+                        <th>Skratka predmetu</th>
+                        <th>Možnosti</th>
                     </tr>
                     </thead>
 
@@ -39,14 +39,14 @@
                         <td>{{ $subject->name }}</td>
                         <td>{{ $subject->shortcut }}</td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#descriptionModal_{{$subject->id}}" >Description</button>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$subject->id}}" >Edit</button>
-                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$subject->id}}">Delete</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#descriptionModal_{{$subject->id}}" >Popis</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$subject->id}}" >Upraviť</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$subject->id}}">Vymazať</button>
                         </td>
 
                     </tr>
                 @empty
-                    <td colspan="4"> Nothing to display</td>
+                    <td colspan="4"> Nič na zobrazenie</td>
                 @endforelse
                     </tbody>
                 </table>

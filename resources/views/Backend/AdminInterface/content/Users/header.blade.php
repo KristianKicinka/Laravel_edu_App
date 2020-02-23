@@ -2,8 +2,8 @@
     <div class="forms col-sm-5 d-inline-block">
         {{ Form::search('search',null,[
         'class'=>'form-control',
-        'placeholder'=>'Search Users',
+        'placeholder'=>'Vyhľadať Používateľa',
         ]) }}
     </div>
-    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#createModal"> New User</button>
+    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#createModal"> Nový používateľ</button>
 </header>

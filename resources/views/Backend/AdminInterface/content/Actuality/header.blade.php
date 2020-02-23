@@ -2,8 +2,8 @@
     <div class="forms col-sm-5 d-inline-block">
         {{ Form::search('search',null,[
         'class'=>'form-control',
-        'placeholder'=>'Search Actuality',
+        'placeholder'=>'Vyhľadať aktuality',
         ]) }}
     </div>
-    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> New Actuality</button>
+    <button class="btn btn-blue float-lg-right mr-2" data-toggle="modal" data-target="#myModal"> Nové Aktuality</button>
 </header>

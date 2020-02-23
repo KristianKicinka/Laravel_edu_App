@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header py-2">
-                <h4 class="modal-title" id="myModalLabel">New Subject</h4>
+                <h4 class="modal-title" id="myModalLabel">Nový predmet</h4>
                 <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
             </div>
@@ -18,18 +18,18 @@
                         </ul>
                     </div>
                 @endif
-                {!! Form::label("subject_name_label","Subject name :") !!}
-                {!! Form::text("subject_name_val",null,['placeholder'=>"Set the name of subject",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
-                {!! Form::label("subject_shortcut_label","Subject shortcut :") !!}
-                {!! Form::text("subject_shortcut_val",null,['placeholder'=>"Set the shortcut of subject",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
-                {!! Form::label("subject_description_label","Subjects") !!}
-                {!! Form::textarea("subject_description_val",null,['placeholder'=>"Set the description of subject",'class'=>'form-control','autofocus'=>true,"required"=>true,]) !!}
+                {!! Form::label("subject_name_label","Názov predmetu:") !!}
+                {!! Form::text("subject_name_val",null,['placeholder'=>"Zadajte názov predmetu",'class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::label("subject_shortcut_label","Skratka predmetu:") !!}
+                {!! Form::text("subject_shortcut_val",null,['placeholder'=>"Zadajte skratku predmetu",'class'=>'form-control','autofocus'=>true,"required"=>true, "min"=>1]) !!}
+                {!! Form::label("subject_description_label","Predmet") !!}
+                {!! Form::textarea("subject_description_val",null,['placeholder'=>"Zadajte popis predmetu",'class'=>'form-control','autofocus'=>true,"required"=>true,]) !!}
 
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-blue">Create</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zatvoriť</button>
+                <button type="submit" class="btn btn-blue">Vytvoriť</button>
             </div>
             {!! Form::close() !!}
         </div>

@@ -1,5 +1,5 @@
 <header class="panel-head container-fluid py-3">
-    <h1>Users</h1>
+    <h1>Používatelia</h1>
 </header>
 
 <main class="panel-main-content">
@@ -19,9 +19,9 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Používateľské meno</th>
                     <th>Email</th>
-                    <th>Actions</th>
+                    <th>Možnosti</th>
                 </tr>
                 </thead>
 
@@ -32,8 +32,8 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$user->id}}">Edit</button>
-                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$user->id}}">Delete</button>
+                            <button class="btn btn-blue" data-toggle="modal" data-target="#editModal_{{$user->id}}">Upraviť</button>
+                            <button class="btn btn-orange" data-toggle="modal" data-target="#deleteModal_{{$user->id}}">Vymazať</button>
                         </td>
 
                     </tr>
