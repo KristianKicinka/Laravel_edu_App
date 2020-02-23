@@ -4,7 +4,7 @@
 
 <div class="container py-4 px-4 my-4 shadow  bg-white rounded text-left d-inline-block">
     <div class="container col-4 float-left">
-        <h2>Zmeniť Meno</h2>
+        <h2>Zmena Požívateľského Mena</h2>
         <div class="form-group">
             {!! Form::open(["method"=>"post", "url"=>route("usernameEdit",Auth::id())]) !!}
             @foreach ($errors->all() as $error)

@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="teacher-tests col-md-3 px-3 py-3 shadow p-3 mb-5 bg-white rounded text-left d-inline-block ml-4">
-            <h3>Testy pre vás:</h3>
+            <h3>Vaše testy:</h3>
             <p>počet testov :</p>
             <button class="btn btn-orange float-lg-right mt-3">Testy</button>
         </div>
