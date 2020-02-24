@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md shadow-sm " style="{border-top: 1px solid navajowhite; width: 100%; background-color:white;}" id="slide" >
+<nav class="navbar navbar-expand-md shadow-sm " style="{border-top: 1px solid navajowhite; width: 100%; background-color:white;}" id="navbar" >
     <div class="container-fluid">
         <button class="navbar-toggler colapse-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -38,3 +38,24 @@
         </div>
     </div>
 </nav>
+<div id="arrow_to_top">
+    <a class="nav-link" onclick="(document.getElementById('top')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">{{--<i class="fas fa-arrow-up"></i>--}}<i class="fas fa-chevron-up"></i></a>
+
+</div>
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.position = "fixed";
+            document.getElementById("navbar").style.top = "0";
+            document.getElementById("navbar").style.zIndex = "100";
+            document.getElementById("arrow_to_top").style.display = "block" ;
+
+        } else {
+            document.getElementById("navbar").style.position = "relative";
+            document.getElementById("arrow_to_top").style.display = "none";
+
+        }
+    }
+</script>

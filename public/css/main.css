@@ -37,8 +37,10 @@
     background-color: #FCAD0E;
     z-index: 500;
 }
-.sidebar-icon{
+.sidebar-icon {
     padding-right: 5%;
+    font-size: 15px;
+    width: 24px;
 }
 .panel-navbar{
     background-color: #FCAD0E;
@@ -253,6 +255,7 @@ a.page-link:hover{
     height: 100%;
     float: right;
     text-align: center;
+    z-index: 30;
     /*!*border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;*!
     !*border-radius: 66% 34% 70% 30% / 47% 30% 70% 53% ;*!
@@ -665,5 +668,22 @@ a.page-link:hover{
 .submit_button_everywhere{
     display: inline-block;
 }
+#arrow_to_top{
+    display: none;
+    position: absolute;
 
+}
+#arrow_to_top{
+    font-size: 30px;
+    color: #FCAD0E;
+    margin-bottom: 1%;
+    display: block;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    margin-right: 2%;
+    background-color: #112134;
+   /* padding: 10px;*/
+    border-radius: 10px;
+}
 

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-blue shadow-sm bg-blue " style="{opacity: 80%; text-align: center;}">
+<nav id="top" class="navbar navbar-expand-md navbar-blue shadow-sm bg-blue " style="{opacity: 80%; text-align: center;}">
     <div class="container-fluid">
         {{--<a class="navbar-brand font-roboto" href="{{ url('/') }}">
             {{ config('app.name', 'Edu-Portal SPSE-PO') }}

@@ -267,7 +267,7 @@ class TestsController extends Controller
     public function testing($id){
         $test_id = \DB::table("tests")->where("id","=",$id)->pluck("id");
         $test_name = \DB::table("tests")->where("id","=",$id)->pluck("name");
-        $questions = \DB::table("questions")->where("test_id","=",$test_id)->get();
+        $questions = \DB::table("questions")->where("test_id","=",$test_id)->inRandomOrder()->get();
         $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
         $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
         $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
@@ -277,9 +277,7 @@ class TestsController extends Controller
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
             }
-            })->get();
-
-
+            })->inRandomOrder()->get();
 
 
 

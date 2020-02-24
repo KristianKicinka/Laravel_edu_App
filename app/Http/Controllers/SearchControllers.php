@@ -135,8 +135,6 @@ class SearchControllers extends Controller
                     ->orWhere('students','Like','%'.$search.'%')
                     ->whereJsonContains("students",Auth::user()->name)
                     ->paginate(5);
-                //->paginate(5);
-                // $categoriesArray = DB::table("categories")->select("name")->get();
                 $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
                 $subjects = DB::table("subjects")->paginate(10);
 
