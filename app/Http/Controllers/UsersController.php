@@ -78,7 +78,13 @@ class UsersController extends Controller
         $admin = Input::post('user_admin_val');
         $teacher  = Input::post('user_teacher_val');
 
-        \DB::table("users")->where("id","=",$id)->update(["name"=>$name,"email"=>$email,"password"=>\Hash::make($password),"is_admin"=>$admin,"is_teacher"=>$teacher]);
+        if ($password != null) {
+            \DB::table("users")->where("id", "=", $id)->update(["name" => $name, "email" => $email, "password" => \Hash::make($password), "is_admin" => $admin, "is_teacher" => $teacher]);
+        }
+        else{
+            \DB::table("users")->where("id", "=", $id)->update(["name" => $name, "email" => $email, "is_admin" => $admin, "is_teacher" => $teacher]);
+
+        }
         return \Redirect::route("Users");
     }
 

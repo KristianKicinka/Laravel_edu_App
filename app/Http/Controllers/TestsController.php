@@ -280,9 +280,7 @@ class TestsController extends Controller
             })->inRandomOrder()->get();
 
 
-
-
-
+        $code = 125689;
 
         return view("Backend.StudentInterface.content.Tests.testing")
             ->with("test_id",$test_id)
@@ -292,7 +290,8 @@ class TestsController extends Controller
             ->with("options",$options)
             ->with("duration",$duration)
             ->with("questions_count",$questions_count)
-            ->with("options_count",$options_count);
+            ->with("options_count",$options_count)
+            ->with("code",$code);
     }
 
     public function saveResaults($id){

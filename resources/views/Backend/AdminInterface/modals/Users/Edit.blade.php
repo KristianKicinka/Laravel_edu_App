@@ -15,7 +15,7 @@
                 {!! Form::label("user_email_lab","Email:") !!}
                 {!! Form::text("user_email_val",$user->email,['placeholder'=>'Set email address','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
                 {!! Form::label("user_password_lab","Heslo:") !!}
-                {!! Form::password("user_password_val",['placeholder'=>'Zadajte heslo','class'=>'form-control','autofocus'=>true,"required"=>true]) !!}
+                {!! Form::password("user_password_val",['placeholder'=>'Zadajte heslo','class'=>'form-control','autofocus'=>true,"required"=>false]) !!}
                 <div class="py-2">
                     {!! Form::label("user_admin_lab","Admin") !!}
                     {!! Form::hidden("user_admin_val",0,['class'=>'px-2','autofocus'=>true,"required"=>true]) !!}

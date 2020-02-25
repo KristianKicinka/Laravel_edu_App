@@ -5,9 +5,9 @@
         'class'=>'form-control search_everything',
         'placeholder'=>'Vyhľadať kurz',
         ])}}
-        {{Form::submit('Hľadať',[
+        {{--{{Form::submit('Hľadať',[
         'class' =>'btn btn-orange submit_button_everywhere',
         ])}}
-        {{Form::close()}}
+        {{Form::close()}}--}}
     </div>
 </header>
