@@ -101,6 +101,8 @@ Route::post('/searchStudents',['uses'=>'SearchControllers@students', 'as' => 'st
 Route::post('/searchTests',['uses'=>'SearchControllers@tests', 'as' => 'tests']);
 Route::post('/searchResults',['uses'=>'SearchControllers@results', 'as' => 'results']);
 Route::post('/searchCoursesStudent',['uses' => 'SearchControllers@coursesStudent', 'as' => 'coursesStudent']);
+Route::post('/searchTestsStudent',['uses' => 'SearchControllers@testsStudent', 'as' => 'testsStudent']);
+Route::post('/searchMaterialsStudent',['uses' => 'SearchControllers@materialsStudent', 'as' => 'materialsStudent']);
 
 
 

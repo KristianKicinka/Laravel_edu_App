@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg-orange py-2 ">
     <div class="container-fluid pt-1">
         <div class="text-center w-100">
-            <h4>Test je hotový</h4>
+            <h4>Koniec Testu</h4>
         </div>
     </div>
 </nav>

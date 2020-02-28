@@ -34,8 +34,8 @@
                     <tr>
                         <td>{{ $course->id }}</td>
                         <td>{{ $course->name }}</td>
-                        <td>{{--{{ $course->count_of_students }}--}}...</td>
-                        <td>{{--{{ (json_decode($course->subject,true)[0])}}--}}...</td>
+                        <td>{{ $counts[$course->name] }}</td>
+                        <td>{{ $counts_tests[$course->name] }}</td>
                         <td>
                             <button class="btn btn-blue" data-toggle="modal" data-target="#studentModal_{{$course->id}}" >Študenti</button>
                         </td>

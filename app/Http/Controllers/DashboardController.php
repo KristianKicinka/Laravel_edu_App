@@ -34,8 +34,21 @@ class DashboardController extends Controller
             $materials_count = \DB::table("materials")->where("author","=",\Auth::user()->name)->count();*/
             return view('Backend.AdminInterface.content.Dashboard.index');
     }
+        $courses = \DB::table('courses')->whereJsonContains("students",\Auth::user()->name)->paginate(10);
+        $courses_array = $courses->pluck("name")->toarray();
+        $tests = \DB::table('test_service')->where(function($query) use ($courses_array){
+            foreach ($courses_array as $course) {
+                $query->orWhereJsonContains('activate_for',$course);
+            }
+        })->get();
+        $materials = \DB::table('materials')->where(function($query) use ($courses_array){
+            foreach ($courses_array as $course) {
+                $query->orWhereJsonContains('class',$course);
+            }
+        })->get();
 
-        return view('Backend.StudentInterface.content.Dashboard.index');
+
+        return view('Backend.StudentInterface.content.Dashboard.index')->with("materials_count",count($materials))->with("tests_count",count($tests));
 
     }
 

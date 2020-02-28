@@ -276,11 +276,12 @@ class TestsController extends Controller
         $options = \DB::table("answers")->where("test_id","=",$test_id)->where(function($query) use ($questions_id){
             foreach ($questions_id as $question_id) {
                 $query->orWhere('question_id', $question_id);
+
             }
             })->inRandomOrder()->get();
 
 
-        $code = 125689;
+
 
         return view("Backend.StudentInterface.content.Tests.testing")
             ->with("test_id",$test_id)
@@ -290,8 +291,8 @@ class TestsController extends Controller
             ->with("options",$options)
             ->with("duration",$duration)
             ->with("questions_count",$questions_count)
-            ->with("options_count",$options_count)
-            ->with("code",$code);
+            ->with("options_count",$options_count);
+
     }
 
     public function saveResaults($id){

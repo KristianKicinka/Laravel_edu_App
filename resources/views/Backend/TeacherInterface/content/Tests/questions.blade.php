@@ -29,6 +29,7 @@
                                     {{ Form::label("question_label_$index","Vaša otázka:") }}
                                     {{ Form::text("question_$index",null,['placeholder'=>" Zadajte otázku $index",'class'=>'form-control','autofocus'=>true,"required"=>true ]) }}
 
+
                                     <div class="options py-4">
                                         {{ Form::label("answer_label_$index","Vaša odpoveď:") }}
                                         @for($i=1;$i<=$options_count;$i++)

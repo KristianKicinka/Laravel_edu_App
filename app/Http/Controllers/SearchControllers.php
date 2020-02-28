@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Auth;
 
 class SearchControllers extends Controller
 {
@@ -133,22 +134,130 @@ class SearchControllers extends Controller
                     ->orWhere('count_of_students','Like','%'.$search.'%')
                     ->orWhere('subject','Like','%'.$search.'%')
                     ->orWhere('students','Like','%'.$search.'%')
-                    ->whereJsonContains("students",Auth::user()->name)
+                    ->whereJsonContains("students",\Auth::user()->name)
                     ->paginate(5);
-                $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
-                $subjects = DB::table("subjects")->paginate(10);
 
-                return view("Backend.TeacherInterface.content.Courses.index",compact("courses"),compact("subjects"))->with("users",$users);
+                $courses = \DB::table('courses')->whereJsonContains("students",\Auth::user()->name)->paginate(10);
+                $courses_array = $courses->pluck("name")->toarray();
+                $tests = DB::table('test_service')->where(function($query) use ($courses_array){
+                    foreach ($courses_array as $course) {
+                        $query->orWhereJsonContains('activate_for',$course);
+                    }
+                })->get();
+                $materials = DB::table('materials')->where(function($query) use ($courses_array){
+                    foreach ($courses_array as $course) {
+                        $query->orWhereJsonContains('class',$course);
+                    }
+                })->get();
+                $p=0;
+                foreach ($courses_array as $course){
+                    $p=0;
+                    foreach ($materials as $material){
+                        if(json_decode($material->class,true)==$course){
+                            $p=$p+1;
+                        }else{
+                            $p=$p;
+                        }
+                    }
+                    $counts[$course] = $p;
+                }
+
+                foreach ($courses_array as $course){
+                    $p=0;
+                    foreach ($tests as $test){
+
+                        if(json_decode($test->activate_for,true)[0]==$course){
+                            $p=$p+1;
+                        }else{
+                            $p=$p;
+                        }
+                    }
+                    $counts_tests[$course] = $p;
+                }
+
+                return view("Backend.StudentInterface.content.Courses.index",compact("courses"),compact("counts"))->with("counts_tests",$counts_tests);
             }
             else{
-                return view("Backend.TeacherInterface.content.Courses.index",compact("subjects"),compact("users"));
+                $courses = DB::table('courses')->paginate(10)->whereJsonContains("students",\Auth::user()->name);
+                $courses_array = $courses->pluck("name")->toarray();
+                $tests = DB::table('test_service')->where(function($query) use ($courses_array){
+                    foreach ($courses_array as $course) {
+                        $query->orWhereJsonContains('activate_for',$course);
+                    }
+                })->get();
+                $materials = DB::table('materials')->where(function($query) use ($courses_array){
+                    foreach ($courses_array as $course) {
+                        $query->orWhereJsonContains('class',$course);
+                    }
+                })->get();
+                $p=0;
+                foreach ($courses_array as $course){
+                    $p=0;
+                    foreach ($materials as $material){
+                        if(json_decode($material->class,true)==$course){
+                            $p=$p+1;
+                        }else{
+                            $p=$p;
+                        }
+                    }
+                    $counts[$course] = $p;
+                }
+
+                foreach ($courses_array as $course){
+                    $p=0;
+                    foreach ($tests as $test){
+
+                        if(json_decode($test->activate_for,true)[0]==$course){
+                            $p=$p+1;
+                        }else{
+                            $p=$p;
+                        }
+                    }
+                    $counts_tests[$course] = $p;
+                }
+                return view("Backend.StudentInterface.content.Courses.index",compact("courses"),compact("counts"))->with("counts_tests",$counts_tests);
 
             }
 
         }
-        $subjects = DB::table("subjects")->paginate(10);
-        $users = DB::table('users')->where('is_teacher', 0)->where('is_admin', 0)->paginate(10);
-        return view("Backend.TeacherInterface.content.Courses.index", compact("subjects"), compact("users"));
+        $courses = DB::table('courses')->paginate(10)->whereJsonContains("students",\Auth::user()->name);
+        $courses_array = $courses->pluck("name")->toarray();
+        $tests = DB::table('test_service')->where(function($query) use ($courses_array){
+            foreach ($courses_array as $course) {
+                $query->orWhereJsonContains('activate_for',$course);
+            }
+        })->get();
+        $materials = DB::table('materials')->where(function($query) use ($courses_array){
+            foreach ($courses_array as $course) {
+                $query->orWhereJsonContains('class',$course);
+            }
+        })->get();
+        $p=0;
+        foreach ($courses_array as $course){
+            $p=0;
+            foreach ($materials as $material){
+                if(json_decode($material->class,true)==$course){
+                    $p=$p+1;
+                }else{
+                    $p=$p;
+                }
+            }
+            $counts[$course] = $p;
+        }
+
+        foreach ($courses_array as $course){
+            $p=0;
+            foreach ($tests as $test){
+
+                if(json_decode($test->activate_for,true)[0]==$course){
+                    $p=$p+1;
+                }else{
+                    $p=$p;
+                }
+            }
+            $counts_tests[$course] = $p;
+        }
+        return view("Backend.StudentInterface.content.Courses.index", compact("courses"), compact("counts"))->with("counts_tests",$counts_tests);
 
     }
 
@@ -318,6 +427,119 @@ class SearchControllers extends Controller
         $courses = DB::table('courses')->paginate(10);
         $tests = DB::table('tests')->paginate(10);
         return view("Backend.TeacherInterface.content.Tests.index", compact("subjects"),compact("courses"))->with("tests",$tests);
+    }
+
+
+    public function testsStudent(){
+        if(($_REQUEST['searchTestsStudent']) != null){
+            if (($_REQUEST['searchTestsStudent']) != null){
+                $search = $_REQUEST['searchTestsStudent'];
+            }
+
+
+            if (($_REQUEST['searchTestsStudent']) != null ){
+                $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+                $courses=$courses->pluck('name')->toArray();
+
+
+                $tests = \DB::table('tests')
+                    ->join('test_service', 'test_service.test_id', '=', 'tests.id')
+                    ->join('results','results.test_id','=','tests.id')
+                    ->where("results.user_id","=",\Auth::user()->id)
+                    ->where('test_service.expiration','>=', now() )
+                    ->where("tests.is_active","=",1 and function($query) use ($courses){
+                            foreach ($courses as $course) {
+                                $query->orWhereJsonContains('test_service.activate_for',$course);
+                            }
+
+                        })
+                    ->Where('name','Like','%'.$search.'%')
+                    ->orWhere('questions_count','Like','%'.$search.'%')
+                    ->paginate(10);
+
+                return view("Backend.StudentInterface.content.Tests.index",compact("tests"));
+            }
+            else{
+                $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+                $courses=$courses->pluck('name')->toArray();
+                $tests = \DB::table('tests')
+                    ->join('test_service', 'test_service.test_id', '=', 'tests.id')
+                    ->join('results','results.test_id','=','tests.id')
+                    ->where("results.user_id","=",\Auth::user()->id)
+                    ->where('test_service.expiration','>=', now() )
+                    ->where("tests.is_active","=",1 and function($query) use ($courses){
+                            foreach ($courses as $course) {
+                                $query->orWhereJsonContains('test_service.activate_for',$course);
+                            }
+                        })->paginate(10);
+                return view("Backend.StudentInterface.content.Tests.index", compact("tests"));
+
+            }
+        }
+        $courses = \DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+        $courses=$courses->pluck('name')->toArray();
+        $tests = \DB::table('tests')
+            ->join('test_service', 'test_service.test_id', '=', 'tests.id')
+            ->join('results','results.test_id','=','tests.id')
+            ->where("results.user_id","=",\Auth::user()->id)
+            ->where('test_service.expiration','>=', now() )
+            ->where("tests.is_active","=",1 and function($query) use ($courses){
+                    foreach ($courses as $course) {
+                        $query->orWhereJsonContains('test_service.activate_for',$course);
+                    }
+                })->paginate(10);
+        return view("Backend.StudentInterface.content.Tests.index", compact("tests"));
+    }
+
+
+
+    public function materialsStudent(){
+        if(($_REQUEST['searchMaterialsStudent']) != null){
+            if (($_REQUEST['searchMaterialsStudent']) != null){
+                $search = $_REQUEST['searchMaterialsStudent'];
+            }
+
+
+            if (($_REQUEST['searchMaterialsStudent']) != null ){
+               /* $subjects = DB::table('subjects')->paginate(10);*/
+                $courses = DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+
+                $courses=$courses->pluck('name')->toArray();
+                $materials = DB::table('materials')->where(function($query) use ($courses){
+                    foreach ($courses as $course) {
+                        $query->orWhereJsonContains('class',$course);
+                    }
+                })
+                    ->where('title','Like','%'.$search.'%')
+                    ->orWhere('class','Like','%'.$search.'%')
+                    ->orWhere('subject','Like','%'.$search.'%')
+                    ->paginate(10);
+
+                return view("Backend.StudentInterface.content.Materials.index",compact("materials"));
+            }
+            else{
+                $courses = DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+
+                $courses=$courses->pluck('name')->toArray();
+                $materials = DB::table('materials')->where(function($query) use ($courses){
+                    foreach ($courses as $course) {
+                        $query->orWhereJsonContains('class',$course);
+                    }
+                })->paginate(10);
+                return view("Backend.StudentInterface.content.Materials.index", compact("materials"));
+
+            }
+        }
+        $courses = DB::table('courses')->select("name")->whereJsonContains("students",\Auth::user()->name);
+
+        $courses=$courses->pluck('name')->toArray();
+        $materials = DB::table('materials')->where(function($query) use ($courses){
+            foreach ($courses as $course) {
+                $query->orWhereJsonContains('class',$course);
+            }
+        })->paginate(10);
+
+        return view("Backend.StudentInterface.content.Materials.index", compact("materials"));
     }
 
 

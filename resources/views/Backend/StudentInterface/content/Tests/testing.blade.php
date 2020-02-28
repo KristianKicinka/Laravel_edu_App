@@ -34,6 +34,16 @@ use App\Http\Controllers\TestsController;
                     <div class="py-2">
 
                         <h3>{{ $question->question }}</h3>
+                       <div style="display: none">  {{ $more_right_option = \DB::table("answers")
+           ->join("questions","questions.id","=","answers.question_id")
+           ->where('is_correct','=','1')
+           ->where('question_id','=',$question->id)
+           ->count()}}</div>
+                        @if($more_right_option > 1)
+                            <div class="alert alert-warning" role="alert">
+                                V tejto otázke je viac správnych odpovedí
+                            </div>
+                        @endif
                         <div class="container py-2">
                             @foreach($options->where("question_id","=",$question->id) as $option)
                                 <div class="custom-checkbox px-2 py-2" >
@@ -44,6 +54,7 @@ use App\Http\Controllers\TestsController;
                                             <label name="{{"labelVal_$question->id".'_'."$option->id" }}" value="{!! $option->answer !!}" for="{{ "checkbox_$question->id".'_'."$option->id" }}" >{{ $option->answer }}</label>
                                             <input type="hidden" name="{{"labelVal_$question->id".'_'."$option->id" }}" value="{!! $option->answer !!}">
                                             <input type="hidden" name="{{"option_id_$question->id".'_'."$option->id" }}" value="{!! $option->id !!}">
+
 
                                         </div>
                                     </div>
