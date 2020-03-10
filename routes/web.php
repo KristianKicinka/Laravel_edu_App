@@ -14,6 +14,7 @@
 use App\Http\Controllers\SettingsController;
 use App\Mail\ContactMail;
 use App\Mail\NewsletterMail;
+use App\Mail\SendPdfMail;
 
 
 Route::get('/',['uses'=>'MainController@index','as'=>'Index']);
@@ -64,6 +65,7 @@ Route::post('/users/delete/{id}', ['uses'=>'UsersController@destroy', 'as'=>'use
 /*Routes for Tests*/
 Route::get('/tests', ['uses'=>'TestsController@index', 'as'=>'Tests']);
 Route::get('/tests/testing/{id}',['uses'=>'TestsController@testing', 'as'=>'Testing']);
+Route::get('/tests/showResults/{id}',['uses'=>'TestsController@showResults', 'as'=>'showResults']);
 Route::get('/tests/results/{id}',['uses'=>'TestsController@saveResaults', 'as'=>'saveResaults']);
 Route::get('/tests/testing/resaults/{id}',['uses'=>'TestsController@testingResaults', 'as'=>'Resaults']);
 Route::get('/tests/create',['uses'=>'TestsController@create', 'as'=>'testCreate']);
@@ -104,6 +106,8 @@ Route::post('/searchCoursesStudent',['uses' => 'SearchControllers@coursesStudent
 Route::post('/searchTestsStudent',['uses' => 'SearchControllers@testsStudent', 'as' => 'testsStudent']);
 Route::post('/searchMaterialsStudent',['uses' => 'SearchControllers@materialsStudent', 'as' => 'materialsStudent']);
 
+/*Routes for newsletter*/
+Route::get('/newsletter',['uses' => 'NewsletterController@index', 'as' => 'Newsletter']);
 
 
 Route::get('/sendmail',['uses'=>'MailController@basic_email','as'=>'mailSender']);
@@ -120,6 +124,15 @@ Route::post("/contact",function (){
     return redirect('/');
 })->name('sendContactMail');
 
+
+Route::post("/sendNewsletterPdf",function (){
+    $emails = DB::table("newsletter")->get("email");
+    $request = request()->all();
+    foreach ($emails as $email){
+        Mail::to($email)->send(new SendPdfMail($request));
+    }
+    return redirect(route("Newsletter"));
+})->name('sendNewsletterPdf');
 
 
 

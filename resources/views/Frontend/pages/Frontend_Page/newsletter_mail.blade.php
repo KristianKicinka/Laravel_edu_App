@@ -6,7 +6,7 @@
 </head>
 <body>
 <header>
-    <h1> Our newsletter</h1>
+    <h1> Ďakujeme za odoberanie nášho newslettera</h1>
 </header>
 <main>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam assumenda consequuntur debitis eius eos esse facere magnam magni molestias nam odio quia, quisquam, recusandae reprehenderit sint tempore temporibus voluptate voluptates!</p>

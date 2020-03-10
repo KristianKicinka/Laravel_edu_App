@@ -295,6 +295,38 @@ class TestsController extends Controller
 
     }
 
+    public function showResults($id){
+        $test_id = \DB::table("tests")->where("id","=",$id)->pluck("id");
+        $test_name = \DB::table("tests")->where("id","=",$id)->pluck("name");
+        $questions = \DB::table("questions")->where("test_id","=",$test_id)->inRandomOrder()->get();
+        $questions_id = \DB::table("questions")->where("test_id","=",$test_id)->pluck("id");
+        $questions_count = \DB::table("tests")->where("id","=",$test_id)->pluck("questions_count");
+        $options_count = \DB::table("tests")->where("id","=",$test_id)->pluck("options_count");
+        $duration = \DB::table("test_service")->where("test_id","=",$test_id)->pluck("duration");
+
+        $options = \DB::table("answers")->where("test_id","=",$test_id)->where(function($query) use ($questions_id){
+            foreach ($questions_id as $question_id) {
+                $query->orWhere('question_id', $question_id);
+
+            }
+        })->inRandomOrder()->get();
+
+
+
+
+        return view("Backend.StudentInterface.content.Tests.showResults")
+            ->with("test_id",$test_id)
+            ->with("test_name",$test_name)
+            ->with("questions",$questions)
+            ->with("questions_id",$questions_id)
+            ->with("options",$options)
+            ->with("duration",$duration)
+            ->with("questions_count",$questions_count)
+            ->with("options_count",$options_count);
+
+    }
+
+
     public function saveResaults($id){
 
 

@@ -43,6 +43,9 @@
                         @endif
                         <td>
                             <button class="btn btn-blue" onclick="window.open('{{ route('Testing',$test->test_id) }}','_blank')">Spustiť test</button>
+                            @if(isset($test->points))
+                                <button class="btn btn-orange" onclick="window.open('{{ route('showResults', $test->test_id) }}','_blank')">Ukázať výsledky</button>
+                                @endif
                         </td>
 
                     </tr>
