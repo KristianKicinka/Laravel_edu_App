@@ -3,7 +3,8 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg-orange py-2 ">
     <div class="container-fluid pt-1">
         <div class="text-center w-100">
-            <h4 id="countdown" class="timer"></h4>
+            <p style="{display: inline-block; float: left}">{{Auth::user()->name}}</p>
+            <h4 id="countdown" class="timer" style="display: inline-block"></h4>
         </div>
     </div>
 </nav>
