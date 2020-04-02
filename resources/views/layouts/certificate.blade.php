@@ -13,6 +13,7 @@
             left: 0px;
             top: 0px;
             z-index: -1;
+            width: 100%;
 
         }
         h1{
@@ -27,45 +28,47 @@
             position: fixed;
             font-family: Arial, sans-serif;
             font-size: 400%;
-            top: 1000px;
-            left:800px;
+            top: 40%;
+            left:35%;
         }
         h3{
             position: fixed;
             font-family: Arial, sans-serif;
             font-size: 300%;
-            top: 1300px;
-            left:800px;
+            top: 52%;
+            left:25%;
         }
         h4{
             position: fixed;
             font-family: Arial, sans-serif;
             font-size: 300%;
-            top: 1550px;
-            left:800px;
+            top: 65%;
+            left:25%;
+
         }
         #main_context_of_certificate{
+
             width: 80%;
             height: 80%;
             text-align: left;
            /* background-color: red;*/
             margin-left: 10%;
-
+            z-index: 10;
         }
         .logoPNG{
-            margin-left: 7%;
+            margin-left: 5%;
             margin-top: 150px;
-            width: 800px;
-            height: 800px;
+            width: 30%;
+            height: 30%;
             display: inline-block;
             z-index: 10;
             position: absolute;
         }
         .stamp{
             float: right;
-            margin-right: 500px;
-            top: 1600px;
-            width: 400px;
+            margin-right: 15%;
+            top: 70%;
+            width: 10%;
             position: absolute;
 
         }
