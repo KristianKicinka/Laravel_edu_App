@@ -116,4 +116,15 @@ class SettingsController extends Controller
         return \Redirect::route("Settings");
 
     }
+
+    public function profilePicture(Request $request){
+        $cover = $request->file('profilePicture_file_val');
+        $extension = $cover->getClientOriginalExtension();
+        $destination_path = "users/avatars/";
+        \Storage::disk('public_uploads')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
+
+        $avatar = $cover->getFilename().'.'.$extension;
+        DB::table("users")->where("id","=",Auth::id())->update(["avatar"=>$avatar]);
+        return \Redirect::route("Settings");
+    }
 }

@@ -196,16 +196,15 @@ a.page-link:hover{
     width: 30%;
 }
 
-#top-image{
-    width: 100%;
+.picture{
+    background-image: url("../img/frontend_image.jpg");
+    background-size: 100%;
     height: 80%;
     position: relative;
-    background-image: url("../img/frontend_image.jpg");
-    background-size: 100% ;
     background-repeat: no-repeat;
 
 }
-#bottom_statistics{
+.bottom_statistics{
     width: 80%;
     margin-left: 10%;
     background-color: white;
@@ -619,7 +618,7 @@ a.page-link:hover{
 }
 .carousel-indicators li{
     background-color: #FCAD0E;
-  /*  margin-bottom: 57%;*/
+    /*  margin-bottom: 57%;*/
     height: 30px;
     border-radius: 50%;
     opacity: 0.7;
@@ -677,6 +676,7 @@ a.page-link:hover{
 #arrow_to_top{
     font-size: 30px;
     color: #FCAD0E;
+    z-index: 500;
     margin-bottom: 1%;
     display: block;
     bottom: 0;
@@ -684,7 +684,639 @@ a.page-link:hover{
     right: 0;
     margin-right: 2%;
     background-color: #112134;
-   /* padding: 10px;*/
+    /* padding: 10px;*/
     border-radius: 10px;
+}
+/*Chat stite*/
+.user-wrapper, .message-wrapper{
+    border: 1px solid black;
+    overflow-y: auto;
+}
+.user-wrapper{
+    height: 600px;
+}
+.user{
+    cursor: pointer;
+    padding: 5px 0;
+    position: relative;
+}
+.user:hover{
+    background: #eeeeee;
+}
+.user:last-child{
+    margin-bottom: 0;
+}
+.pending{
+    position: absolute;
+    left: 13px;
+    top: 9px;
+    background: #FCAD0E;
+    margin: 0;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding-left: 5px;
+    color: white;
+    font-size: 12px;
+}
+.media-left{
+   margin: 0 10px;
+}
+.media-left img{
+    width: 64px;
+    border-radius: 60%;
+}
+.media-body p {
+    margin: 6px 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.message-wrapper{
+    padding: 10px;
+    height: 536px;
+    background: #eeeeee;
+}
+.messages .message{
+    margin-bottom: 15px;
+}
+.messages .message:last-child{
+    margin-bottom: 0;
+}
+.recived,.sent{
+    width: 45%;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+.recived{
+    background: white;
+}
+.sent{
+    background: rgb(255, 178, 18);
+    float: right;
+    text-align: right;
+}
+.message p {
+    margin: 5px 0;
+}
+.sent>.date{
+    color: black;
+    font-size: 12px;
+}
+.recived>.date{
+    color: darkgray;
+    font-size: 12px;
+}
+.active-user{
+    background: #eeeeee;
+}
+.text-input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 15px 0 0 0;
+    margin-right: 2%;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #cccccc;
+}
+.text-input:focus{
+    border: 1px solid #aaaaaa;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .language{
+        display: none;
+    }
+    .address{
+        display: none;
+    }
+    .right-text{
+        padding: 12% 1.4% 10% 2%;
+        width: 100%;
+        height: 100%;
+        font-size: 130%;
+        text-align: center;
+    }
+    .button-viac{
+        padding: 2%;
+
+    }
+    .image-h2{
+        font-size: 100%;
+
+    }
+    .picture{
+        background-image: url("../img/sm-background.jpg");
+        background-size: 100% ;
+        padding-bottom: 10%;
+        background-repeat: no-repeat;
+    }
+    .bottom_statistics{
+        margin-top: 65%;
+        margin-left: 15%;
+        position: absolute;
+        bottom: inherit;
+
+    }
+    #help_Div{
+       display: none;
+    }
+    #statistics{
+        margin-top: 98%;
+        width: 100%;
+        margin-left: 0;
+        padding: 10% 5% 10% 5%;
+        text-align: center;
+    }
+    #left_question_solid{
+        color: white;
+        margin-left: 30%;
+        transform: rotate(-28deg);
+        font-size: 1600%;
+    }
+    #left_info i {
+         display: none;
+     }
+    #right_info {
+        float: right;
+        width: 80%;
+        padding: 2%;
+        height: 100%;
+        text-align: center;
+        margin-right: 8%;
+    }
+    .kurzy_left_icon {
+        width: 80%;
+        margin-left: 15%;
+        padding: 2%;
+    }
+    .kurzy_right_icon{
+        width: 80%;
+        margin-left: 15%;
+        padding: 2%;
+    }
+    .kurzy_right_text{
+        width: 100%;
+        padding: 5%;
+        margin-top: 5%;
+        float: left;
+        margin-right: 0;
+        margin-left: 5%;
+    }
+    .kurzy_left_text{
+        width: 100%;
+        padding: 5%;
+        margin-top: 5%;
+        float: left;
+        margin-right: 0;
+        margin-left: 5%;
+    }
+    #newsletter>form{
+        width: 100%;
+        margin: 0;
+    }
+    #newsletter{
+        width: 100%;
+        padding: 6%;
+        margin: 4% 0 0 0;
+    }
+    #left_side_of_contact{
+        width: 100%;
+        float: left;
+    }
+    #right_side_of_contact{
+        width: 100%;
+        padding: 2% 0 20% 12%;
+    }
+    .contact-section{
+        margin: 12% 0 0 0;
+    }
+    #contact_us_form{
+        width: 100%;
+        margin-left: 2%;
+    }
+    .newsletter-div{
+        background-color: #112134;
+    }
+    #map{
+        display: none;
+    }
+    .newsletter-div{
+        margin-top: 20%;
+    }
+    #arrow_to_top{
+        display: none;
+    }
+
+
+
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .language{
+        display: none;
+    }
+    .address{
+        display: none;
+    }
+    .right-text{
+        padding: 12% 1.4% 10% 2%;
+        width: 100%;
+        height: 100%;
+        font-size: 130%;
+        text-align: center;
+    }
+    .button-viac{
+        padding: 2%;
+
+    }
+    .image-h2{
+        font-size: 100%;
+
+    }
+    .picture{
+        background-image: url("../img/sm-background.jpg");
+        background-size: 100% ;
+        padding-bottom: 10%;
+        background-repeat: no-repeat;
+    }
+    .bottom_statistics{
+        margin-top: 65%;
+        margin-left: 15%;
+        position: absolute;
+        bottom: inherit;
+
+    }
+    #help_Div{
+        display: none;
+    }
+    #statistics{
+        margin-top: 98%;
+        width: 100%;
+        margin-left: 0;
+        padding: 10% 5% 10% 5%;
+        text-align: center;
+    }
+    #left_question_solid{
+        color: white;
+        margin-left: 30%;
+        transform: rotate(-28deg);
+        font-size: 1600%;
+    }
+    #left_info i {
+        display: none;
+    }
+    #right_info {
+        float: right;
+        width: 80%;
+        padding: 2%;
+        height: 100%;
+        text-align: center;
+        margin-right: 8%;
+    }
+    .kurzy_left_icon {
+        width: 80%;
+        margin-left: 15%;
+        padding: 2%;
+    }
+    .kurzy_right_icon{
+        width: 80%;
+        margin-left: 15%;
+        padding: 2%;
+    }
+    .kurzy_right_text{
+        width: 100%;
+        padding: 5%;
+        margin-top: 5%;
+        float: left;
+        margin-right: 0;
+        margin-left: 5%;
+    }
+    .kurzy_left_text{
+        width: 100%;
+        padding: 5%;
+        margin-top: 5%;
+        float: left;
+        margin-right: 0;
+        margin-left: 5%;
+    }
+    #newsletter>form{
+        width: 100%;
+        margin: 0;
+    }
+    #contact_us_form{
+        width: 100%;
+        margin-left: 2%;
+    }
+    #newsletter{
+        width: 100%;
+        padding: 6%;
+        margin: 4% 0 0 0;
+    }
+    #left_side_of_contact{
+        width: 100%;
+        float: left;
+    }
+    #right_side_of_contact{
+        width: 100%;
+        padding: 2% 0 20% 12%;
+    }
+    .contact-section{
+        margin: 12% 0 0 0;
+    }
+
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .language{
+        display: inline-block;
+    }
+    .address{
+        display: inline-block;
+    }
+    .right-text{
+        padding: 10% 3% 15% 3%;
+        font-size: 200%;
+
+    }
+    .image-h2{
+        font-size: 120%;
+    }
+    .address{
+        margin-left: 5%;
+        padding-left: 4%;
+    }
+    #statistics{
+        margin-top: 0%;
+    }
+    .bottom_statistics{
+        margin-top: 45%;
+        width: 100%;
+        margin-left: 3%;
+    }
+    .picture{
+        padding-bottom: inherit;
+    }
+    .newsletter-div{
+        margin-top: 10%;
+    }
+    #left_side_of_contact{
+        height: 50%;
+    }
+    #right_side_of_contact{
+        margin: 25% 0 5% 0;
+        padding: 0;
+        display: inline-block;
+        height: 50%;
+    }
+    #contact_information {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        margin-left: 10%;
+    }
+    #contact_information>p{
+        width: 45%;
+        float: left;
+    }
+    #map{
+        display: inline-block;
+        position: inherit;
+        width: 100%;
+        height: 60%;
+        float: left;
+        padding: 0;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .language{
+        display: inline-block;
+    }
+    .right-text{
+        padding: 12% 3% 20% 2%;
+    }
+    .image-h2{
+         font-size: 160%;
+     }
+    .address{
+        margin-left: 10%;
+    }
+    .right-text{
+        padding: 12% 0% 15% 0%;
+
+    }
+    .bottom_statistics{
+        width: 100%;
+        margin-left: 2.2%;
+        margin-top: 35%;
+    }
+    .statistics_Text{
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+    #newsletter>form{
+        width: 50%;
+        margin-left: 25%;
+    }
+    #left_side_of_contact{
+        width: 50%;
+        margin: 2% 5% 2% 0%;
+    }
+    #right_side_of_contact{
+        float: left;
+        width: 45%;
+        margin: 10% 0 0 0;
+    }
+
+    #contact_information {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        margin-left: 20%;
+        float: left;
+    }
+    #contact_information>p{
+        width: 100%;
+    }
+    #map{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        float: left;
+        padding: 0;
+    }
+    #contact_us_form{
+        width: 80%;
+    }
+    #message{
+        height: 100%;
+    }
+    .kurzy_left_icon{
+        width: 20%;
+        padding: 0%;
+        margin-left: 0%;
+        margin-top: 15%;
+        float: left;
+    }
+    .kurzy_right_text{
+        width: 68%;
+        float: right;
+    }
+    .kurzy_right_icon{
+        width: 20%;
+        padding: 0%;
+        margin-right: 0%;
+        margin-top: 15%;
+        margin-bottom: 15%;
+        float: right;
+    }
+    .kurzy_left_text{
+        float: left;
+        width: 65%;
+        margin-left: 0;
+    }
+    .picture{
+        background-image: url("../img/frontend_image.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    #statistics{
+        margin: 0 0.8% 0 2.2%;
+
+    }
+    .top-image-text{
+        float: right;
+        font-size: 50%;
+        padding-right: 2%;
+    }
+    #left_info{
+        margin-top: 5%;
+    }
+    #left_info i {
+        display: inline-block;
+    }
+    #right_info{
+        display: inline-block;
+        width: 50%;
+        float: right;
+        text-align: right;
+        margin: 0;
+    }
+    #left_question_solid{
+        display: inline-block;
+        position: relative;
+        float: left;
+        margin-left: 15%;
+    }
+    #right_question_solid{
+        display: inline-block;
+        position: relative;
+        float: right;
+    }
+
+
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #navbar{
+    margin-left: 0;
+    }
+    .language{
+        display: inline-block;
+    }
+    .right-text{
+        padding: 12% 3% 10% 2%;
+    }
+    .image-h2{
+        font-size: 210%;
+    }
+    .address{
+        margin-left: 18%;
+    }
+    .top-image-text{
+        font-size: 55%;
+    }
+    .bottom_statistics{
+        width: 80%;
+        margin: 30% 10% 0 11%;
+    }
+    .picture{
+        padding-bottom: inherit;
+    }
+    #statistics{
+        margin: 0% 11% 0 11%;
+    }
+    #newsletter{
+        padding: 1%;
+    }
+    #contact_us_form{
+        height: 80%;
+    }
+    #contact_us_form>form{
+        height: 100%;
+    }
+    #right_side_of_contact{
+        float: right;
+    }
+    #contact_us{
+        margin-bottom: 0;
+        height: 80% !important;
+    }
+    #message{
+        resize: none;
+        height: 50% !important;
+    }
+    .kurzy_left_icon{
+        width: 20%;
+        padding: 0%;
+        margin-left: 0%;
+        margin-top: 12%;
+        float: left;
+    }
+    .kurzy_right_text{
+        width: 68%;
+        float: right;
+    }
+    .tws{
+        margin-top: 25%;
+    }
+    .kurzy_right_icon{
+        width: 20%;
+        padding: 0%;
+        margin-right: 0%;
+        margin-top: 12%;
+        margin-bottom: 18%;
+        float: right;
+    }
+    .kurzy_left_text{
+        float: left;
+        width: 65%;
+        margin-left: 0;
+    }
+    .contact-section {
+        margin: 12% 5% 5% 5%;
+        width: 90%;
+    }
 }
 

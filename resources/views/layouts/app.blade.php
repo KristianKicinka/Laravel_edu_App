@@ -68,6 +68,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js" defer></script>
+    <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
 
     <script src="{{ asset('js/main.js') }}" defer></script>
 
@@ -100,6 +101,107 @@
                 display_c();
             }
 
+        }
+    </script>
+
+    <script>
+        var receiver_id = '';
+        var my_id = "{{ Auth::id() }}";
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            Pusher.logToConsole = true;
+            var pusher = new Pusher('b940dfa008d542bbb9bc', {
+                cluster: 'eu',
+                forceTLS: true
+            });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function (data) {
+
+                if (my_id == data.from) {
+                    $('#' + data.to).click();
+                } else if (my_id == data.to) {
+                    if (receiver_id == data.from) {
+                        $('#' + data.from).click();
+                    } else {
+
+                        var pending = parseInt($('#' + data.from).find('.pending').html());
+                        if (pending) {
+                            $('#' + data.from).find('.pending').html(pending + 1);
+                        } else {
+                            $('#' + data.from).append('<span class="pending">1</span>');
+                        }
+                    }
+                }
+            });
+            $('.user').click(function () {
+                $('.user').removeClass('active-user');
+                $(this).addClass('active-user');
+                $(this).find('.pending').remove();
+                receiver_id = $(this).attr('id');
+                $.ajax({
+                    type: "get",
+                    url: "message/" + receiver_id,
+                    data: "",
+                    cache: false,
+                    success: function (data) {
+                        $('#messages').html(data);
+                        scrollToBottomFunc();
+                    }
+                });
+            });
+            $(document).on('keyup', '.input-text input', function (e) {
+                var message = $(this).val();
+
+                if (e.keyCode == 13 && message != '' && receiver_id != '') {
+                    $(this).val('');
+                    var datastr = "receiver_id=" + receiver_id + "&message=" + message;
+                    $.ajax({
+                        type: "post",
+                        url: "message",
+                        data: datastr,
+                        cache: false,
+                        success: function (data) {
+                        },
+                        error: function (jqXHR, status, err) {
+                        },
+                        complete: function () {
+                            scrollToBottomFunc();
+                        }
+                    })
+                }
+            });
+        });
+        $(document).on("click", "#send-button", function() {
+            var message = $("#input-message").val();
+
+            if ( message != '' && receiver_id != '') {
+                $("#input-message").val('');
+                var datastr = "receiver_id=" + receiver_id + "&message=" + message;
+                $.ajax({
+                    type: "post",
+                    url: "message",
+                    data: datastr,
+                    cache: false,
+                    success: function (data) {
+                    },
+                    error: function (jqXHR, status, err) {
+                    },
+                    complete: function () {
+                        scrollToBottomFunc();
+                    }
+                })
+            }
+        });
+
+        function scrollToBottomFunc() {
+            $('.message-wrapper').animate({
+                scrollTop: $('.message-wrapper').get(0).scrollHeight
+            }, 50);
         }
     </script>
 

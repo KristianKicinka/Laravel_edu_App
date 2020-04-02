@@ -17,7 +17,7 @@
         "laravel/tinker": "^1.0",
         "mrohnstock/bootstrap-multiselect": "^0.9.15",
         "nesbot/carbon": "^2.28",
-      "ext-http": "*"
+        "pusher/pusher-php-server": "^4.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",

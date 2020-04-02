@@ -48,7 +48,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card mb-2">
-                                        <img class="card-img-top" src="{!! url("../storage/app/public/actualities/".$actualities[$i]->filename) !!}"
+                                        <img class="card-img-top" src="{!! url("../public/uploads/actualities/".$actualities[$i]->filename) !!}"
                                              alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title ml-1">{!! $actualities[$i]->title !!} </h4>
@@ -62,7 +62,7 @@
                                 @if(($i+1)<count($actualities))
                                     <div class="col-md-4 clearfix d-none d-md-block">
                                         <div class="card mb-2">
-                                            <img class="card-img-top" src="{!! url("../storage/app/public/actualities/".$actualities[$i+1]->filename) !!}"
+                                            <img class="card-img-top" src="{!! url("../public/uploads/actualities/".$actualities[$i+1]->filename) !!}"
                                                  alt="Card image cap">
                                             <div class="card-body">
                                                 <h4 class="card-title ml-1">{!! $actualities[$i+1]->title !!} </h4>
@@ -75,7 +75,7 @@
                                 @if(($i+2)<=count($actualities))
                                 <div class="col-md-4 clearfix d-none d-md-block">
                                     <div class="card mb-2">
-                                        <img class="card-img-top" src="{!! url("../storage/app/public/actualities/".$actualities[$i+2]->filename) !!}"
+                                        <img class="card-img-top" src="{!! url("../public/uploads/actualities/".$actualities[$i+2]->filename) !!}"
                                              alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title ml-1">{!! $actualities[$i+2]->title !!} </h4>

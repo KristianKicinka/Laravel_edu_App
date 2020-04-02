@@ -42,7 +42,7 @@
 
     </div>
     <div class="kurzy_main">
-        <div class="kurzy_left_icon">
+        <div class="kurzy_left_icon tws">
             <i class="fab fa-wordpress"></i>
             <p>Tvorba webových stránok</p>
         </div>

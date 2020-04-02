@@ -58,7 +58,7 @@ class ActualityController extends Controller
         $cover = $request->file('actuality_image_val');
         $extension = $cover->getClientOriginalExtension();
         $destination_path = "actualities/";
-        \Storage::disk('public')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
+        \Storage::disk('public_uploads')->put($destination_path.'/'.$cover->getFilename().'.'.$extension, \File::get($cover));
 
         $actuality->filename = $cover->getFilename().'.'.$extension;
         $actuality->original_filename = $cover->getClientOriginalName();
@@ -113,7 +113,7 @@ class ActualityController extends Controller
     public function destroy($id)
     {
         $file = \DB::table("actuality")->select("filename")->where("id","=",$id)->get();
-        \Storage::delete(url("../storage/app/public/actualities/".$file));
+        \Storage::delete(url("../public/uploads/actualities/".$file));
         \DB::table("actuality")->where("id","=",$id)->delete();
         return \Redirect::route("Actuality");
     }

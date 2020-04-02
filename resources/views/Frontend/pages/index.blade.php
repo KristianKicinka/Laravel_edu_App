@@ -1,5 +1,5 @@
 @extends("layouts.app")
-    </head>
+
     <body>
         <div class="flex-center position-ref full-height">
           {{-- @include("layouts.unLoggedUser")--}}
@@ -11,4 +11,4 @@
             </div>
         </div>
     </body>
-</html>
+

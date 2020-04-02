@@ -8,7 +8,7 @@
 
             {{csrf_field()}}
             <div class="modal-body">
-                <img class="w-100" src="{!! url("../storage/app/public/actualities/".$actuality->filename) !!}"  alt="">
+                <img class="w-100" src="{!! url("../public/uploads/actualities/".$actuality->filename) !!}"  alt="">
                 <br>
                 <h4 class="modal-title ml-1" id="myModalLabel">{{ $actuality->title }}</h4>
                 <p>{!!  $actuality->description  !!}</p>

@@ -32,6 +32,12 @@ Route::get('/home', function () {
 
 
 Auth::routes();
+/*Routes for Chat*/
+Route::get("/chat",["uses"=>"ChatController@index","as"=>"Chat"]);
+Route::get('/message/{id}','ChatController@getMessage')->name("message");
+Route::post('message','ChatController@sendMessage');
+
+
 /*Routes for pdf*/
 Route::get('/pdf/{id}',['uses'=>'PDFController@index','as'=>'Certificate']);
 /*Actuality routes*/
@@ -83,6 +89,7 @@ Route::post('/subjects/delete/{id}', ['uses'=>'SubjectsController@destroy', 'as'
 /*Routes for settings*/
 Route::get('/settings', ['uses'=>'SettingsController@index', 'as'=>'Settings']);
 Route::post('/settings/username/edit/{id}', ['uses'=>'SettingsController@username', 'as'=>'usernameEdit']);
+Route::post('/settings/profilepicture/edit/{id}', ['uses'=>'SettingsController@profilePicture', 'as'=>'profilePictureEdit']);
 Route::post('/settings/email/edit/{id}', ['uses'=>'SettingsController@email', 'as'=>'emailEdit']);
 Route::post('/settings/password/edit/{id}', ['uses'=>'SettingsController@password', 'as'=>'passwordEdit']);
 /*Routes for Classrooms*/
@@ -105,6 +112,8 @@ Route::post('/searchResults',['uses'=>'SearchControllers@results', 'as' => 'resu
 Route::post('/searchCoursesStudent',['uses' => 'SearchControllers@coursesStudent', 'as' => 'coursesStudent']);
 Route::post('/searchTestsStudent',['uses' => 'SearchControllers@testsStudent', 'as' => 'testsStudent']);
 Route::post('/searchMaterialsStudent',['uses' => 'SearchControllers@materialsStudent', 'as' => 'materialsStudent']);
+
+
 
 /*Routes for newsletter*/
 Route::get('/newsletter',['uses' => 'NewsletterController@index', 'as' => 'Newsletter']);
@@ -133,7 +142,6 @@ Route::post("/sendNewsletterPdf",function (){
     }
     return redirect(route("Newsletter"));
 })->name('sendNewsletterPdf');
-
 
 
 

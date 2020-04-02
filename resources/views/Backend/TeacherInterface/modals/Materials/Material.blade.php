@@ -8,7 +8,7 @@
 
                 {{csrf_field()}}
                 <div class="modal-body" style="height: 550px">
-                    <iframe class="w-100 h-100" src="{!! "../storage/app/public/materials".'\\'.$material->filename !!}" frameborder="0"></iframe>
+                    <iframe class="w-100 h-100" src="{!! "../public/uploads/materials".'\\'.$material->filename !!}" frameborder="0"></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Zatvoriť</button>

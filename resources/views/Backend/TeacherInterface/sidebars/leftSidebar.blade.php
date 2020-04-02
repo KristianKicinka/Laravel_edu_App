@@ -9,6 +9,7 @@
             <li><a class="left-sidebar-link" href="{{ route('Materials') }}"><i class="fas fa-book text-left sidebar-icon" ></i> Materiály</a></li>
             {{--<li><a class="left-sidebar-link" href="{{ route('Students') }}"><i class="fas fa-user-graduate text-left sidebar-icon" ></i> Students</a></li>--}}
             <li><a class="left-sidebar-link" href="{{ route('Classrooms') }}"><i class="fas fa-chalkboard-teacher text-left sidebar-icon" ></i> Kurzy</a></li>
+            <li><a class="left-sidebar-link" href="{{ route('Chat') }}"><i class="far fa-comments text-left sidebar-icon"></i>Správy</a></li>
         </ul>
     </div>
 @endif

@@ -7,6 +7,7 @@
             <li><a class="left-sidebar-link" href="{{ route('Subjects') }}"><i class="fas fa-flask text-left sidebar-icon"></i> Predmety</a></li>
             <li><a class="left-sidebar-link" href="{{ route('Actuality') }}"><i class="far text-left fa-calendar-plus sidebar-icon"></i> Aktuality</a></li>
             <li><a class="left-sidebar-link" href="{{ route('Newsletter') }}"><i class="far fa-newspaper text-left sidebar-icon"></i> Newsletter</a></li>
+            <li><a class="left-sidebar-link" href="{{ route('Chat') }}"><i class="far fa-comments text-left sidebar-icon"></i>Správy</a></li>
         </ul>
     </div>
 @endif
