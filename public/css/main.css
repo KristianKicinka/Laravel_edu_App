@@ -809,6 +809,27 @@ li{
     font-size: 12px;
     line-height: 1.42857;
 }
+.video-container{
+    width: 100%;
+    height: auto;
+}
+
+.my-video{
+    position: absolute;
+    width: 12%;
+    height: auto;
+    left: 15%;
+    bottom: 12%;
+    z-index: 2;
+}
+.user-video{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 
 /* Extra small devices (phones, 600px and down) */

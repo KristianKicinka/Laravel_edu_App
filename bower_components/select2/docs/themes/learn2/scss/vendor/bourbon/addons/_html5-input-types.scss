@@ -39,7 +39,7 @@ $all-text-inputs-focus: assign-inputs($inputs-list, focus);
 // #{$all-text-inputs-hover}
 // #{$all-text-inputs-focus}
 
-// Example
+// App
 //************************************************************************//
 //   #{$all-text-inputs}, textarea {
 //     border: 1px solid red;
@@ -79,7 +79,7 @@ $all-button-inputs-active: assign-inputs($inputs-button-list, active);
 // #{$all-button-inputs-focus}
 // #{$all-button-inputs-active}
 
-// Example
+// App
 //************************************************************************//
 //   #{$all-button-inputs}, button {
 //     border: 1px solid red;

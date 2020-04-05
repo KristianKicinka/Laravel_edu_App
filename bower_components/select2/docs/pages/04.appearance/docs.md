@@ -153,7 +153,7 @@ Select2 will try to match the width of the original element as closely as possib
   </tbody>
 </table>
 
-### Example
+### App
 
 The two Select2 boxes below are styled to `50%` and `75%` width respectively to support responsive design:
 
