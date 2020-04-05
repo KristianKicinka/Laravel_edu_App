@@ -140,4 +140,15 @@ class ChatController extends Controller
     {
         //
     }
+
+    public function videoCall(Request $request){
+        $recipient_id = $request->recipient_id;
+        if(\Auth::user()->is_teacher==1) {
+            return view("Backend.TeacherInterface.content.Chat.call.index")->with("recipient_id", $recipient_id);
+        }else if(\Auth::user()->is_admin==1) {
+            return view("Backend.AdminInterface.content.Chat.call.index")->with("recipient_id", $recipient_id);
+        }else{
+            return view("Backend.StudentInterface.content.Chat.call.index")->with("recipient_id", $recipient_id);
+        }
+    }
 }
