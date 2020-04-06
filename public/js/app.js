@@ -80476,6 +80476,7 @@ var App = /*#__PURE__*/function (_Component) {
     value: function setupPusher() {
       var _this3 = this;
 
+      pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a.logToConsole = true;
       this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a(APP_KEY, {
         authEndpoint: '/pusher/auth',
         cluster: 'ap2',

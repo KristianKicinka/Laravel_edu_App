@@ -1,3 +1,6 @@
 .env
 public/img
 *.env
+.git
+ssh_key
+ssh_key.pub

@@ -38,6 +38,7 @@ export default class App extends Component {
 
     }
     setupPusher(){
+        Pusher.logToConsole = true;
         this.pusher = new Pusher(APP_KEY,{
             authEndpoint:'/pusher/auth',
             cluster:'ap2',
