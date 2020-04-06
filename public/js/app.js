@@ -80460,6 +80460,7 @@ var App = /*#__PURE__*/function (_Component) {
         });
 
         _this2.user.stream = stream;
+        var mStream = stream;
 
         try {
           _this2.myVideo.srcObject = stream;
@@ -80544,6 +80545,20 @@ var App = /*#__PURE__*/function (_Component) {
       this.peers[userId] = this.startPeer(userId);
     }
   }, {
+    key: "mute",
+    value: function mute() {
+      this.user.stream.getAudioTracks()[0].enabled = !this.user.stream.getAudioTracks()[0].enabled;
+    }
+  }, {
+    key: "isMuted",
+    value: function isMuted() {
+      if (this.user.stream.getAudioTracks()[0].enabled === true) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this5 = this;
@@ -80565,7 +80580,27 @@ var App = /*#__PURE__*/function (_Component) {
         ref: function ref(_ref2) {
           _this5.userVideo = _ref2;
         }
-      })));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container controls-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "float-left px-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-danger btn-circle btn-xl",
+        onClick: function onClick() {
+          return window.close();
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-times"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "float-left px-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-orange btn-circle btn-xl",
+        onClick: function onClick() {
+          return _this5.mute();
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-microphone-slash"
+      })))))));
     }
   }]);
 
