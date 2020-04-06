@@ -30,7 +30,14 @@
     </main>
 </div>
 
-
+<script>
+    window.user = {
+        id: "{{ auth()->id() }}",
+        name: "{{ auth()->user()->name }}"
+    };
+    window.csrfToken = "{{ csrf_token() }}";
+    window.recipient_id = "{{ $recipient_id }}";
+</script>
 
 <script
     src="https://code.jquery.com/jquery-3.4.1.js"

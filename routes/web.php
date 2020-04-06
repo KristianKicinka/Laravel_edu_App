@@ -15,6 +15,7 @@ use App\Http\Controllers\SettingsController;
 use App\Mail\ContactMail;
 use App\Mail\NewsletterMail;
 use App\Mail\SendPdfMail;
+use FontLib\Table\Type\post;
 
 
 Route::get('/',['uses'=>'MainController@index','as'=>'Index']);
@@ -36,7 +37,8 @@ Auth::routes();
 Route::get("/chat",["uses"=>"ChatController@index","as"=>"Chat"]);
 Route::get('/message/{id}','ChatController@getMessage')->name("message");
 Route::post('message','ChatController@sendMessage');
-Route::get("/chat/videocall",["uses"=>"ChatController@videoCall","as"=>"videoCall"]);
+Route::get("/chat/videocall/{id}",["uses"=>"ChatController@videoCall","as"=>"videoCall"]);
+Route::post('/pusher/auth','ChatController@authenticate');
 
 
 /*Routes for pdf*/

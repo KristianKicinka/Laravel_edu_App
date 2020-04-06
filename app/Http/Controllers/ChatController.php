@@ -39,7 +39,7 @@ class ChatController extends Controller
             $query->where('from',$user_id)->where('to',$my_id);
         })->get();
 
-        return view("Backend.StudentInterface.content.Chat.messages.index")->with('messages',$messages);
+        return view("Backend.StudentInterface.content.Chat.messages.index")->with('messages',$messages)->with("user_id",$user_id);
     }
 
     public function sendMessage(Request $request){
@@ -141,14 +141,27 @@ class ChatController extends Controller
         //
     }
 
-    public function videoCall(Request $request){
-        $recipient_id = $request->recipient_id;
+    public function videoCall($user_id){
+        $receiver_id = $user_id;
         if(\Auth::user()->is_teacher==1) {
-            return view("Backend.TeacherInterface.content.Chat.call.index")->with("recipient_id", $recipient_id);
+            return view("Backend.TeacherInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
         }else if(\Auth::user()->is_admin==1) {
-            return view("Backend.AdminInterface.content.Chat.call.index")->with("recipient_id", $recipient_id);
+            return view("Backend.AdminInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
         }else{
-            return view("Backend.StudentInterface.content.Chat.call.index")->with("recipient_id", $recipient_id);
+            return view("Backend.StudentInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
         }
+    }
+
+    public function authenticate(Request $request){
+        $socketId = $request->socket_id;
+        $channelName = $request->channel_name;
+        $pusher = new Pusher(env('PUSHER_APP_KEY'),env('PUSHER_APP_SECRET'),env('PUSHER_APP_ID'),[
+           'cluster' => 'ap2',
+           'encrypted' =>true
+        ]);
+        $presence_data = ['name'=>auth()->user()->name];
+        $key = $pusher->presence_auth($channelName,$socketId,auth()->id(),$presence_data);
+
+        return response($key);
     }
 }

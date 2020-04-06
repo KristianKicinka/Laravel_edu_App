@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests_tests\Unit;
 
-use Tests\TestCase;
+use Tests_tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase

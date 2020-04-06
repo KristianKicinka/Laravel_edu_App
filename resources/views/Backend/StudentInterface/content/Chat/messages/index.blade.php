@@ -1,5 +1,5 @@
 <ul class="pl-4 float-right">
-    <li class="py-2"><button onclick="window.open('{{ route('videoCall') }}','_blank')" type="button" class="btn btn-orange btn-circle btn-xl"><i class="fas fa-video"></i></button></li>
+    <li class="py-2"><button onclick="window.open('{{ route('videoCall',$user_id) }}','_blank')" type="button" class="btn btn-orange btn-circle btn-xl"><i class="fas fa-video"></i></button></li>
     <li class="py-2"><button type="button" class="btn btn-blue btn-circle btn-xl"><i class="fas fa-phone"></i></button></li>
 </ul>
 <div class="message-wrapper">
