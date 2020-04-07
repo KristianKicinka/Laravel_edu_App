@@ -80460,7 +80460,6 @@ var App = /*#__PURE__*/function (_Component) {
         });
 
         _this2.user.stream = stream;
-        var mStream = stream;
 
         try {
           _this2.myVideo.srcObject = stream;
@@ -80479,7 +80478,7 @@ var App = /*#__PURE__*/function (_Component) {
       pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a.logToConsole = true;
       this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a(APP_KEY, {
         authEndpoint: '/pusher/auth',
-        cluster: 'ap2',
+        forceTLS: true,
         auth: {
           params: this.user.id,
           headers: {
@@ -80508,7 +80507,7 @@ var App = /*#__PURE__*/function (_Component) {
       var _this4 = this;
 
       var initiator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-      var peer = new Peer({
+      var peer = new simple_peer__WEBPACK_IMPORTED_MODULE_4___default.a({
         initiator: initiator,
         stream: this.user.stream,
         trickle: false
@@ -80565,10 +80564,7 @@ var App = /*#__PURE__*/function (_Component) {
       var _this5 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "App",
-        onLoad: function onLoad() {
-          return _this5.callTo(window.recipient_id);
-        }
+        className: "App"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "video-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
@@ -80601,6 +80597,15 @@ var App = /*#__PURE__*/function (_Component) {
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-microphone-slash"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "float-left px-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-success btn-circle btn-xl",
+        onClick: function onClick() {
+          return _this5.callTo(window.recipient_id);
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-phone"
       })))))));
     }
   }]);

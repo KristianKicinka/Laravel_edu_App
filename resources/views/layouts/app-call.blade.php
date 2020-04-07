@@ -32,11 +32,11 @@
 
 <script>
     window.user = {
-        id: "{{ auth()->id() }}",
+        id: `{{ auth()->id() }}`,
         name: "{{ auth()->user()->name }}"
     };
     window.csrfToken = "{{ csrf_token() }}";
-    window.recipient_id = "{{ $recipient_id }}";
+    window.recipient_id = `{{ json_decode($recipient_id) }}`;
 </script>
 
 <script

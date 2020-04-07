@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import MediaHandler from '../MediaHandler';
 import Pusher from 'pusher-js';
-import peer from 'simple-peer';
+import Peer from 'simple-peer';
 
 const APP_KEY = 'b940dfa008d542bbb9bc';
 
@@ -27,7 +27,6 @@ export default class App extends Component {
             .then((stream)=>{
                 this.setState({hasMedia:true});
                 this.user.stream = stream;
-                const mStream = stream;
                 try {
                     this.myVideo.srcObject = stream;
                 }catch (e) {
@@ -41,7 +40,7 @@ export default class App extends Component {
         Pusher.logToConsole = true;
         this.pusher = new Pusher(APP_KEY,{
             authEndpoint:'/pusher/auth',
-            cluster:'ap2',
+            forceTLS: true,
             auth:{
                 params:this.user.id,
                 headers:{
@@ -108,15 +107,15 @@ export default class App extends Component {
     render() {
 
         return (
-            <div className="App" onLoad={ ()=>this.callTo(window.recipient_id) }>
+            <div className="App">
                 <div className="video-container">
                     <video className="my-video" ref={(ref)=> {this.myVideo= ref;}}></video>
                     <video className="user-video" ref={(ref)=> {this.userVideo= ref;}}></video>
-
                         <div className="container controls-container">
                             <ul>
                                 <li className="float-left px-2"><button className="btn btn-danger btn-circle btn-xl" onClick={()=>window.close()}><i className="fas fa-times"></i></button></li>
                                 <li className="float-left px-2"><button className="btn btn-orange btn-circle btn-xl" onClick={()=>this.mute()}><i className="fas fa-microphone-slash"></i></button></li>
+                                <li className="float-left px-2"><button className="btn btn-success btn-circle btn-xl" onClick={()=>this.callTo(window.recipient_id)}><i className="fas fa-phone"></i></button></li>
                             </ul>
                         </div>
                 </div>
