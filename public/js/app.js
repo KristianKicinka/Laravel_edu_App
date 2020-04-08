@@ -80479,7 +80479,6 @@ var App = /*#__PURE__*/function (_Component) {
       this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a(APP_KEY, {
         authEndpoint: "/pusher/auth",
         cluster: 'eu',
-        encrypted: true,
         auth: {
           params: this.user.id,
           headers: {
