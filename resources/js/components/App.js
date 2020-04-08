@@ -41,7 +41,7 @@ export default class App extends Component {
         this.pusher = new Pusher(APP_KEY,{
             authEndpoint:`/pusher/auth`,
             cluster:'eu',
-            useTLS:true,
+            encrypted:true,
             auth:{
                 params:this.user.id,
                 headers:{
@@ -67,6 +67,7 @@ export default class App extends Component {
             trickle: false
         });
         peer.on('signal',(data)=>{
+            console.log(data);
            this.channel.trigger(`client-signal-${userId}`,{
                type:'signal',
                userId: this.user.id,

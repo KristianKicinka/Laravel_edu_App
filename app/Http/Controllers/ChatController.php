@@ -157,7 +157,7 @@ class ChatController extends Controller
         $channelName = $request->channel_name;
         $pusher = new Pusher('b940dfa008d542bbb9bc','91cf8b5a6756b5fa22af','956583',[
             'cluster' => 'eu',
-            'useTLS' => true,
+            'encrypted' => true,
         ]);
         $presence_data = ['name'=>auth()->user()->name];
         $key = $pusher->presence_auth($channelName,$socketId,auth()->id(),$presence_data);
