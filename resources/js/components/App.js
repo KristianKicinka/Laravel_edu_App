@@ -22,7 +22,7 @@ export default class App extends Component {
         this.setupPusher = this.setupPusher.bind(this);
         this.startPeer = this.startPeer.bind(this);
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
@@ -39,8 +39,9 @@ export default class App extends Component {
     setupPusher(){
         Pusher.logToConsole = true;
         this.pusher = new Pusher(APP_KEY,{
-            authEndpoint:'/pusher/auth',
-            forceTLS: true,
+            authEndpoint:`/pusher/auth`,
+            cluster:'eu',
+            useTLS:true,
             auth:{
                 params:this.user.id,
                 headers:{

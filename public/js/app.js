@@ -80450,8 +80450,8 @@ var App = /*#__PURE__*/function (_Component) {
   }
 
   _createClass(App, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "UNSAFE_componentWillMount",
+    value: function UNSAFE_componentWillMount() {
       var _this2 = this;
 
       this.mediaHandler.getPermissions().then(function (stream) {
@@ -80477,8 +80477,9 @@ var App = /*#__PURE__*/function (_Component) {
 
       pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a.logToConsole = true;
       this.pusher = new pusher_js__WEBPACK_IMPORTED_MODULE_3___default.a(APP_KEY, {
-        authEndpoint: '/pusher/auth',
-        forceTLS: true,
+        authEndpoint: "/pusher/auth",
+        cluster: 'eu',
+        useTLS: true,
         auth: {
           params: this.user.id,
           headers: {
