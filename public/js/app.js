@@ -80287,7 +80287,9 @@ var MediaHandler = /*#__PURE__*/function () {
       return new Promise(function (res, rej) {
         navigator.mediaDevices.getUserMedia({
           video: true,
-          audio: true
+          audio: {
+            echoCancellation: false
+          }
         }).then(function (stream) {
           res(stream);
         })["catch"](function (err) {
@@ -80466,6 +80468,8 @@ var App = /*#__PURE__*/function (_Component) {
         } catch (e) {
           _this2.myVideo.src = URL.createObjectURL(stream);
         }
+
+        _this2.myVideo.muted = true;
 
         _this2.myVideo.play();
       });

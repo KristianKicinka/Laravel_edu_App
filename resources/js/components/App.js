@@ -32,6 +32,7 @@ export default class App extends Component {
                 }catch (e) {
                     this.myVideo.src = URL.createObjectURL(stream);
                 }
+                this.myVideo.muted = true;
                 this.myVideo.play();
             })
 

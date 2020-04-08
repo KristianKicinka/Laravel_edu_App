@@ -1,7 +1,7 @@
 export default class MediaHandler {
     getPermissions(){
         return new Promise((res,rej)=>{
-            navigator.mediaDevices.getUserMedia({video:true,audio:true})
+            navigator.mediaDevices.getUserMedia({video:true,audio:{echoCancellation:false}})
                 .then((stream)=>{
                     res(stream);
                 })
@@ -10,4 +10,5 @@ export default class MediaHandler {
                 })
         })
     }
+
 }
