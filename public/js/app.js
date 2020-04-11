@@ -80505,12 +80505,12 @@ var App = /*#__PURE__*/function (_Component) {
         peer.signal(signal.data);
       });
       this.channel.bind('client-sdp', function () {
-        var answer = confirm("You have a call from: " + _this3.user.id + "Would you like to answer?");
+        var answer = confirm("You have a call from: " + this.user.id + "Would you like to answer?");
 
         if (!answer) {
-          return _this3.channel.trigger("client-reject");
+          return this.channel.trigger("client-reject");
         } else {
-          window.location.replace("/chat/videocoference/".concat(_this3.user.id));
+          window.location.replace("/chat/videocoference/".concat(this.user.id));
         }
       });
     }

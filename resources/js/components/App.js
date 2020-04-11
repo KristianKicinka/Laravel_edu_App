@@ -59,8 +59,8 @@ export default class App extends Component {
             }
             peer.signal(signal.data);
         });
-        this.channel.bind('client-sdp',()=>{
-            var answer = confirm("You have a call from: "+ this.user.id + "Would you like to answer?");
+        this.channel.bind('client-sdp',function (){
+            let answer = confirm("You have a call from: "+ this.user.id + "Would you like to answer?");
             if(!answer){
                 return this.channel.trigger("client-reject");
             }else {
