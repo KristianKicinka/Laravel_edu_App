@@ -66,7 +66,7 @@ export default class App extends Component {
             }else {
                 window.location.replace(`/chat/videocoference/${this.user.id}`);
             }
-        })
+        });
     }
     startPeer(userId,initiator = true){
         const peer = new Peer({
