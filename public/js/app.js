@@ -80518,6 +80518,13 @@ var App = /*#__PURE__*/function (_Component) {
       });
       peer.on('signal', function (data) {
         console.log(data);
+        var answer = confirm("You have a call from: " + data.userId + "Would you like to answer?");
+
+        if (!answer) {
+          return _this4.channel.trigger("client-reject");
+        }
+
+        window.location.replace("/chat/videocoference/".concat(userId));
 
         _this4.channel.trigger("client-signal-".concat(userId), {
           type: 'signal',
@@ -80645,8 +80652,8 @@ if (document.getElementById('application')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\www\LaravelProjects\Laravel_edu_App\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\www\LaravelProjects\Laravel_edu_App\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\www\Laravel_edu_App\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\www\Laravel_edu_App\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

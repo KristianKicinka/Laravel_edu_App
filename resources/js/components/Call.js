@@ -62,17 +62,12 @@ export default class App extends Component {
     }
     startPeer(userId,initiator = true){
         const peer = new Peer({
-           initiator,
+            initiator,
             stream: this.user.stream,
             trickle: false
         });
         peer.on('signal',(data)=>{
             console.log(data);
-            let answer = confirm("You have a call from: "+ data.userId + "Would you like to answer?");
-            if(!answer){
-                return this.channel.trigger("client-reject");
-            }
-            window.location.replace(`/chat/videocoference/${userId}`);
             this.channel.trigger(`client-signal-${userId}`,{
                 type:'signal',
                 userId: this.user.id,
@@ -118,13 +113,13 @@ export default class App extends Component {
                 <div className="video-container">
                     <video className="my-video" ref={(ref)=> {this.myVideo= ref;}}></video>
                     <video className="user-video" ref={(ref)=> {this.userVideo= ref;}}></video>
-                        <div className="container controls-container">
-                            <ul>
-                                <li className="float-left px-2"><button className="btn btn-danger btn-circle btn-xl" onClick={()=>window.close()}><i className="fas fa-times"></i></button></li>
-                                <li className="float-left px-2"><button className="btn btn-orange btn-circle btn-xl" onClick={()=>this.mute()}><i className="fas fa-microphone-slash"></i></button></li>
-                                <li className="float-left px-2"><button className="btn btn-success btn-circle btn-xl" onClick={()=>this.callTo(window.recipient_id)}><i className="fas fa-phone"></i></button></li>
-                            </ul>
-                        </div>
+                    <div className="container controls-container">
+                        <ul>
+                            <li className="float-left px-2"><button className="btn btn-danger btn-circle btn-xl" onClick={()=>window.close()}><i className="fas fa-times"></i></button></li>
+                            <li className="float-left px-2"><button className="btn btn-orange btn-circle btn-xl" onClick={()=>this.mute()}><i className="fas fa-microphone-slash"></i></button></li>
+                            <li className="float-left px-2"><button className="btn btn-success btn-circle btn-xl" onClick={()=>this.callTo(window.recipient_id)}><i className="fas fa-phone"></i></button></li>
+                        </ul>
+                    </div>
                 </div>
 
             </div>

@@ -1,5 +1,7 @@
 <header class="panel-head container-fluid py-3">
     <h1>Správy</h1>
+    <div class="chat">
+    </div>
 </header>
 
 

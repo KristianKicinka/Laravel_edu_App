@@ -816,9 +816,9 @@ li{
 
 .my-video{
     position: absolute;
-    width: 12%;
+    max-width: 20%;
     height: auto;
-    left: 15%;
+    /* left: 14%; */
     bottom: 8%;
     z-index: 2;
 }
@@ -833,6 +833,7 @@ li{
 
 .controls-container{
     text-align: center;
+    padding: 2%;
 }
 .controls-container ul{
     display: inline-block;

@@ -151,6 +151,16 @@ class ChatController extends Controller
             return view("Backend.StudentInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
         }
     }
+    public function videoConference($user_id){
+        $receiver_id = $user_id;
+        if(\Auth::user()->is_teacher==1) {
+            return view("Backend.TeacherInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
+        }else if(\Auth::user()->is_admin==1) {
+            return view("Backend.AdminInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
+        }else{
+            return view("Backend.StudentInterface.content.Chat.call.index")->with("recipient_id", $receiver_id);
+        }
+    }
 
     public function authenticate(Request $request){
         $socketId = $request->socket_id;

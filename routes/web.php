@@ -38,6 +38,7 @@ Route::get("/chat",["uses"=>"ChatController@index","as"=>"Chat"]);
 Route::get('/message/{id}','ChatController@getMessage')->name("message");
 Route::post('message','ChatController@sendMessage');
 Route::get("/chat/videocall/{id}",["uses"=>"ChatController@videoCall","as"=>"videoCall"]);
+Route::get("/chat/videocoference/{id}",["uses"=>"ChatController@videoConference","as"=>"videoConference"]);
 Route::post('/pusher/auth',["uses"=>'ChatController@authenticate','as'=>'auth']);
 
 
