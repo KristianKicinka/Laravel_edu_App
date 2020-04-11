@@ -80504,6 +80504,15 @@ var App = /*#__PURE__*/function (_Component) {
 
         peer.signal(signal.data);
       });
+      this.channel.bind('client-sdp', function () {
+        var answer = confirm("You have a call from: " + _this3.user.id + "Would you like to answer?");
+
+        if (!answer) {
+          return _this3.channel.trigger("client-reject");
+        } else {
+          window.location.replace("/chat/videocoference/".concat(_this3.user.id));
+        }
+      });
     }
   }, {
     key: "startPeer",
@@ -80518,13 +80527,6 @@ var App = /*#__PURE__*/function (_Component) {
       });
       peer.on('signal', function (data) {
         console.log(data);
-        var answer = confirm("You have a call from: " + data.userId + "Would you like to answer?");
-
-        if (!answer) {
-          return _this4.channel.trigger("client-reject");
-        }
-
-        window.location.replace("/chat/videocoference/".concat(userId));
 
         _this4.channel.trigger("client-signal-".concat(userId), {
           type: 'signal',
@@ -80532,6 +80534,7 @@ var App = /*#__PURE__*/function (_Component) {
           data: data
         });
       });
+      peer.on('cl');
       peer.on('stream', function (stream) {
         try {
           _this4.userVideo.srcObject = stream;
