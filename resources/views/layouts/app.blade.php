@@ -104,9 +104,7 @@
         }
     </script>
 
-    <script>
-        import * as channel from "pusher-js";
-
+    <script type="text/babel">
         var receiver_id = '';
         var my_id = "{{ Auth::id() }}";
         $(document).ready(function () {
@@ -121,7 +119,7 @@
                 cluster: 'eu',
                 forceTLS: true
             });
-            let channels = ['my-channel', 'presence-video-channel'].map(channelName => pusher.subscribe(channelName));
+            var channels = ['my-channel', 'presence-video-channel'].map(channelName => pusher.subscribe(channelName));
             for (channel of channels){
                 channel.bind('my-event', function (data) {
 
