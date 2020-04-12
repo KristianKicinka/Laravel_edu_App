@@ -151,6 +151,12 @@
                         return console.log("call-rejected");
                     }else {
                         window.location.replace(`/chat/videocoference/${signal.userId}`);
+                        try {
+                            this.userVideo.srcObject = stream;
+                        }catch (e) {
+                            this.userVideo.src = URL.createObjectURL(stream);
+                        }
+                        this.userVideo.play();
                     }
                 });
 
