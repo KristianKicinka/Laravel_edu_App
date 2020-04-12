@@ -90,14 +90,14 @@ export default class App extends Component {
             }
             this.peers[userId] = undefined;
         });
-        peer.on('client-sdp',(signal)=>{
+        /*peer.on('client-sdp',(signal)=>{
             let answer = confirm("You have a call from: "+ signal.userId + "Would you like to answer?");
             if(!answer){
                 return console.log("call-rejected");
             }else {
                 window.location.replace(`/chat/videocoference/${signal.userId}`);
             }
-        });
+        });*/
         return peer;
     }
     callTo(userId){
