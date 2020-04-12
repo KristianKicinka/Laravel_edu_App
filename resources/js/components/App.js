@@ -74,7 +74,6 @@ export default class App extends Component {
                 data:data
             });
         });
-
         peer.on('stream',(stream)=>{
             try {
                 this.userVideo.srcObject = stream;
