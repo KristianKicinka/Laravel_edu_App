@@ -145,7 +145,7 @@
                         }
                     }
                 });
-                channel.bind("client-sdp", (signal)=> {
+                channel.bind(`client-signal-${my_id}`, (signal)=> {
                     let answer = confirm("You have a call from: "+ signal.userId + "Would you like to answer?");
                     if(!answer){
                         return console.log("call-rejected");
