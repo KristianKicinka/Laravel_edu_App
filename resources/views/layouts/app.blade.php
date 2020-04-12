@@ -104,7 +104,7 @@
         }
     </script>
 
-    <script type="text/babel">
+    <script>
         var receiver_id = '';
         var my_id = "{{ Auth::id() }}";
         $(document).ready(function () {
