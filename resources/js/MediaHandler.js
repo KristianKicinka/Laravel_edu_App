@@ -8,7 +8,7 @@ export default class MediaHandler {
                 .catch(err =>{
                     throw new Error(`Unable to fetch stream ${err}`);
                 })
-        })
+        });
     }
 
 }
