@@ -116,8 +116,14 @@
 
             Pusher.logToConsole = true;
             var pusher = new Pusher('b940dfa008d542bbb9bc', {
-                cluster: 'eu',
-                forceTLS: true
+                authEndpoint:`/pusher/auth`,
+                cluster:'eu',
+                auth:{
+                    params:this.user.id,
+                    headers:{
+                        'X-CSRF-Token':$('meta[name="csrf-token"]').attr('content')
+                    }
+                }
             });
             var channels = ['my-channel', 'presence-video-channel'].map(channelName => pusher.subscribe(channelName));
             for (channel of channels){
