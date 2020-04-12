@@ -59,14 +59,7 @@ export default class App extends Component {
             }
             peer.signal(signal.data);
         });
-        this.channel.bind('client-sdp',(signal)=>{
-            let answer = confirm("You have a call from: "+ signal.userId + "Would you like to answer?");
-            if(!answer){
-                return console.log("call-rejected");
-            }else {
-                window.location.replace(`/chat/videocoference/${signal.userId}`);
-            }
-        });
+
     }
     startPeer(userId,initiator = true){
         const peer = new Peer({
@@ -82,7 +75,6 @@ export default class App extends Component {
                 data:data
             });
         });
-        peer.on('cl')
         peer.on('stream',(stream)=>{
             try {
                 this.userVideo.srcObject = stream;
@@ -97,6 +89,14 @@ export default class App extends Component {
                 peer.destroy();
             }
             this.peers[userId] = undefined;
+        });
+        this.channel.bind('client-sdp',(signal)=>{
+            let answer = confirm("You have a call from: "+ signal.userId + "Would you like to answer?");
+            if(!answer){
+                return console.log("call-rejected");
+            }else {
+                window.location.replace(`/chat/videocoference/${signal.userId}`);
+            }
         });
         return peer;
     }
