@@ -119,7 +119,7 @@
                 authEndpoint:`/pusher/auth`,
                 cluster:'eu',
                 auth:{
-                    params:this.user.id,
+                    params:my_id,
                     headers:{
                         'X-CSRF-Token':$('meta[name="csrf-token"]').attr('content')
                     }
