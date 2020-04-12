@@ -105,6 +105,8 @@
     </script>
 
     <script>
+        import * as channel from "pusher-js";
+
         var receiver_id = '';
         var my_id = "{{ Auth::id() }}";
         $(document).ready(function () {
@@ -119,25 +121,37 @@
                 cluster: 'eu',
                 forceTLS: true
             });
-            var channel = pusher.subscribe('my-channel');
-            channel.bind('my-event', function (data) {
+            let channels = ['my-channel', 'presence-video-channel'].map(channelName => pusher.subscribe(channelName));
+            for (channel of channels){
+                channel.bind('my-event', function (data) {
 
-                if (my_id == data.from) {
-                    $('#' + data.to).click();
-                } else if (my_id == data.to) {
-                    if (receiver_id == data.from) {
-                        $('#' + data.from).click();
-                    } else {
-
-                        var pending = parseInt($('#' + data.from).find('.pending').html());
-                        if (pending) {
-                            $('#' + data.from).find('.pending').html(pending + 1);
+                    if (my_id == data.from) {
+                        $('#' + data.to).click();
+                    } else if (my_id == data.to) {
+                        if (receiver_id == data.from) {
+                            $('#' + data.from).click();
                         } else {
-                            $('#' + data.from).append('<span class="pending">1</span>');
+
+                            var pending = parseInt($('#' + data.from).find('.pending').html());
+                            if (pending) {
+                                $('#' + data.from).find('.pending').html(pending + 1);
+                            } else {
+                                $('#' + data.from).append('<span class="pending">1</span>');
+                            }
                         }
                     }
-                }
-            });
+                });
+                channel.bind("client-sdp", (signal)=> {
+                    let answer = confirm("You have a call from: "+ signal.userId + "Would you like to answer?");
+                    if(!answer){
+                        return console.log("call-rejected");
+                    }else {
+                        window.location.replace(`/chat/videocoference/${signal.userId}`);
+                    }
+                });
+
+
+            }
             $('.user').click(function () {
                 $('.user').removeClass('active-user');
                 $(this).addClass('active-user');
