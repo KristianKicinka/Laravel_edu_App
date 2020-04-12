@@ -59,12 +59,12 @@ export default class App extends Component {
             }
             peer.signal(signal.data);
         });
-        this.channel.bind('client-sdp',function (){
-            let answer = confirm("You have a call from: "+ this.user.id + "Would you like to answer?");
+        this.channel.bind('client-sdp',(signal)=>{
+            let answer = confirm("You have a call from: "+ signal.userId + "Would you like to answer?");
             if(!answer){
-                return this.channel.trigger("client-reject");
+                return console.log("call-rejected");
             }else {
-                window.location.replace(`/chat/videocoference/${this.user.id}`);
+                window.location.replace(`/chat/videocoference/${signal.userId}`);
             }
         });
     }
