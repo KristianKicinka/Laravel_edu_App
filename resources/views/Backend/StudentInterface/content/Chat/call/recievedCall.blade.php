@@ -10,7 +10,7 @@
 
         <div class="window">
             <div class="container mt-lg-5 py-lg-4 px-4 my-4 shadow  bg-white rounded">
-                <div id="application"></div>
+                <div id="calling"></div>
             </div>
         </div>
 
