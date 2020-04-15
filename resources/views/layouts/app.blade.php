@@ -150,7 +150,9 @@
                     if(!answer){
                         return console.log("call-rejected");
                     }else {
+                        sessionStorage.setItem('signal',signal);
                         window.location.replace(`/chat/videocoference/${signal.userId}`);
+
                     }
                 });
 
