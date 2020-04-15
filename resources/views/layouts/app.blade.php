@@ -151,7 +151,7 @@
                         return console.log("call-rejected");
                     }else {
                         sessionStorage.setItem('signal',signal);
-                        window.open("{{ route('videoConference',["id"=>${signal.userId}]) }}",'_blank');
+                        window.location.replace(`/chat/videocoference/${signal.userId}`);
 
                     }
                 });
