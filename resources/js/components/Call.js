@@ -34,7 +34,16 @@ export default class Call extends Component {
                 }
                 this.myVideo.muted = true;
                 this.myVideo.play();
-            })
+
+
+            }).then((signal)=>{
+            let peer = this.peers[signal.userId];
+            if(peer === undefined){
+                this.setState({otherUserId: signal.userId});
+                peer = this.startPeer(signal.userId,false);
+            }
+            peer.signal(signal.data);
+        })
 
     }
     /*setupPusher(){

@@ -151,12 +151,6 @@
                         return console.log("call-rejected");
                     }else {
                         window.location.replace(`/chat/videocoference/${signal.userId}`);
-                        let peer = this.peers[signal.userId];
-                        if(peer === undefined){
-                            this.setState({otherUserId: signal.userId});
-                            peer = this.startPeer(signal.userId,false);
-                        }
-                        peer.signal(signal.data);
                     }
                 });
 
