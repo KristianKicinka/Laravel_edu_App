@@ -154,7 +154,7 @@
                         window.sessionStorage.setItem('signal',signal);
                         console.log("session storage user_id : "+window.sessionStorage.getItem("user_id"));
                         console.log("session storage data : "+window.sessionStorage.getItem("signal"));
-                       /* window.location.replace(`/chat/videocoference/${signal.userId}`);*/
+                        window.location.replace(`/chat/videocoference/${signal.userId}`);
 
                     }
                 });
