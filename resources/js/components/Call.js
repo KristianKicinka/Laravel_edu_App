@@ -37,13 +37,15 @@ export default class Call extends Component {
                 this.myVideo.muted = true;
                 this.myVideo.play();
 
-                let peer = this.peers[window.sessionStorage.getItem('user_id')];
-                if(peer === undefined){
-                    this.setState({otherUserId: window.sessionStorage.getItem("user_id")});
-                    peer = this.startPeer(window.sessionStorage.getItem('user_id'),false);
-                }
-                peer.signal(window.sessionStorage.getItem('signal').valueOf().data);
-            })
+
+            }).then((signal)=>{
+            let peer = this.peers[window.sessionStorage.getItem('user_id')];
+            if(peer === undefined){
+                this.setState({otherUserId: window.sessionStorage.getItem("user_id")});
+                peer = this.startPeer(window.sessionStorage.getItem('user_id'),false);
+            }
+            peer.signal(signal.data);
+        })
 
     }
     setupPusher(){
