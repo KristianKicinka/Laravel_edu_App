@@ -23,7 +23,8 @@ export default class Call extends Component {
         this.startPeer = this.startPeer.bind(this);
     }
     UNSAFE_componentWillMount() {
-        console.log("session storage var : "+sessionStorage.getItem("signal"));
+        console.log("session storage user_id : "+sessionStorage.getItem("user_id"));
+        console.log("session storage data : "+sessionStorage.getItem("signal_data"));
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
