@@ -38,7 +38,7 @@ class NewsletterMail extends Mailable
             );
         }
         return $this->subject('Edu-App Newsletter')
-            ->from('testemailsending29@gmail.com')
+            ->from('eduportalmail@gmail.com')
             ->view('Frontend.pages.Frontend_Page.newsletter_mail');
     }
 }

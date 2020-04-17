@@ -31,7 +31,7 @@ class SendPdfMail extends Mailable
     {
 
         return $this->subject('Edu-App Newsletter')
-            ->from('testemailsending29@gmail.com')
+            ->from('eduportalmail@gmail.com')
             ->attach($this->request["pdf_file_val"])
             ->view('Backend.AdminInterface.content.Newsletter.veryMuchPdfSender')
             ->with("request",$this->request);

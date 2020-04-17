@@ -17,9 +17,9 @@ export default class Call extends Component {
         this.user.stream = null;
         this.peers = {};
         this.mediaHandler = new MediaHandler();
-       /* this.setupPusher();*/
+        this.setupPusher();
         /*this.callTo = this.callTo.bind(this);*/
-        /*this.setupPusher = this.setupPusher.bind(this);*/
+        this.setupPusher = this.setupPusher.bind(this);
         this.startPeer = this.startPeer.bind(this);
     }
     UNSAFE_componentWillMount() {
@@ -44,7 +44,7 @@ export default class Call extends Component {
             })
 
     }
-    /*setupPusher(){
+    setupPusher(){
         Pusher.logToConsole = true;
         this.pusher = new Pusher(APP_KEY,{
             authEndpoint:`/pusher/auth`,
@@ -67,7 +67,7 @@ export default class Call extends Component {
             peer.signal(signal.data);
         });
 
-    }*/
+    }
     startPeer(userId,initiator = true){
         const peer = new Peer({
             initiator,
@@ -123,7 +123,7 @@ export default class Call extends Component {
                     <video className="user-video" ref={(ref)=> {this.userVideo= ref;}}></video>
                     <div className="container controls-container">
                         <ul>
-                            <li className="float-left px-2"><button className="btn btn-danger btn-circle btn-xl" onClick={()=>window.close()}><i className="fas fa-times"></i></button></li>
+                            <li className="float-left px-2"><button className="btn btn-danger btn-circle btn-xl" onClick={()=>this.window.close()}><i className="fas fa-times"></i></button></li>
                             <li className="float-left px-2"><button className="btn btn-orange btn-circle btn-xl" onClick={()=>this.mute()}><i className="fas fa-microphone-slash"></i></button></li>
                             {/*<li className="float-left px-2"><button className="btn btn-success btn-circle btn-xl" onClick={()=>this.callTo(window.recipient_id)}><i className="fas fa-phone"></i></button></li>*/}
                         </ul>

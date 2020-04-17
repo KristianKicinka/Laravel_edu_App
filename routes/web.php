@@ -133,7 +133,7 @@ Route::post("/sendNewsletter",function (){
 })->name('sendNewsletterMail');
 Route::post("/contact",function (){
     $request = request()->all();
-    Mail::to('kicinka@spse-po.sk')->send(new ContactMail($request));
+    Mail::to('eduportalmail@gmail.com')->send(new ContactMail($request));
     return redirect('/');
 })->name('sendContactMail');
 
