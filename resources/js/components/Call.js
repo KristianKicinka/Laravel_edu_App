@@ -23,8 +23,8 @@ export default class Call extends Component {
         this.startPeer = this.startPeer.bind(this);
     }
     UNSAFE_componentWillMount() {
-        console.log("session storage user_id : "+sessionStorage.getItem("user_id"));
-        console.log("session storage data : "+sessionStorage.getItem("signal_data"));
+        console.log("session storage user_id : "+window.sessionStorage.getItem("user_id"));
+        console.log("session storage data : "+window.sessionStorage.getItem("signal_data"));
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
@@ -37,12 +37,12 @@ export default class Call extends Component {
                 this.myVideo.muted = true;
                 this.myVideo.play();
 
-                let peer = this.peers[sessionStorage.getItem('user_id')];
+                let peer = this.peers[window.sessionStorage.getItem('user_id')];
                 if(peer === undefined){
-                    this.setState({otherUserId: sessionStorage.getItem("user_id")});
-                    peer = this.startPeer(sessionStorage.getItem('user_id'),false);
+                    this.setState({otherUserId: window.sessionStorage.getItem("user_id")});
+                    peer = this.startPeer(window.sessionStorage.getItem('user_id'),false);
                 }
-                peer.signal(sessionStorage.getItem('signal_data'));
+                peer.signal(window.sessionStorage.getItem('signal_data'));
             })
 
     }
