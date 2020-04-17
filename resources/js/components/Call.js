@@ -42,7 +42,7 @@ export default class Call extends Component {
                     this.setState({otherUserId: window.sessionStorage.getItem("user_id")});
                     peer = this.startPeer(window.sessionStorage.getItem('user_id'),false);
                 }
-                peer.signal(window.sessionStorage.getItem('signal').data);
+                peer.signal(window.sessionStorage.getItem('signal').valueOf().data);
             })
 
     }
