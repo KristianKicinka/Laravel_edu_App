@@ -152,7 +152,7 @@
                     }else {
                         window.sessionStorage.setItem('user_id',signal.userId);
                         window.sessionStorage.setItem('signal_data',signal.data);
-                        window.location.replace(`/chat/videocoference/${signal.userId}`);
+                       /* window.location.replace(`/chat/videocoference/${signal.userId}`);*/
 
                     }
                 });
