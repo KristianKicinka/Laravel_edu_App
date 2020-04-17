@@ -34,7 +34,7 @@ export default class Call extends Component {
                 }
                 this.myVideo.muted = true;
                 this.myVideo.play();
-
+                console.log(sessionStorage.getItem("signal"));
                 let peer = this.peers[sessionStorage.getItem("signal").userId];
                 if(peer === undefined){
                     this.setState({otherUserId: sessionStorage.getItem("signal").userId});
