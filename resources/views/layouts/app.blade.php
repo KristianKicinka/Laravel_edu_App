@@ -151,9 +151,9 @@
                         return console.log("call-rejected");
                     }else {
                         window.sessionStorage.setItem('user_id',signal.userId);
-                        window.sessionStorage.setItem('signal_data',signal.data);
+                        window.sessionStorage.setItem('signal',signal);
                         console.log("session storage user_id : "+window.sessionStorage.getItem("user_id"));
-                        console.log("session storage data : "+window.sessionStorage.getItem("signal_data"));
+                        console.log("session storage data : "+window.sessionStorage.getItem("signal"));
                        /* window.location.replace(`/chat/videocoference/${signal.userId}`);*/
 
                     }
