@@ -1,4 +1,4 @@
-@extends("layouts.app")
+@extends("layouts.app-frontend")
 
     <body>
         <div class="flex-center position-ref full-height">
