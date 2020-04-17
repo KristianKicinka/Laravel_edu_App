@@ -24,7 +24,7 @@ export default class Call extends Component {
     }
     UNSAFE_componentWillMount() {
         console.log("session storage user_id : "+window.sessionStorage.getItem("user_id"));
-        console.log("session storage data : "+window.sessionStorage.getItem("signal_data"));
+        console.log("session storage signal : "+window.sessionStorage.getItem("signal"));
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
@@ -42,7 +42,7 @@ export default class Call extends Component {
                     this.setState({otherUserId: window.sessionStorage.getItem("user_id")});
                     peer = this.startPeer(window.sessionStorage.getItem('user_id'),false);
                 }
-                peer.signal(window.sessionStorage.getItem('signal_data'));
+                peer.signal(window.sessionStorage.getItem('signal').data);
             })
 
     }
