@@ -38,14 +38,14 @@ export default class Call extends Component {
                 this.myVideo.play();
 
 
-            }).then((signal)=>{
+            })/*.then((signal)=>{
             let peer = this.peers[window.sessionStorage.getItem('user_id')];
             if(peer === undefined){
                 this.setState({otherUserId: window.sessionStorage.getItem("user_id")});
                 peer = this.startPeer(window.sessionStorage.getItem('user_id'),false);
             }
             peer.signal(signal.data);
-        })
+        })*/
 
     }
     setupPusher(){
