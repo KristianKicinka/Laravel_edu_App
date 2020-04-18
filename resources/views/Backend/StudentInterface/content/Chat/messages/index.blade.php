@@ -1,3 +1,5 @@
+@include('Backend.StudentInterface.modals.Chat.startCall')
+
 <ul class="pl-4 float-right">
     <li class="py-2"><button data-toggle="modal" data-target="#startCallModal" type="button" class="btn btn-orange btn-circle btn-xl"><i class="fas fa-video"></i></button></li>
     <li class="py-2"><button type="button" class="btn btn-blue btn-circle btn-xl"><i class="fas fa-phone"></i></button></li>
@@ -18,3 +20,4 @@
     <input type="text" name="message" class="submit text-input" id="input-message">
     <button class="btn btn-orange" id="send-button" >Odoslať</button>
 </div>
+
