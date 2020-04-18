@@ -39,7 +39,7 @@
                         <td>{{ json_decode($material->class,true) }}</td>
                         <td>{{ $material->subject }}</td>
                         <td><a class="text-dark" href="{{ route('materialDownload', $material->filename) }}"><i class="fas fa-download pr-2"></i>{{ $material->original_filename }}</a></td>
-                        <td>
+                        <td class="materials-controls">
                             <button class="btn btn-blue" data-toggle="modal" data-target="#descriptionModal_{{$material->id}}" >Popis</button>
                             <button class="btn btn-blue" data-toggle="modal" data-target="#materialModal_{{$material->id}}" >Zobraziť materiál</button>
                             @if(Auth::user()->is_teacher==1)

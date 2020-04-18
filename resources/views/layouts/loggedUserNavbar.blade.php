@@ -27,12 +27,6 @@
 
         <div class="collapse navbar-collapse text-center navbar-user" id="navbarNav">
             <ul class="navbar-nav ml-auto font-roboto nav-right-part font-weight-bold user-navbar-nav">
-                <li><a class="nav-link" href="{{ route('Dashboard') }}"><i class="fa fa-fw fa-home text-left sidebar-icon" ></i> Domov</a></li>
-                <li><a class="nav-link" href="{{ route('Settings') }}"><i class="fas fa-cogs text-left sidebar-icon" ></i> Nastavenia</a></li>
-                <li><a class="nav-link" href="{{ route('Classrooms') }}"><i class="fas fa-chalkboard-teacher text-left sidebar-icon" ></i> Kurzy</a></li>
-                <li><a class="nav-link" href="{{ route('Materials') }}"><i class="fas fa-book text-left sidebar-icon" ></i> Materiály</a></li>
-                <li><a class="nav-link" href="{{ route('Tests') }}"><i class="far fa-clipboard text-left sidebar-icon"></i>Testy</a></li>
-                <li><a class="nav-link" href="{{ route('Chat') }}"><i class="far fa-comments text-left sidebar-icon"></i>Správy</a></li>
                 @if(Auth::user()->is_teacher==1)
                     <li><a class="nav-link" href="{{ route('Dashboard') }}"><i class="fa fa-fw fa-home text-left sidebar-icon" ></i> Domov</a></li>
                     <li><a class="nav-link" href="{{ route('Settings') }}"><i class="fas fa-cogs text-left sidebar-icon" ></i> Nastavenia</a></li>
@@ -52,6 +46,14 @@
                     <li><a class="nav-link" href="{{ route('Newsletter') }}"><i class="far fa-newspaper text-left sidebar-icon"></i> Newsletter</a></li>
                     <li><a class="nav-link" href="{{ route('Chat') }}"><i class="far fa-comments text-left sidebar-icon"></i>Správy</a></li>
                     @endif
+                    @if(Auth::user()->is_admin==0 && Auth::user()->is_teacher==0)
+                            <li><a class="nav-link" href="{{ route('Dashboard') }}"><i class="fa fa-fw fa-home text-left sidebar-icon" ></i> Domov</a></li>
+                            <li><a class="nav-link" href="{{ route('Settings') }}"><i class="fas fa-cogs text-left sidebar-icon" ></i> Nastavenia</a></li>
+                            <li><a class="nav-link" href="{{ route('Classrooms') }}"><i class="fas fa-chalkboard-teacher text-left sidebar-icon" ></i> Kurzy</a></li>
+                            <li><a class="nav-link" href="{{ route('Materials') }}"><i class="fas fa-book text-left sidebar-icon" ></i> Materiály</a></li>
+                            <li><a class="nav-link" href="{{ route('Tests') }}"><i class="far fa-clipboard text-left sidebar-icon"></i>Testy</a></li>
+                            <li><a class="nav-link" href="{{ route('Chat') }}"><i class="far fa-comments text-left sidebar-icon"></i>Správy</a></li>
+                     @endif
             </ul>
 
         </div>

@@ -41,7 +41,7 @@
                             $test->points." / ".$test->max_points
                         }} @else {{ "0 / 0" }}</td>
                         @endif
-                        <td>
+                        <td class="test-controls">
                             <button class="btn btn-blue" onclick="window.open('{{ route('Testing',$test->test_id) }}','_blank')">Spustiť test</button>
                             @if(isset($test->points))
                                 <button class="btn btn-orange" onclick="window.open('{{ route('showResults', $test->test_id) }}','_blank')">Ukázať výsledky</button>

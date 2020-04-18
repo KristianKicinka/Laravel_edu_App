@@ -848,6 +848,9 @@ li{
 .user-navbar-nav{
     display: none;
 }
+.call-buttons-list{
+    float: right;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
@@ -1025,6 +1028,53 @@ li{
     .col-4{
         flex: none;
         max-width: none;
+    }
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .container-fluid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .search_everything{
+        width: 70%;
+    }
+    .table td, .table th{
+        padding: .25em;
+    }
+    .table{
+        font-size: 65%;
+    }
+    .test-controls>.btn{
+        font-size: 60%;
+        width: 48%;
+        padding: 5%;
+    }
+    .materials-controls>.btn{
+        font-size: 80%;
+        width: 100%;
+        margin: 2%;
+    }
+
+    .users{
+        font-size: 80%;
+    }
+    .text-input{
+        width: 100%;
+        margin-bottom: 2%;
+    }
+    .call-buttons-list{
+        float: left;
+        width: 100%;
+    }
+    .call-buttons-list>li{
+        display: inline-block;
+        float: left;
+        margin: 2%;
+    }
+    .recived, .sent{
+        width: 60%;
     }
 
 
