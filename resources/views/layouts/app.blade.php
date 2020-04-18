@@ -150,12 +150,12 @@
                     if(!answer){
                         return console.log("call-rejected");
                     }else {
-                        window.sessionStorage.setItem('user_id',signal.userId);
-                        window.sessionStorage.setItem('signal',signal);
-                        console.log("session storage user_id : "+window.sessionStorage.getItem("user_id"));
-                        console.log("session storage data : "+window.sessionStorage.getItem("signal"));
-                        window.location.replace(`/chat/videocoference/${signal.userId}`);
-
+                        let peer = this.peers[signal.userId];
+                        if(peer === undefined){
+                            this.setState({otherUserId: signal.userId});
+                            peer = this.startPeer(signal.userId,false);
+                        }
+                        peer.signal(signal.data);
                     }
                 });
 
@@ -166,6 +166,7 @@
                 $(this).addClass('active-user');
                 $(this).find('.pending').remove();
                 receiver_id = $(this).attr('id');
+                window.recipient_id = receiver_id;
                 $.ajax({
                     type: "get",
                     url: "message/" + receiver_id,
@@ -226,6 +227,13 @@
                 scrollTop: $('.message-wrapper').get(0).scrollHeight
             }, 50);
         }
+    </script>
+    <script>
+        window.user = {
+            id: `{{ auth()->id() }}`,
+            name: "{{ auth()->user()->name }}"
+        };
+        window.csrfToken = "{{ csrf_token() }}";
     </script>
 
 

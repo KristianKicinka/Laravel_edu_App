@@ -6,8 +6,9 @@
 
 
     <div class="row container-fluid">
-        {{--@include('Backend.StudentInterface.content.Chat.header')--}}
-
+        {{--@foreach($users as $user)--}}
+        @include('Backend.StudentInterface.modals.Chat.startCall')
+        {{--@endforeach--}}
 
         {{--Main Content--}}
 

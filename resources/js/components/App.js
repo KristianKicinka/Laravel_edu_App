@@ -17,12 +17,13 @@ export default class App extends Component {
         this.user.stream = null;
         this.peers = {};
         this.mediaHandler = new MediaHandler();
-        this.setupPusher();
+        /*this.setupPusher();*/
         this.callTo = this.callTo.bind(this);
-        this.setupPusher = this.setupPusher.bind(this);
+       /* this.setupPusher = this.setupPusher.bind(this);*/
         this.startPeer = this.startPeer.bind(this);
     }
     UNSAFE_componentWillMount() {
+        console.log("recipient_id : "+window.recipient_id);
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
@@ -37,7 +38,7 @@ export default class App extends Component {
             })
 
     }
-    setupPusher(){
+    /*setupPusher(){
         Pusher.logToConsole = true;
         this.pusher = new Pusher(APP_KEY,{
             authEndpoint:`/pusher/auth`,
@@ -60,7 +61,7 @@ export default class App extends Component {
             peer.signal(signal.data);
         });
 
-    }
+    }*/
     startPeer(userId,initiator = true){
         const peer = new Peer({
            initiator,
