@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-orange text-dark shadow-sm">
-    <div class="container-fluid">
+    <div class="container-fluid top-menu-container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Edu-Portal') }}
         </a>

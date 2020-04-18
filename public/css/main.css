@@ -841,6 +841,13 @@ li{
 .controls>li{
     display: block;
 }
+/*logged-user*/
+.user-nav{
+    display: none;
+}
+.user-navbar-nav{
+    display: none;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
@@ -969,8 +976,56 @@ li{
         display: none;
     }
 
+/*Design for backend*/
 
+    .main-content{
+        width: 80%;
+        padding: 0;
+    }
+    .top-menu-container{
+        width: 100%;
+        margin: 0;
+    }
+    .hamburger{
+        z-index: 100;
+    }
+    .sidebar-left{
+        display: none;
+    }
+    .logo-panel{
+        width: 50%;
+        height: auto;
+        position: relative;
+        background-color: transparent;
+    }
+    .user-nav{
+        position: relative;
+        background-color: #112134;
+        color: white;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        display: block;
+    }
+    .user-nav>li{
+        display: inline-block;
+        padding: 2%;
+        color: white;
+    }
+    .user-navbar-nav{
+        display: block;
+    }
+    .navbar-user{
+        color: black;
 
+    }
+    .panel-navbar{
+        position: relative;
+    }
+    .col-4{
+        flex: none;
+        max-width: none;
+    }
 
 
 }
