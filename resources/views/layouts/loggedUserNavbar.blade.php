@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm panel-navbar">
     <div class="container-fluid top-menu-container">
         <div class="col-sm-2 logo-panel text-center">
-            <a class="navbar-brand font-roboto" href="">
+            <a class="navbar-brand font-roboto navbar-logo" href="">
                 {{ config('app.name', 'Edu-Portal SPSE-PO') }}
             </a>
         </div>
