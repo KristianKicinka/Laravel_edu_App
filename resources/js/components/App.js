@@ -23,7 +23,6 @@ export default class App extends Component {
         this.startPeer = this.startPeer.bind(this);
     }
     UNSAFE_componentWillMount() {
-        console.log("recipient_id : "+window.recipient_id);
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
