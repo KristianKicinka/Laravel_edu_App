@@ -1248,9 +1248,9 @@ li{
         margin-top: 0%;
     }
     .bottom_statistics{
-        margin-top: 45%;
-        width: 100%;
-        margin-left: 3%;
+        margin-top: 47%;
+        width: 102%;
+        margin-left: 2%;
     }
     .picture{
         padding-bottom: inherit;
@@ -1344,9 +1344,9 @@ li{
 
     }
     .bottom_statistics{
-        width: 100%;
-        margin-left: 2.2%;
-        margin-top: 35%;
+        width: 101.8%;
+        margin-left: 1.4%;
+        margin-top: 38%;
     }
     .statistics_Text{
         padding-left: 5% !important;
@@ -1419,7 +1419,7 @@ li{
         background-repeat: no-repeat;
     }
     #statistics{
-        margin: 0 0.8% 0 2.2%;
+        margin: 0;
 
     }
     .top-image-text{
