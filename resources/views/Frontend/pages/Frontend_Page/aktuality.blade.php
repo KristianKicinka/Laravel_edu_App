@@ -53,7 +53,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title ml-1">{!! $actualities[$i]->title !!} </h4>
                                             <div class="card-text">{!! Str::words($actualities[$i]->description,5,"...") !!}</div>
-                                            <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i]->id}}">Read more</button>
+                                            <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i]->id}}">Čítaj viac</button>
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                             <div class="card-body">
                                                 <h4 class="card-title ml-1">{!! $actualities[$i+1]->title !!} </h4>
                                                 <div class="card-text">{!! Str::words($actualities[$i+1]->description,5,"...") !!}</div>
-                                                <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i+1]->id}}">Read more</button>
+                                                <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i+1]->id}}">Čítaj viac</button>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +80,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title ml-1">{!! $actualities[$i+2]->title !!} </h4>
                                             <div class="card-text">{!! Str::words($actualities[$i+2]->description,5,"...") !!}</div>
-                                            <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i+2]->id}}">Read more</button>
+                                            <button class="btn btn-orange" style="color: white" data-toggle="modal" data-target="#descriptionModal_{{$actualities[$i+2]->id}}">Čítaj viac</button>
                                         </div>
                                     </div>
                                 </div>

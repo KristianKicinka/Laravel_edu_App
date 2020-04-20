@@ -2,10 +2,23 @@
    <div class="language col-md-2 py-2">
        <ul class="navbar-nav">
            <li class="nav-item">
-               <a href="" class="nav-link text-light" style="border-right: 1px solid white;">Slovak</a>
+               {{Form::open(["method"=>"get", "url"=>route('Index')])}}
+
+               {{Form::submit('Slovak',[
+               'class' =>'nav-link text-light',
+               'style' =>'background-color:transparent; border:none; border-right: 1px solid white;'
+               ])}}
+               {{Form::close()}}
+               {{--<a href="" class="nav-link text-light">English</a>--}}
            </li>
-           <li class="nav-item">
-               <a href="" class="nav-link text-light">English</a>
+           <li class="nav-item">  {{Form::open(["method"=>"get", "url"=>route('translate')])}}
+
+               {{Form::submit('English',[
+               'class' =>'nav-link text-light',
+               'style' =>'background-color:transparent; border:none;'
+               ])}}
+               {{Form::close()}}
+               {{--<a href="" class="nav-link text-light">English</a>--}}
            </li>
        </ul>
    </div>

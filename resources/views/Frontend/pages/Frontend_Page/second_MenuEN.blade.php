@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-md shadow-sm navbar-light bg-light w-100 pr-2" style="{border-top: 1px solid navajowhite; padding-right: 0%; background-color:white;}" id="navbar" >
     <div class="container-fluid">
-                <a href="#" class="navbar-brand px-4" style="color: #112134;font-weight: bold;">
-                    <i class="fas fa-university"style="font-size: 250%;"></i>
-                    <h3 class="d-inline-block font-weight-bold px-2">Edu-Portal</h3>
-                </a>
+        <a href="#" class="navbar-brand px-4" style="color: #112134;font-weight: bold;">
+            <i class="fas fa-university"style="font-size: 250%;"></i>
+            <h3 class="d-inline-block font-weight-bold px-2">Edu-Portal</h3>
+        </a>
         <button class="navbar-toggler colapse-menu float-left mr-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +15,7 @@
             <ul class="navbar-nav ml-auto font-roboto nav-right-part font-weight-bold">
 
                 <li class="nav-item active w-20" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-                    <a class="nav-link" onclick="(document.getElementById('statistics')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">O portáli</a>
+                    <a class="nav-link" onclick="(document.getElementById('statistics')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">About us</a>
                 </li>
 
                 <li class="nav-item active w-20" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
@@ -27,11 +27,11 @@
                 </li>
 
                 <li class="nav-item active w-20" style="" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-                    <a class="nav-link" onclick="(document.getElementById('aktuality')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;" >Aktuality</a>
+                    <a class="nav-link" onclick="(document.getElementById('aktuality')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;" >Actuality</a>
                 </li>
 
                 <li class="nav-item active w-20" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-                    <a class="nav-link" onclick="(document.getElementById('contact_us')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">Kontakt</a>
+                    <a class="nav-link" onclick="(document.getElementById('contact_us')).scrollIntoView({behavior: 'smooth'})" style="cursor: pointer;">Contact</a>
                 </li>
 
 

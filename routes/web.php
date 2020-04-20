@@ -117,6 +117,9 @@ Route::post('/searchCoursesStudent',['uses' => 'SearchControllers@coursesStudent
 Route::post('/searchTestsStudent',['uses' => 'SearchControllers@testsStudent', 'as' => 'testsStudent']);
 Route::post('/searchMaterialsStudent',['uses' => 'SearchControllers@materialsStudent', 'as' => 'materialsStudent']);
 
+/*Routes for translate*/
+Route::get('/en', ['uses'=>'MainController@translate', 'as'=>'translate']);
+
 
 
 /*Routes for newsletter*/

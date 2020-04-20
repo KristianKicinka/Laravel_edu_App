@@ -18,6 +18,12 @@ class MainController extends Controller
         /*dd($actualities);*/
         return view('Frontend.pages.index')->with("actualities",$actualities);
     }
+    public function translate()
+    {
+        $actualities = \DB::table("actuality")->get();
+        /*dd($actualities);*/
+        return view('Frontend.pages.indexEN')->with("actualities",$actualities);
+    }
 
     /**
      * Show the form for creating a new resource.
