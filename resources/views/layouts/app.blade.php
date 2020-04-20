@@ -167,6 +167,7 @@
                 $(this).find('.pending').remove();
                 receiver_id = $(this).attr('id');
                 window.recipient_id = receiver_id;
+                console.log("Recipient_id = "+window.recipient_id);
                 $.ajax({
                     type: "get",
                     url: "message/" + receiver_id,

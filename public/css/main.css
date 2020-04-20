@@ -841,6 +841,16 @@ li{
 .controls>li{
     display: block;
 }
+/*logged-user*/
+.user-nav{
+    display: none;
+}
+.user-navbar-nav{
+    display: none;
+}
+.call-buttons-list{
+    float: right;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
@@ -969,8 +979,129 @@ li{
         display: none;
     }
 
+/*Design for backend*/
 
+    .main-content{
+        width: 80%;
+        padding: 0;
+    }
+    .top-menu-container{
+        width: 100%;
+        margin: 0;
+    }
+    .hamburger{
+        z-index: 100;
+    }
+    .sidebar-left{
+        display: none;
+    }
+    .logo-panel{
+        width: 50%;
+        height: auto;
+        position: relative;
+        background-color: transparent;
+    }
+    .user-nav{
+        position: relative;
+        background-color: #112134;
+        color: white;
+        top: 0;
+        width: 100%;
+        height: 10%;
+        display: block;
+    }
+    .user-nav>li{
+        display: inline-block;
+        padding: 2%;
+        color: white;
+    }
+    .user-navbar-nav{
+        display: block;
+    }
+    .navbar-user{
+        color: black;
 
+    }
+    .panel-navbar{
+        position: relative;
+    }
+    .col-4{
+        flex: none;
+        max-width: none;
+    }
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .container-fluid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .search_everything{
+        width: 70%;
+    }
+    .table td, .table th{
+        padding: .25em;
+    }
+    .table{
+        font-size: 50%;
+    }
+    .test-controls>.btn{
+        font-size: 60%;
+        width: 48%;
+        padding: 5%;
+    }
+    .materials-controls>.btn{
+        font-size: 80%;
+        width: 100%;
+        margin: 2%;
+    }
+
+    .users{
+        font-size: 80%;
+    }
+    .text-input{
+        width: 100%;
+        margin-bottom: 2%;
+    }
+    .call-buttons-list{
+        float: left;
+        width: 100%;
+    }
+    .call-buttons-list>li{
+        display: inline-block;
+        float: left;
+        margin: 2%;
+    }
+    .recived, .sent{
+        width: 60%;
+    }
+    .materials-header>.forms{
+        padding: 0;
+    }
+    .submit_button_everywhere{
+        width: 28%;
+        font-size: 90%;
+        padding: 2%;
+    }
+    .content-header>.btn-blue{
+        width: 40%;
+        padding: 2%;
+        margin: 2% 0 2% 0;
+        float: right;
+    }
+    .content-header>.mr-2{
+        margin-right: 0 !important;
+    }
+    .forms{
+        padding: 0;
+    }
+    td>.btn{
+        width: 80%;
+        padding: 2%;
+        font-size: 150%;
+        margin: 2% 10% 2% 10%;
+    }
 
 
 }
@@ -1117,9 +1248,9 @@ li{
         margin-top: 0%;
     }
     .bottom_statistics{
-        margin-top: 45%;
-        width: 100%;
-        margin-left: 3%;
+        margin-top: 47%;
+        width: 102%;
+        margin-left: 2%;
     }
     .picture{
         padding-bottom: inherit;
@@ -1154,6 +1285,44 @@ li{
         float: left;
         padding: 0;
     }
+    /*Backend design*/
+    .main-content{
+        padding-top: 10%;
+    }
+    .col-sm-2{
+        font-size: 60%;
+    }
+    .sidebar-left{
+        padding: 2% 0 0 0;
+    }
+    .sidebar-ul>li{
+        padding-left: 10%;
+    }
+    .navbar-logo{
+        font-size: 160%;
+        margin-top: 15%;
+    }
+    .table{
+        font-size: 50%;
+    }
+    .forms{
+        max-width: none; !important;
+        width: 70%;
+    }
+    td>.btn{
+        width: 80%;
+        padding: 2%;
+        font-size: 150%;
+        margin: 2% 10% 2% 10%;
+    }
+    .submit_button_everywhere{
+        width: 15%;
+        font-size: 90%;
+        padding: 2%;
+    }
+    .search_everything{
+        width: 80%;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -1175,9 +1344,9 @@ li{
 
     }
     .bottom_statistics{
-        width: 100%;
-        margin-left: 2.2%;
-        margin-top: 35%;
+        width: 101.8%;
+        margin-left: 1.4%;
+        margin-top: 38%;
     }
     .statistics_Text{
         padding-left: 5% !important;
@@ -1250,7 +1419,7 @@ li{
         background-repeat: no-repeat;
     }
     #statistics{
-        margin: 0 0.8% 0 2.2%;
+        margin: 0;
 
     }
     .top-image-text{
@@ -1282,7 +1451,44 @@ li{
         position: relative;
         float: right;
     }
-
+    /*Backend design*/
+    .main-content{
+        padding-top: 10%;
+    }
+    .col-sm-2{
+        font-size: 100%;
+    }
+    .sidebar-left{
+        padding: 0% 0 0 0;
+        font-size: 80%;
+    }
+    .sidebar-ul>li{
+        padding-left: 10%;
+    }
+    .navbar-logo{
+        font-size: 120%;
+        margin-top: 10%;
+    }
+    .table{
+        font-size: 100%;
+    }
+    .forms{
+        width: 50%;
+    }
+    td>.btn{
+        width: 60%;
+        padding: 2%;
+        font-size: 100%;
+        margin: 2%;
+    }
+    .submit_button_everywhere{
+        width: 15%;
+        font-size: 100%;
+        padding: 1%;
+    }
+    .search_everything{
+        width: 80%;
+    }
 
 
 
@@ -1369,5 +1575,45 @@ li{
         margin: 12% 5% 5% 5%;
         width: 90%;
     }
+
+    /*Backend design*/
+    .main-content{
+        padding-top: 5%;
+    }
+    .col-sm-2{
+        font-size: 100%;
+    }
+    .sidebar-left{
+        padding: 0% 0 0 0;
+        font-size: 100%;
+    }
+    .sidebar-ul>li{
+        padding-left: 10%;
+    }
+    .navbar-logo{
+        font-size: 160%;
+        margin-top: 0%;
+    }
+    .table{
+        font-size: 100%;
+    }
+    .forms{
+        width: 50%;
+    }
+    td>.btn{
+        width: 30%;
+        padding: 1%;
+        font-size: 100%;
+        margin: 1%;
+    }
+    .submit_button_everywhere{
+        width: 15%;
+        font-size: 100%;
+        padding: 1%;
+    }
+    .search_everything{
+        width: 80%;
+    }
+
 }
 

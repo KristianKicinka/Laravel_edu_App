@@ -2,6 +2,8 @@
 
 namespace Laracasts\Generators\Migrations;
 
+use Illuminate\Support\Str;
+
 class SchemaParser
 {
     /**
@@ -104,7 +106,7 @@ class SchemaParser
         if (empty($options)) return [];
 
         foreach ($options as $option) {
-            if (str_contains($option, '(')) {
+            if (Str::contains($option, '(')) {
                 preg_match('/([a-z]+)\(([^\)]+)\)/i', $option, $matches);
 
                 $results[$matches[1]] = $matches[2];
@@ -141,7 +143,7 @@ class SchemaParser
      */
     private function getTableNameFromForeignKey($key)
     {
-        return str_plural(str_replace('_id', '', $key));
+        return Str::plural(str_replace('_id', '', $key));
     }
 
     /**
