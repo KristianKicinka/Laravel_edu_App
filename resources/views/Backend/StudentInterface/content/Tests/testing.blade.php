@@ -1,9 +1,10 @@
 @extends('layouts.app-test')
 
 <nav class="navbar navbar-expand-md navbar-light shadow-sm bg-orange py-2 ">
+    <div class="pl-xl-5" style="{display: inline-block; float: left}">{{Auth::user()->name}}</div>
     <div class="container-fluid pt-1">
+
         <div class="text-center w-100">
-            <p style="{display: inline-block; float: left}">{{Auth::user()->name}}</p>
             <h4 id="countdown" class="timer" style="display: inline-block"></h4>
         </div>
     </div>
