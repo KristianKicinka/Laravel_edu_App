@@ -22,7 +22,7 @@ export default class App extends Component {
        /* this.setupPusher = this.setupPusher.bind(this);*/
         this.startPeer = this.startPeer.bind(this);
     }
-    callFunction() {
+    UNSAFE_componentWillMount() {
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
