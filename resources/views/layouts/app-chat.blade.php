@@ -237,85 +237,20 @@
         window.csrfToken = "{{ csrf_token() }}";
     </script>
     <script>
-        import React, { Component } from 'react';
-        import ReactDOM from 'react-dom';
-        import MediaHandler from '../MediaHandler';
-        import Pusher from 'pusher-js';
-        import Peer from 'simple-peer';
-            this.state = {
-                hasMedia:false,
-                otherUserId:null
-            }
-            this.user = window.user;
-            this.user.stream = null;
-            this.peers = {};
-            this.mediaHandler = new MediaHandler();
-            /*this.setupPusher();*/
-            this.callTo = this.callTo.bind(this);
-            /* this.setupPusher = this.setupPusher.bind(this);*/
-            this.startPeer = this.startPeer.bind(this);
-
-        function ClickCall(){
-                this.mediaHandler.getPermissions()
-                    .then((stream)=>{
-                        this.setState({hasMedia:true});
-                        this.user.stream = stream;
-                        try {
-                            this.myVideo.srcObject = stream;
-                        }catch (e) {
-                            this.myVideo.src = URL.createObjectURL(stream);
-                        }
-                        this.myVideo.muted = true;
-                        this.myVideo.play();
-                    })
-            }
-
-
-
-            function startPeer(userId,initiator = true){
-                const peer = new Peer({
-                    initiator,
-                    stream: this.user.stream,
-                    trickle: false
-                });
-                peer.on('signal',(data)=>{
-                    console.log(data);
-                    this.channel.trigger(`client-signal-${userId}`,{
-                        type:'signal',
-                        userId: this.user.id,
-                        data:data
-                    });
-                });
-                peer.on('stream',(stream)=>{
+        function loadComponent(){
+            this.mediaHandler.getPermissions()
+                .then((stream)=>{
+                    this.setState({hasMedia:true});
+                    this.user.stream = stream;
                     try {
-                        this.userVideo.srcObject = stream;
+                        this.myVideo.srcObject = stream;
                     }catch (e) {
-                        this.userVideo.src = URL.createObjectURL(stream);
+                        this.myVideo.src = URL.createObjectURL(stream);
                     }
-                    this.userVideo.play();
+                    this.myVideo.muted = true;
+                    this.myVideo.play();
                 });
-                peer.on('close',()=>{
-                    let peer = this.peers[userId];
-                    if(peer != undefined){
-                        peer.destroy();
-                    }
-                    this.peers[userId] = undefined;
-                });
-                return peer;
-            }
-            function allTo(userId){
-                this.peers[userId] = this.startPeer(userId);
-            }
-            function mute(){
-                this.user.stream.getAudioTracks()[0].enabled = !(this.user.stream.getAudioTracks()[0].enabled);
-            }
-            function isMuted(){
-                if(this.user.stream.getAudioTracks()[0].enabled === true){
-                    return true;
-                }else {
-                    return false;
-                }
-            }
+        }
     </script>
 
 
