@@ -238,18 +238,7 @@
     </script>
     <script>
         function loadComponent(){
-            this.mediaHandler.getPermissions()
-                .then((stream)=>{
-                    this.setState({hasMedia:true});
-                    this.user.stream = stream;
-                    try {
-                        this.myVideo.srcObject = stream;
-                    }catch (e) {
-                        this.myVideo.src = URL.createObjectURL(stream);
-                    }
-                    this.myVideo.muted = true;
-                    this.myVideo.play();
-                });
+
         }
     </script>
 
