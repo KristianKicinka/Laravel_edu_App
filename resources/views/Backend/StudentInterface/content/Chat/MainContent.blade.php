@@ -4,7 +4,6 @@
     </div>
 </header>
 
-@include('Backend.StudentInterface.modals.Chat.startCall')
     <div class="row container-fluid">
         {{--@foreach($users as $user)--}}
 
