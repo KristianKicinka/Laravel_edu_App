@@ -8,7 +8,7 @@
 
             {{csrf_field()}}
             <div class="modal-body">
-               <div id="application"></div>
+               <div id="application" style="display: none"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Zatvoriť</button>
