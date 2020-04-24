@@ -22,7 +22,7 @@ export default class App extends Component {
        /* this.setupPusher = this.setupPusher.bind(this);*/
         this.startPeer = this.startPeer.bind(this);
     }
-    UNSAFE_componentWillMount() {
+    /*UNSAFE_componentWillMount() {
         this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
@@ -36,7 +36,7 @@ export default class App extends Component {
                 this.myVideo.play();
             })
 
-    }
+    }*/
 
     /*setupPusher(){
         Pusher.logToConsole = true;
