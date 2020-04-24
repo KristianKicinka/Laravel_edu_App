@@ -236,11 +236,7 @@
         };
         window.csrfToken = "{{ csrf_token() }}";
     </script>
-    <script>
-        function loadComponent(){
 
-        }
-    </script>
 
 
 </body>
