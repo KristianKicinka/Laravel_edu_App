@@ -1,4 +1,4 @@
-@include('Backend.StudentInterface.modals.Chat.startCall')
+
 
 <ul class="pl-4 call-buttons-list">
     <li class="py-2"><button data-toggle="modal" data-target="#startCallModal" type="button" class="btn btn-orange btn-circle btn-xl"><i class="fas fa-video"></i></button></li>
