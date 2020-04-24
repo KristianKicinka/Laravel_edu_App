@@ -1,8 +1,8 @@
-
+@include('Backend.StudentInterface.modals.Chat.startCall')
 
 <ul class="pl-4 call-buttons-list">
     <li class="py-2"><button data-toggle="modal" data-target="#startCallModal" onclick="function loadComponent(){
-        this.mediaHandler.getPermissions()
+       this.mediaHandler.getPermissions()
             .then((stream)=>{
                 this.setState({hasMedia:true});
                 this.user.stream = stream;
@@ -13,9 +13,8 @@
                 }
                 this.myVideo.muted = true;
                 this.myVideo.play();
-            })
-}"
-                             } type="button" class="btn btn-orange btn-circle btn-xl"><i class="fas fa-video"></i></button></li>
+            });
+    }" type="button" class="btn btn-orange btn-circle btn-xl"><i class="fas fa-video"></i></button></li>
     <li class="py-2"><button type="button" class="btn btn-blue btn-circle btn-xl"><i class="fas fa-phone"></i></button></li>
 </ul>
 <div class="message-wrapper">
