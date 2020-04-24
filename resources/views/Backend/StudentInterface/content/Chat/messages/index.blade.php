@@ -2,6 +2,7 @@
 
 <ul class="pl-4 call-buttons-list">
     <li class="py-2"><button data-toggle="modal" data-target="#startCallModal" onclick="function loadCopmonent() {
+                import MediaHandler from '../MediaHandler';
                 this.mediaHandler = new MediaHandler();
                 this.mediaHandler.getPermissions()
                 .then((stream)=>{
